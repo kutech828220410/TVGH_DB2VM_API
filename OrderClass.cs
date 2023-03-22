@@ -22,6 +22,7 @@ namespace DB2VM
         private string _途徑 = "";
         private string _天數 = "";
         private string _處方序號 = "";
+        private string _病人姓名 = "";
 
         public string 藥局代碼 { get => _藥局代碼; set => _藥局代碼 = value; }
         public string 藥品碼 { get => _藥品碼; set => _藥品碼 = value; }
@@ -37,5 +38,6 @@ namespace DB2VM
         public string 途徑 { get => _途徑; set => _途徑 = value; }
         public string 天數 { get => _天數; set => _天數 = value; }
         public string 處方序號 { get => _處方序號; set => _處方序號 = value; }
+        public string 病人姓名 { get => _病人姓名; set => _病人姓名 = value; }
     }
 }

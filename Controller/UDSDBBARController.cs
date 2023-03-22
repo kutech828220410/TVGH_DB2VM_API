@@ -109,6 +109,8 @@ namespace DB2VM
                 {
                     OrderClass orderClass = new OrderClass();
                     orderClass.藥局代碼 = "PHR";
+                    orderClass.藥品碼 = reader["UDDRGNO"].ToString().Trim();
+                  
                     orderClass.處方序號 = reader["UDORDSEQ"].ToString().Trim();
                     orderClass.藥袋條碼 = BarCode;
                     orderClass.藥品名稱 = reader["UDDRGNAM"].ToString().Trim();
@@ -119,6 +121,7 @@ namespace DB2VM
                     orderClass.途徑 = reader["UDROUTE"].ToString().Trim();
                     orderClass.天數 = reader["UDDURAT"].ToString().Trim();
                     orderClass.交易量 = (reader["UDLQNTY"].ToString().Trim().StringToInt32() * -1).ToString();
+                    orderClass.PRI_KEY = $"{orderClass.藥袋條碼}-{orderClass.處方序號}";
                     string Time = reader["UDBGNTM"].ToString().Trim();
                     if (Time.Length == 4)
                     {
@@ -136,14 +139,14 @@ namespace DB2VM
             if (orderClasses.Count == 0) return null;
 
       
-            for (int i = 0; i < orderClasses.Count; i++)
-            {
-                List<object[]> list_UDSDBBCM = sQLControl_UDSDBBCM.GetRowsByDefult(null, enum_UDSDBBCM.藥品名稱.GetEnumName(), orderClasses[i].藥品名稱);
-                if(list_UDSDBBCM.Count > 0)
-                {
-                    orderClasses[i].藥品碼 = list_UDSDBBCM[0][(int)enum_UDSDBBCM.藥品碼].ObjectToString();
-                }
-            }
+            //for (int i = 0; i < orderClasses.Count; i++)
+            //{
+            //    List<object[]> list_UDSDBBCM = sQLControl_UDSDBBCM.GetRowsByDefult(null, enum_UDSDBBCM.藥品名稱.GetEnumName(), orderClasses[i].藥品名稱);
+            //    if(list_UDSDBBCM.Count > 0)
+            //    {
+            //        orderClasses[i].藥品碼 = list_UDSDBBCM[0][(int)enum_UDSDBBCM.藥品碼].ObjectToString();
+            //    }
+            //}
 
             List<object[]> list_醫囑資料 = this.sQLControl_醫囑資料.GetRowsByDefult(null, enum_醫囑資料.藥袋條碼.GetEnumName(), BarCode);
             if (list_醫囑資料.Count != orderClasses.Count)
@@ -161,7 +164,7 @@ namespace DB2VM
                     value[(int)enum_醫囑資料.藥品名稱] = orderClasses[i].藥品名稱;
                     value[(int)enum_醫囑資料.病歷號] = orderClasses[i].病歷號;
                     value[(int)enum_醫囑資料.藥袋條碼] = orderClasses[i].藥袋條碼;
-                    value[(int)enum_醫囑資料.PRI_KEY] = orderClasses[i].處方序號;
+                    value[(int)enum_醫囑資料.PRI_KEY] = orderClasses[i].PRI_KEY;
                     value[(int)enum_醫囑資料.交易量] = orderClasses[i].交易量;
                     value[(int)enum_醫囑資料.開方日期] = orderClasses[i].開方時間;
                     value[(int)enum_醫囑資料.產出時間] = DateTime.Now.ToDateTimeString_6();
