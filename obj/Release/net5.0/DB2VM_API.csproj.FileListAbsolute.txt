@@ -202,3 +202,4 @@ C:\Users\Administrator\Desktop\DB2VM\bin\Release\net5.0\CallBackUI.dll
 C:\Users\Administrator\Desktop\DB2VM\bin\Release\net5.0\DrawingClass.dll
 C:\Users\Administrator\Desktop\DB2VM\bin\Release\net5.0\MVSDK.dll
 C:\Users\Administrator\Desktop\DB2VM\bin\Release\net5.0\TCP.dll
+C:\Users\Administrator\Desktop\DB2VM\bin\Release\net5.0\HIS_DB_Lib.dll
