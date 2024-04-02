@@ -104,17 +104,18 @@ namespace DB2VM
                         orderClass.藥局代碼 = "PHR";
                         orderClass.藥品碼 = reader["UDDRGNO"].ToString().Trim();
 
-                        orderClass.處方序號 = reader["UDORDSEQ"].ToString().Trim();
+                        orderClass.住院序號 = reader["UDORDSEQ"].ToString().Trim();
                         orderClass.藥袋條碼 = BarCode;
                         orderClass.藥品名稱 = reader["UDDRGNAM"].ToString().Trim();
                         orderClass.病歷號 = reader["UDHISTNO"].ToString().Trim();
-                        orderClass.包裝單位 = reader["UDDUNIT"].ToString().Trim();
-                        orderClass.劑量 = reader["UDDOSAGE"].ToString().Trim();
+                        orderClass.劑量單位 = reader["UDDUNIT"].ToString().Trim();
+                        orderClass.單次劑量 = reader["UDDOSAGE"].ToString().Trim();
                         orderClass.頻次 = reader["UDDUNIT"].ToString().Trim();
                         orderClass.途徑 = reader["UDROUTE"].ToString().Trim();
-                        orderClass.天數 = reader["UDDURAT"].ToString().Trim();
+                        //orderClass.天數 = reader["UDDURAT"].ToString().Trim();
                         orderClass.交易量 = (reader["UDLQNTY"].ToString().Trim().StringToInt32() * -1).ToString();
-                        orderClass.PRI_KEY = $"{orderClass.藥袋條碼}-{orderClass.處方序號}";
+                        orderClass.PRI_KEY = $"{orderClass.藥袋條碼}-{orderClass.住院序號}";
+                        orderClass.狀態 = "已過帳";
                         string Time = reader["UDBGNTM"].ToString().Trim();
                         if (Time.Length == 4)
                         {
@@ -122,7 +123,7 @@ namespace DB2VM
                             string time1 = Time.Substring(2, 2);
                             Time = $"{time0}:{time1}:00";
                         }
-                        orderClass.開方時間 = $"{reader["UDBGNDT2"].ToString().Trim()} {Time}";
+                        orderClass.開方日期 = $"{reader["UDBGNDT2"].ToString().Trim()} {Time}";
                         orderClasses.Add(orderClass);
                     }
 
@@ -160,11 +161,13 @@ namespace DB2VM
                         value[(int)enum_醫囑資料.途徑] = orderClasses[i].途徑;
                         value[(int)enum_醫囑資料.頻次] = orderClasses[i].頻次;
                         value[(int)enum_醫囑資料.交易量] = orderClasses[i].交易量;
-                        value[(int)enum_醫囑資料.單次劑量] = orderClasses[i].劑量;
+                        value[(int)enum_醫囑資料.單次劑量] = orderClasses[i].單次劑量;
                         value[(int)enum_醫囑資料.產出時間] = DateTime.Now.ToDateTimeString_6();
                         value[(int)enum_醫囑資料.過帳時間] = DateTime.MinValue.ToDateTimeString_6();
+                        value[(int)enum_醫囑資料.展藥時間] = DateTime.MinValue.ToDateTimeString_6();
+                        value[(int)enum_醫囑資料.開方日期] = orderClasses[i].開方日期;
                         value[(int)enum_醫囑資料.狀態] = "未過帳";
-
+                        orderClasses[i].狀態 = "未過帳";
                         this.sQLControl_醫囑資料.AddRow(null, value);
                     }
 
