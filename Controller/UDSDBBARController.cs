@@ -30,7 +30,7 @@ namespace DB2VM
             藥品條碼4,
             藥品條碼5,
         }
-        static string DB2_server = $"{ConfigurationManager.AppSettings["DB2_server"]}:{ConfigurationManager.AppSettings["DB2_port"]}";
+        static string DB2_server = $"10.30.253.249:{ConfigurationManager.AppSettings["DB2_port"]}";
         static string DB2_database = $"{ConfigurationManager.AppSettings["DB2_database"]}";
         static string DB2_userid = $"{ConfigurationManager.AppSettings["DB2_user"]}";
         static string DB2_password = $"{ConfigurationManager.AppSettings["DB2_password"]}";
@@ -59,6 +59,9 @@ namespace DB2VM
                     returnData.Result = "Barcode空白";
                     return returnData.JsonSerializationt(true);
                 }
+                Table table = OrderClass.init("http://127.0.0.1:4433");
+                sQLControl_醫囑資料 = new SQLControl(table);
+
                 String MyDb2ConnectionString = $"server={DB2_server};database={DB2_database};userid={DB2_userid};password={DB2_password};";
                 DB2Connection MyDb2Connection = new DB2Connection(MyDb2ConnectionString);
 
@@ -103,7 +106,6 @@ namespace DB2VM
                         OrderClass orderClass = new OrderClass();
                         orderClass.藥局代碼 = "PHR";
                         orderClass.藥品碼 = reader["UDDRGNO"].ToString().Trim();
-
                         orderClass.住院序號 = reader["UDORDSEQ"].ToString().Trim();
                         orderClass.藥袋條碼 = BarCode;
                         orderClass.藥品名稱 = reader["UDDRGNAM"].ToString().Trim();

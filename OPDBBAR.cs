@@ -16,7 +16,7 @@ namespace DB2VM
     [ApiController]
     public class OPDBBAR : ControllerBase
     {
-        static string DB2_server = $"{ConfigurationManager.AppSettings["DB2_server"]}:{ConfigurationManager.AppSettings["DB2_port"]}";
+        static string DB2_server = $"10.30.253.249:{ConfigurationManager.AppSettings["DB2_port"]}";
 
         //string DB2_server = $"10.30.253.248:51011";
         string DB2_database = $"{ConfigurationManager.AppSettings["DB2_database"]}";
@@ -43,12 +43,15 @@ namespace DB2VM
             returnData returnData = new returnData();
             try
             {
+            
                 if (BarCode.StringIsEmpty())
                 {
                     returnData.Code = -200;
                     returnData.Result = "Barcode空白";
                     return returnData.JsonSerializationt(true);
                 }
+                Table table = OrderClass.init("http://127.0.0.1:4433");
+                sQLControl_醫囑資料 = new SQLControl(table);
                 String MyDb2ConnectionString = $"server={DB2_server};database={DB2_database};userid={DB2_userid};password={DB2_password};";
                 DB2Connection MyDb2Connection = new DB2Connection(MyDb2ConnectionString);
 
@@ -110,8 +113,8 @@ namespace DB2VM
                         orderClass.途徑 = reader["ARNHROUT"].ToString().Trim();
                         //orderClass. = reader["ARNHDUR"].ToString().Trim();
                         orderClass.交易量 = (reader["ARNHDQTY"].ToString().Trim().StringToInt32() * -1).ToString();
-                        orderClass.PRI_KEY = $"{orderClass.藥袋條碼}-{orderClass.領藥號}";
-                        orderClass.狀態 = "未過帳";
+                        orderClass.PRI_KEY = $"{orderClass.藥袋條碼}";
+                        orderClass.狀態 = "已過帳";
                         string Time = "00:00:00";
                         //if (Time.Length == 4)
                         //{
@@ -137,16 +140,15 @@ namespace DB2VM
                     }
                 }
 
-                List<object[]> list_醫囑資料 = this.sQLControl_醫囑資料.GetRowsByDefult(null, enum_醫囑資料.藥袋條碼.GetEnumName(), BarCode);
+                List<object[]> list_醫囑資料 = this.sQLControl_醫囑資料.GetRowsByDefult(null, enum_醫囑資料.PRI_KEY.GetEnumName(), BarCode);
+                List<object[]> list_醫囑資料_add = new List<object[]>();
+                List<object[]> list_醫囑資料_replace = new List<object[]>();
                 if (list_醫囑資料.Count != orderClasses.Count)
                 {
-                    for (int i = 0; i < list_醫囑資料.Count; i++)
-                    {
-                        this.sQLControl_醫囑資料.DeleteByDefult(null, "GUID", list_醫囑資料[i][(int)enum_醫囑資料.GUID].ObjectToString());
-                    }
+   
                     for (int i = 0; i < orderClasses.Count; i++)
                     {
-                        object[] value = new object[new enum_醫囑資料().GetLength()];
+                        object[] value = orderClasses[i].ClassToSQL<OrderClass, enum_醫囑資料>();
                         value[(int)enum_醫囑資料.GUID] = Guid.NewGuid().ToString();
                         value[(int)enum_醫囑資料.藥局代碼] = orderClasses[i].藥局代碼;
                         value[(int)enum_醫囑資料.藥品碼] = orderClasses[i].藥品碼;
@@ -165,15 +167,18 @@ namespace DB2VM
                         value[(int)enum_醫囑資料.開方日期] = orderClasses[i].開方日期;
                         value[(int)enum_醫囑資料.狀態] = "未過帳";
                         orderClasses[i].狀態 = "未過帳";
-                        this.sQLControl_醫囑資料.AddRow(null, value);
+                        list_醫囑資料_add.Add(value);
                     }
 
                 }
+
+                this.sQLControl_醫囑資料.AddRows(null, list_醫囑資料_add);
+
                 returnData.Code = 200;
                 returnData.Data = orderClasses;
-                returnData.Result = $"取得醫令成功,共<{orderClasses.Count}>筆";
+                returnData.Result = $"取得醫令成功,共<{orderClasses.Count}>筆,新增<{list_醫囑資料_add.Count}>筆";
                 returnData.TimeTaken = myTimerBasic.ToString();
-                string jsonString = returnData.JsonSerializationt();
+                string jsonString = returnData.JsonSerializationt(true);
                 return jsonString;
             }
             catch (Exception e)
