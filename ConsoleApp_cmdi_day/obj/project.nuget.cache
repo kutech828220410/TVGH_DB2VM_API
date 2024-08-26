@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "SptCSgNZUwpzkzdJohat2DXvX/js3363WNS48W/cNuBznMMW1x2OekEH7GqYzc81Jxh0qL+zulByeCqeLg3Buw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_cmdi_day\\ConsoleApp_cmdi_day.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
