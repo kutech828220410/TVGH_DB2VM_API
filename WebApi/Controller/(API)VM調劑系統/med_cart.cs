@@ -62,11 +62,9 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 }
 
                 string API = serverSettingClasses[0].Server;
-                //string API = $"http://{Server}:4436";
                 string 藥局 = returnData.ValueAry[0];
                 string 護理站 = returnData.ValueAry[1];
                 List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
-                //List<string> valueAry = new List<string> { 藥局, 護理站 };
                 medCarInfoClass.update_med_carinfo(API, bedList);
                 List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.get_bed_list_by_cart(API, returnData.ValueAry);
                 returnData.Code = 200;

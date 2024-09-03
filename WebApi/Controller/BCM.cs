@@ -20,6 +20,7 @@ namespace DB2VM_API.Controller
     {
         static private string API_Server = "http://127.0.0.1:4433/api/serversetting";
         static string DB2_schema = $"{ConfigurationManager.AppSettings["DB2_schema"]}";
+        [HttpPost("get_atc")]
         public string get_atc([FromBody] returnData returnData)
         {
             MyTimerBasic myTimerBasic = new MyTimerBasic();
