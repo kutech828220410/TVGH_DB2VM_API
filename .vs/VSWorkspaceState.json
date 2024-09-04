@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ConsoleApp_cmdi_day",
-    "\\WebApi",
-    "\\WebApi\\Controller"
+    "\\Controller"
   ],
-  "SelectedNode": "\\WebApi\\Controller\\UDPDPDSPController.cs",
+  "SelectedNode": "\\Controller\\TestController.cs",
   "PreviewInSolutionExplorer": false
 }

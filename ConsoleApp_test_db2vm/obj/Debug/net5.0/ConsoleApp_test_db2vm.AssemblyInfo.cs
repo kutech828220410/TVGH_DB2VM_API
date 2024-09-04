@@ -11,6 +11,13 @@
 using System;
 using System.Reflection;
 
+[assembly: System.Reflection.AssemblyCompanyAttribute("ConsoleApp_test_db2vm")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("ConsoleApp_test_db2vm")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ConsoleApp_test_db2vm")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // 由 MSBuild WriteCodeFragment 類別產生。
 
