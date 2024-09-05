@@ -499,18 +499,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
             {
-                if (returnData.ValueAry == null)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 無傳入資料";
-                    return returnData.JsonSerializationt(true);
-                }
-                if (returnData.ValueAry.Count != 2)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 內容應為[藥局, 護理站]";
-                    return returnData.JsonSerializationt(true);
-                }
+               
                 List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
                 serverSettingClasses = serverSettingClasses.MyFind("Main", "網頁", "API01");
                 if (serverSettingClasses.Count == 0)
@@ -521,8 +510,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 }
 
                 string API = serverSettingClasses[0].Server;
-                string 藥局 = returnData.ValueAry[0];
-                string 護理站 = returnData.ValueAry[1];
+                string 藥局 = "UC02";
 
                 string[] list = { "C039", "C049", "C059", "C069", "C079", "C089", "C099", "C109", "C119", "C129", "BMT" };
                 List<string> nurst_list = list.ToList();
@@ -1023,6 +1011,8 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                         {
                             while (reader.Read())
                             {
+                                string update_time = reader["DHUPDT"].ToString().Trim();
+                                DateTime dateTime = DateTime.Parse(update_time);
                                 medInfoClass medInfoClass = new medInfoClass
                                 {
                                     序號 = reader["DHSEQNO"].ToString().Trim(),
@@ -1036,8 +1026,9 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                     用法劑量 = reader["DHADMIN"].ToString().Trim(),
                                     備註 = reader["DHNOTE"].ToString().Trim(),
                                     藥碼 = reader["DHIMAGEP"].ToString().Trim(),
-                                    更新時間 = reader["DHUPDT"].ToString().Trim(),
-                                };
+                                    更新時間 = dateTime.ToDateTimeString(),
+                                    
+                            };
                                 medInfoClasses.Add(medInfoClass);
                             }
                         }
