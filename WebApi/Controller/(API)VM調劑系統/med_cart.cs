@@ -647,7 +647,11 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         {
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             List<medInfoClass> medInfoClasses = new List<medInfoClass>();
-            medInfoClasses[0].藥碼 = "04566";
+            medInfoClass medInfoClass = new medInfoClass
+            {
+                藥碼 = "04566"
+            };
+            medInfoClasses.Add(medInfoClass);
             List<medInfoClass> result = ExecuteUDPDPDRG(medInfoClasses);
             returnData returnData = new returnData();
             returnData.Code = 200;
@@ -1004,7 +1008,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.CommandText = procName;
-                        cmd.Parameters.Add("@UDDRGNO", DB2Type.VarChar, 5).Value = code;
+                        cmd.Parameters.Add("@UDDRGNO", DB2Type.VarChar, 5).Value = code[i];
                         DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
                         DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
                         using (DB2DataReader reader = cmd.ExecuteReader())
@@ -1021,7 +1025,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                     藥品通名 = reader["DHGNAME"].ToString().Trim(),
                                     藥品商品名 = reader["DHTNAME"].ToString().Trim(),
                                     藥品分類 = reader["DHRXCLAS"].ToString().Trim(),
-                                    藥品治療分類 = reader["DHTXCLA"].ToString().Trim(),
+                                    藥品治療分類 = reader["DHTXCLAS"].ToString().Trim(),
                                     適應症 = reader["DHINDICA"].ToString().Trim(),
                                     用法劑量 = reader["DHADMIN"].ToString().Trim(),
                                     備註 = reader["DHNOTE"].ToString().Trim(),
@@ -1050,16 +1054,18 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.CommandText = procName;
-                        cmd.Parameters.Add("@UDDRGNO", DB2Type.VarChar, 5).Value = medInfoClass.藥碼;
+                        cmd.Parameters.Add("@TDRGNO", DB2Type.VarChar, 5).Value = medInfoClass.藥碼;
                         DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
                         DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
                         using (DB2DataReader reader = cmd.ExecuteReader())
                         {
-                            medInfoClass.售價 = reader["UDWCOST"].ToString().Trim();
-                            medInfoClass.健保價 = reader["UDPRICE"].ToString().Trim();
-                            medInfoClass.頻次代碼 = reader["UDFREQN"].ToString().Trim();
-                            medInfoClass.劑量 = reader["UDCMDOSA"].ToString().Trim();
-
+                            while (reader.Read())
+                            {
+                                medInfoClass.售價 = reader["UDWCOST"].ToString().Trim();
+                                medInfoClass.健保價 = reader["UDPRICE"].ToString().Trim();
+                                medInfoClass.頻次代碼 = reader["UDFREQN"].ToString().Trim();
+                                medInfoClass.劑量 = reader["UDCMDOSA"].ToString().Trim();
+                            }                           
                         }
                     }
                 }
