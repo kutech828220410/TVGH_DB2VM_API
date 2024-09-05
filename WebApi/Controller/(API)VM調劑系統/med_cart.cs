@@ -62,11 +62,9 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 }
 
                 string API = serverSettingClasses[0].Server;
-                //string API = $"http://{Server}:4436";
                 string 藥局 = returnData.ValueAry[0];
                 string 護理站 = returnData.ValueAry[1];
                 List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
-                //List<string> valueAry = new List<string> { 藥局, 護理站 };
                 medCarInfoClass.update_med_carinfo(API, bedList);
                 List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.get_bed_list_by_cart(API, returnData.ValueAry);
                 returnData.Code = 200;
@@ -523,34 +521,27 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 }
 
                 string API = serverSettingClasses[0].Server;
-                //string API = $"http://{Server}:4436";
                 string 藥局 = returnData.ValueAry[0];
                 string 護理站 = returnData.ValueAry[1];
-                List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
-                List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
-                List<medCarInfoClass> update_medCarInfoClass = medCarInfoClass.update_med_carinfo(API, bedListInfo);
-                List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(update_medCarInfoClass);
 
-
-                List<medCarInfoClass> update = new List<medCarInfoClass>();
-                foreach (var medCarInfoClass in update_medCarInfoClass)
+                string[] list = { "C039", "C049", "C059", "C069", "C079", "C089", "C099", "C109", "C119", "C129", "BMT" };
+                List<string> nurst_list = list.ToList();
+                //List<string> code = new List<string>();
+                for (int i = 0; i < nurst_list.Count;i++)
                 {
-                    List<medCpoeClass> medCpoeClasses = bedListCpoe
-                        .Where(temp => temp.Master_GUID == medCarInfoClass.GUID)
-                        .ToList();
-                    if (medCpoeClasses.Count == 0 && medCarInfoClass.占床狀態 == "已佔床")
-                    {
-                        medCarInfoClass.調劑狀態 = "Y";
-                        update.Add(medCarInfoClass);
-                    }
+                    List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, nurst_list[i]);
+                    List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(bedList);
+                    List<string> code = bedListCpoe.GroupBy(temp => temp.藥碼).Select(group => group.Key).ToList();
+                    List<medInfoClass> medInfoClass_1 = ExecuteUDPDPHLP(code);
+                    List<medInfoClass> medInfoClass_2 = ExecuteUDPDPDRG(medInfoClass_1);
+                    medInfoClass.update_med_info(API, medInfoClass_2);
                 }
-                if (update.Count != 0) medCarInfoClass.update_med_carinfo(API, update);
 
-
+              
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
                 returnData.Data = "";
-                returnData.Result = $"取得 {護理站} 病床資訊共{bedList.Count}筆";
+                returnData.Result = $"更新藥品資訊成功";
                 return returnData.JsonSerializationt(true);
             }
             catch (Exception ex)
