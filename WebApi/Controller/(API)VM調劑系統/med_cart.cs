@@ -123,7 +123,10 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 string Server = serverSettingClasses[0].Server;
                 string API = $"http://{Server}:4436";
                 string GUID = returnData.ValueAry[0];
-                List<medCarInfoClass> targetPatient = medCarInfoClass.get_patient_by_GUID(API, returnData.ValueAry);
+
+                medCarInfoClass medCarInfoClass = medCarInfoClass.get_patient_by_GUID(API, returnData.ValueAry);
+                List<medCarInfoClass> targetPatient = new List<medCarInfoClass>();
+                targetPatient.Add(medCarInfoClass);
                 if (targetPatient.Count != 1)
                 {
                     returnData.Code = -200;
@@ -146,7 +149,9 @@ namespace DB2VM_API.Controller._API_VM調劑系統
 
                 List<medCarInfoClass> update_medCarInfoClass = medCarInfoClass.update_med_carinfo(API, bedListInfo);
                 List<medCpoeClass> update_medCpoeClass = medCpoeClass.update_med_cpoe(API, bedListCpoe);
-                List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.get_patient_by_GUID(API, valueAry2);
+                medCarInfoClass medCarInfoClass1 = medCarInfoClass.get_patient_by_GUID(API, valueAry2);
+                List<medCarInfoClass> out_medCarInfoClass = new List<medCarInfoClass>();
+                out_medCarInfoClass.Add(medCarInfoClass1);
 
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
@@ -278,7 +283,9 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 List<string> valueAry = new List<string> { GUID };
 
 
-                List<medCarInfoClass> bedList = medCarInfoClass.get_patient_by_GUID(API, valueAry);
+                medCarInfoClass bed = medCarInfoClass.get_patient_by_GUID(API, valueAry);
+                List<medCarInfoClass> bedList = new List<medCarInfoClass>();
+                bedList.Add(bed);
                 List<medCpoeRecClass> medCpoe_change = ExecuteUDPDPORD(bedList);
                 List<medCpoeRecClass> update_medCpoe_change = medCpoeRecClass.update_med_CpoeRec(API, medCpoe_change);
                 List<medCarInfoClass> get_patient = medCpoeRecClass.get_medChange_by_GUID(API, valueAry);

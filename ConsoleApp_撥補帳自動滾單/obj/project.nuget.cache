@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "TPLn9/Nz8MJwpCELf6UhxpxokqyFr+qIwHwtThRGJurIJpmu2bIx1VP2pXmc97sLbHLPKQhIQahs8mTIWAUiKw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_撥補帳自動滾單\\ConsoleApp_撥補帳自動滾單.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
