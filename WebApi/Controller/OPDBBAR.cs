@@ -107,12 +107,12 @@ namespace DB2VM
                     {
                         List<string> list_str = new List<string>();
 
-                        //for(int i = 0; i < colNames.Count; i++)
-                        //{
-                        //    list_str.Add(reader[colNames[i]].ToString().Trim());
-                        //}
+                        for (int i = 0; i < colNames.Count; i++)
+                        {
+                            list_str.Add(reader[colNames[i]].ToString().Trim());
+                        }
                         string ARNHDUR = reader["ARNHDUR"].ToString().Trim();
-                        if (ARNHDUR != "30") continue;
+                        //if (ARNHDUR != "30") continue;
                         OrderClass orderClass = new OrderClass();
                         orderClass.藥局代碼 = "OPD";
                         orderClass.藥品碼 = reader["UDDRGNO"].ToString().Trim();
@@ -153,16 +153,24 @@ namespace DB2VM
                         return returnData.JsonSerializationt(true);
                     }
                 }
-
+        
                 List<object[]> list_醫囑資料 = this.sQLControl_醫囑資料.GetRowsByDefult(null, enum_醫囑資料.PRI_KEY.GetEnumName(), BarCode);
+                List<OrderClass> sql_OrderClass = list_醫囑資料.SQLToClass<OrderClass, enum_醫囑資料>();
+                List<OrderClass> buf_OrderClass = sql_OrderClass
+                    .Where(temp => !orderClasses.Select(@new => @new.批序).Contains(temp.批序)).ToList();
+                
                 List<object[]> list_醫囑資料_add = new List<object[]>();
                 List<object[]> list_醫囑資料_replace = new List<object[]>();
-                if (list_醫囑資料.Count != orderClasses.Count)
+                List<object[]> list_醫囑資料_delete = new List<object[]>();
+                for (int i = 0; i < orderClasses.Count; i++)
                 {
-   
-                    for (int i = 0; i < orderClasses.Count; i++)
+                    List<OrderClass> target = sql_OrderClass
+                        .Where(temp => temp.批序 == orderClasses[i].批序).ToList();
+                    list_醫囑資料_delete = target.ClassToSQL<OrderClass, enum_醫囑資料>();
+                    if (target.Count == 0)
                     {
                         object[] value = orderClasses[i].ClassToSQL<OrderClass, enum_醫囑資料>();
+
                         value[(int)enum_醫囑資料.GUID] = Guid.NewGuid().ToString();
                         value[(int)enum_醫囑資料.藥局代碼] = orderClasses[i].藥局代碼;
                         value[(int)enum_醫囑資料.藥品碼] = orderClasses[i].藥品碼;
@@ -173,7 +181,6 @@ namespace DB2VM
                         value[(int)enum_醫囑資料.交易量] = orderClasses[i].交易量;
                         value[(int)enum_醫囑資料.途徑] = orderClasses[i].途徑;
                         value[(int)enum_醫囑資料.頻次] = orderClasses[i].頻次;
-                        value[(int)enum_醫囑資料.交易量] = orderClasses[i].交易量;
                         value[(int)enum_醫囑資料.單次劑量] = orderClasses[i].單次劑量;
                         value[(int)enum_醫囑資料.產出時間] = DateTime.Now.ToDateTimeString_6();
                         value[(int)enum_醫囑資料.過帳時間] = DateTime.MinValue.ToDateTimeString_6();
@@ -186,7 +193,36 @@ namespace DB2VM
 
                 }
 
+                //if (list_醫囑資料.Count != orderClasses.Count)
+                //{
+                //    for (int i = 0; i < orderClasses.Count; i++)
+                //    {
+                //        object[] value = orderClasses[i].ClassToSQL<OrderClass, enum_醫囑資料>();
+
+                //        value[(int)enum_醫囑資料.GUID] = Guid.NewGuid().ToString();
+                //        value[(int)enum_醫囑資料.藥局代碼] = orderClasses[i].藥局代碼;
+                //        value[(int)enum_醫囑資料.藥品碼] = orderClasses[i].藥品碼;
+                //        value[(int)enum_醫囑資料.藥品名稱] = orderClasses[i].藥品名稱;
+                //        value[(int)enum_醫囑資料.病歷號] = orderClasses[i].病歷號;
+                //        value[(int)enum_醫囑資料.藥袋條碼] = orderClasses[i].藥袋條碼;
+                //        value[(int)enum_醫囑資料.PRI_KEY] = orderClasses[i].PRI_KEY;
+                //        value[(int)enum_醫囑資料.交易量] = orderClasses[i].交易量;
+                //        value[(int)enum_醫囑資料.途徑] = orderClasses[i].途徑;
+                //        value[(int)enum_醫囑資料.頻次] = orderClasses[i].頻次;
+                //        value[(int)enum_醫囑資料.單次劑量] = orderClasses[i].單次劑量;
+                //        value[(int)enum_醫囑資料.產出時間] = DateTime.Now.ToDateTimeString_6();
+                //        value[(int)enum_醫囑資料.過帳時間] = DateTime.MinValue.ToDateTimeString_6();
+                //        value[(int)enum_醫囑資料.展藥時間] = DateTime.MinValue.ToDateTimeString_6();
+                //        value[(int)enum_醫囑資料.開方日期] = orderClasses[i].開方日期;
+                //        value[(int)enum_醫囑資料.狀態] = "未過帳";
+                //        orderClasses[i].狀態 = "未過帳";
+                //        list_醫囑資料_add.Add(value);
+                //    }
+
+                //}
+
                 this.sQLControl_醫囑資料.AddRows(null, list_醫囑資料_add);
+                this.sQLControl_醫囑資料.DeleteExtra(null, list_醫囑資料_delete);
 
                 returnData.Code = 200;
                 returnData.Data = orderClasses;
