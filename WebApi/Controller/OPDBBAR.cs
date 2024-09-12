@@ -106,8 +106,13 @@ namespace DB2VM
                     if (TFLAG.Value.ToString() == "O")
                     {
                         List<string> list_str = new List<string>();
-      
 
+                        //for(int i = 0; i < colNames.Count; i++)
+                        //{
+                        //    list_str.Add(reader[colNames[i]].ToString().Trim());
+                        //}
+                        string ARNHDUR = reader["ARNHDUR"].ToString().Trim();
+                        if (ARNHDUR != "30") continue;
                         OrderClass orderClass = new OrderClass();
                         orderClass.藥局代碼 = "OPD";
                         orderClass.藥品碼 = reader["UDDRGNO"].ToString().Trim();

@@ -86,6 +86,10 @@ namespace DB2VM_API
                         string DIMQUTY = reader["DIMQUTY"].ToString().Trim();
                         string DIMFLAG = reader["DIMFLAG"].ToString().Trim();
                         string DIMRQUTY = reader["DIMRQUTY"].ToString().Trim();
+                        if (DIMNAME.StartsWith("Foliromin"))
+                        {
+
+                        }
 
                         medClasses_cloud_buf = (from temp in medClasses_cloud
                                                 where temp.料號 == DIMSTNO
@@ -129,7 +133,7 @@ namespace DB2VM_API
 
             returnData.Code = 200;
             returnData.Data = batch_Inventory_ImportClasses;
-            returnData.Result = $"DB2 Connecting sucess! , {MyDb2ConnectionString}";
+            returnData.Result = $"取得資料共<{batch_Inventory_ImportClasses.Count}>筆,DB2 Connecting sucess! , {MyDb2ConnectionString}";
             return returnData.JsonSerializationt(true);
 
 

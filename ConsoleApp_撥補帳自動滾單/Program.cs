@@ -14,7 +14,7 @@ namespace ConsoleApp_撥補帳自動滾單
             {
                 returnData returnData = new returnData();
                 returnData.Value = "門診高管櫃";
-                returnData.ValueAry.Add($"{DateTime.Now.ToDateString()}");
+                returnData.ValueAry.Add($"{DateTime.Now.AddDays(0).ToDateString()}");
                 string json_in = returnData.JsonSerializationt();
                 Logger.LogAddLine();
                 Logger.Log($"[{returnData.Value}-{returnData.ValueAry[0]}]開始取得撥補資料");
@@ -24,7 +24,7 @@ namespace ConsoleApp_撥補帳自動滾單
                 Logger.Log($"[{returnData.Value}-{returnData.ValueAry[0]}]取得HIS撥補資料,共<{batch_inventory_importClasses.Count}>筆");
                 List<batch_inventory_importClass> batch_inventory_importClasse_buf = new List<batch_inventory_importClass>();
                 List<batch_inventory_importClass> batch_inventory_importClasse_add = new List<batch_inventory_importClass>();
-                List<batch_inventory_importClass> batch_inventory_importClasses_today = batch_inventory_importClass.get_by_CT_TIME("http://127.0.0.1:4433", DateTime.Now.GetStartDate(), DateTime.Now.GetEndDate());
+                List<batch_inventory_importClass> batch_inventory_importClasses_today = batch_inventory_importClass.get_by_CT_TIME("http://127.0.0.1:4433", DateTime.Now.AddDays(0).GetStartDate(), DateTime.Now.AddDays(0).GetEndDate());
                 Logger.Log($"[{returnData.Value}-{returnData.ValueAry[0]}]取得Server撥補資料,共<{batch_inventory_importClasses_today.Count}>筆");
 
 
