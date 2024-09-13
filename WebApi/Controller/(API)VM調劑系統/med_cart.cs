@@ -520,7 +520,8 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, nurst_list[i]);
                     List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(bedList);
                     List<string> code = bedListCpoe.GroupBy(temp => temp.藥碼).Select(group => group.Key).ToList();
-                    List<medInfoClass> medInfoClass_1 = ExecuteUDPDPHLP(code);
+                    List<string> result = code.SelectMany(code => code.Split(",")).ToList();
+                    List<medInfoClass> medInfoClass_1 = ExecuteUDPDPHLP(result);
                     List<medInfoClass> medInfoClass_2 = ExecuteUDPDPDRG(medInfoClass_1);
                     medInfoClass.update_med_info(API, medInfoClass_2);
                 }
@@ -649,7 +650,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             List<medInfoClass> medInfoClasses = new List<medInfoClass>();
             medInfoClass medInfoClass = new medInfoClass
             {
-                藥碼 = "04566"
+                藥碼 = "05052"
             };
             medInfoClasses.Add(medInfoClass);
             List<medInfoClass> result = ExecuteUDPDPDRG(medInfoClasses);
@@ -1029,10 +1030,10 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                     適應症 = reader["DHINDICA"].ToString().Trim(),
                                     用法劑量 = reader["DHADMIN"].ToString().Trim(),
                                     備註 = reader["DHNOTE"].ToString().Trim(),
-                                    藥碼 = reader["DHIMAGEP"].ToString().Trim(),
+                                    c
                                     更新時間 = dateTime.ToDateTimeString(),
                                     
-                            };
+                                };
                                 medInfoClasses.Add(medInfoClass);
                             }
                         }
