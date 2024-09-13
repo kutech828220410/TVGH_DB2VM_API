@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp_test_db2vm", "Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DB2VM_API", "WebApi\DB2VM_API.csproj", "{79AE2450-5D8D-441E-AF47-9BEB5ACB25FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_撥補帳自動滾單", "ConsoleApp_撥補帳自動滾單\ConsoleApp_撥補帳自動滾單.csproj", "{56E5AFAF-59AC-438C-A909-21894CCDA1F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{79AE2450-5D8D-441E-AF47-9BEB5ACB25FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79AE2450-5D8D-441E-AF47-9BEB5ACB25FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79AE2450-5D8D-441E-AF47-9BEB5ACB25FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56E5AFAF-59AC-438C-A909-21894CCDA1F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E5AFAF-59AC-438C-A909-21894CCDA1F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E5AFAF-59AC-438C-A909-21894CCDA1F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E5AFAF-59AC-438C-A909-21894CCDA1F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
