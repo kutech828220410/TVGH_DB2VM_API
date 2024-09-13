@@ -1029,8 +1029,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                     藥品治療分類 = reader["DHTXCLAS"].ToString().Trim(),
                                     適應症 = reader["DHINDICA"].ToString().Trim(),
                                     用法劑量 = reader["DHADMIN"].ToString().Trim(),
-                                    備註 = reader["DHNOTE"].ToString().Trim(),
-                                    c
+                                    備註 = reader["DHNOTE"].ToString().Trim(),                                  
                                     更新時間 = dateTime.ToDateTimeString(),
                                     
                                 };
