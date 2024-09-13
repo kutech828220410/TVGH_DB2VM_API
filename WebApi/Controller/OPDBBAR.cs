@@ -162,11 +162,13 @@ namespace DB2VM
                 List<object[]> list_醫囑資料_add = new List<object[]>();
                 List<object[]> list_醫囑資料_replace = new List<object[]>();
                 List<object[]> list_醫囑資料_delete = new List<object[]>();
+                list_醫囑資料_delete = buf_OrderClass.ClassToSQL<OrderClass, enum_醫囑資料>();
+
                 for (int i = 0; i < orderClasses.Count; i++)
                 {
                     List<OrderClass> target = sql_OrderClass
                         .Where(temp => temp.批序 == orderClasses[i].批序).ToList();
-                    list_醫囑資料_delete = target.ClassToSQL<OrderClass, enum_醫囑資料>();
+                    
                     if (target.Count == 0)
                     {
                         object[] value = orderClasses[i].ClassToSQL<OrderClass, enum_醫囑資料>();
@@ -190,6 +192,7 @@ namespace DB2VM
                         orderClasses[i].狀態 = "未過帳";
                         list_醫囑資料_add.Add(value);
                     }
+                    
 
                 }
 
