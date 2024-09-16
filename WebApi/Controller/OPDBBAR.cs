@@ -156,13 +156,13 @@ namespace DB2VM
         
                 List<object[]> list_醫囑資料 = this.sQLControl_醫囑資料.GetRowsByDefult(null, enum_醫囑資料.PRI_KEY.GetEnumName(), BarCode);
                 List<OrderClass> sql_OrderClass = list_醫囑資料.SQLToClass<OrderClass, enum_醫囑資料>();
-                List<OrderClass> buf_OrderClass = sql_OrderClass
+                List<OrderClass> delete_OrderClass = sql_OrderClass
                     .Where(temp => !orderClasses.Select(@new => @new.批序).Contains(temp.批序)).ToList();
                 
                 List<object[]> list_醫囑資料_add = new List<object[]>();
                 List<object[]> list_醫囑資料_replace = new List<object[]>();
                 List<object[]> list_醫囑資料_delete = new List<object[]>();
-                list_醫囑資料_delete = buf_OrderClass.ClassToSQL<OrderClass, enum_醫囑資料>();
+                list_醫囑資料_delete = delete_OrderClass.ClassToSQL<OrderClass, enum_醫囑資料>();
 
                 for (int i = 0; i < orderClasses.Count; i++)
                 {
