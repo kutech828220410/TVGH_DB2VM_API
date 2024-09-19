@@ -1060,7 +1060,8 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                     藥品治療分類 = reader["DHTXCLAS"].ToString().Trim(),
                                     適應症 = reader["DHINDICA"].ToString().Trim(),
                                     用法劑量 = reader["DHADMIN"].ToString().Trim(),
-                                    備註 = reader["DHNOTE"].ToString().Trim(),                                  
+                                    備註 = reader["DHNOTE"].ToString().Trim(),
+                                    藥碼 = code[i],
                                     更新時間 = dateTime.ToDateTimeString(),
                                     
                                 };
@@ -1092,6 +1093,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                         {
                             while (reader.Read())
                             {
+                                medInfoClass.藥品名 = reader["UDARNAME"].ToString().Trim();
                                 medInfoClass.售價 = reader["UDWCOST"].ToString().Trim();
                                 medInfoClass.健保價 = reader["UDPRICE"].ToString().Trim();
                                 medInfoClass.頻次代碼 = reader["UDFREQN"].ToString().Trim();
