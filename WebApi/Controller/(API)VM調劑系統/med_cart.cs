@@ -534,6 +534,43 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 return returnData.JsonSerializationt(true);
             }
         }
+        [HttpPost("get_medInfo")]
+        public string get_medInfo([FromBody] returnData returnData)
+        {
+            MyTimerBasic myTimerBasic = new MyTimerBasic();
+            try
+            {
+               
+                List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
+                serverSettingClasses = serverSettingClasses.MyFind("Main", "網頁", "API01");
+                if (serverSettingClasses.Count == 0)
+                {
+                    returnData.Code = -200;
+                    returnData.Result = $"找無Server資料!";
+                    return returnData.JsonSerializationt();
+                }
+
+                string API = serverSettingClasses[0].Server;
+                List<medClass> medClasses = medClass.get_med_cloud(API);
+                List<string> code = medClasses.Select(temp => temp.藥品碼).ToList();
+                List<string> result = code.SelectMany(code => code.Split(",")).ToList();
+                List<medInfoClass> medInfoClass_1 = ExecuteUDPDPHLP(result);
+                List<medInfoClass> medInfoClass_2 = ExecuteUDPDPDRG(medInfoClass_1);
+                medInfoClass.update_med_info(API, medInfoClass_2);             
+              
+                returnData.Code = 200;
+                returnData.TimeTaken = $"{myTimerBasic}";
+                returnData.Data = "";
+                returnData.Result = $"更新藥品資訊成功";
+                return returnData.JsonSerializationt(true);
+            }
+            catch (Exception ex)
+            {
+                returnData.Code = -200;
+                returnData.Result = $"Exception:{ex.Message}";
+                return returnData.JsonSerializationt(true);
+            }
+        }
         [HttpGet("UDPDPPF1")]
         public string UDPDPPF1()
         {
