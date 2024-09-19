@@ -52,7 +52,6 @@ namespace DB2VM_API
                 cmd.CommandText = $"SELECT * FROM VGHLNXTS.DIMAUTRNUDNO where DIMDATE >='{date.ToDateTinyString()}' with ur;";
 
 
-
                 using (DB2DataReader reader = cmd.ExecuteReader())
                 {
                     // 取得欄位數量
