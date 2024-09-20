@@ -552,9 +552,10 @@ namespace DB2VM_API.Controller._API_VM調劑系統
 
                 string API = serverSettingClasses[0].Server;
                 List<medClass> medClasses = medClass.get_med_cloud(API);
+                //List<medClass> select = medClasses.Where(temp => temp.藥品碼 == "04514" || temp.藥品碼 == "05412" || temp.藥品碼 == "04974").ToList();
                 List<string> code = medClasses.Select(temp => temp.藥品碼).ToList();
-                List<string> result = code.SelectMany(code => code.Split(",")).ToList();
-                List<medInfoClass> medInfoClass_1 = ExecuteUDPDPHLP(result);
+                //List<string> result = code.SelectMany(code => code.Split(",")).ToList();
+                List<medInfoClass> medInfoClass_1 = ExecuteUDPDPHLP(code);
                 List<medInfoClass> medInfoClass_2 = ExecuteUDPDPDRG(medInfoClass_1);
                 medInfoClass.update_med_info(API, medInfoClass_2);             
               
@@ -664,7 +665,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         public string UDPDPHLP()
         {
             MyTimerBasic myTimerBasic = new MyTimerBasic();
-            string code = "05052";
+            string code = "04514";
             List<string> codes = new List<string>() { code };
             List<medInfoClass> result = ExecuteUDPDPHLP(codes);
             returnData returnData = new returnData();
@@ -681,7 +682,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             List<medInfoClass> medInfoClasses = new List<medInfoClass>();
             medInfoClass medInfoClass = new medInfoClass
             {
-                藥碼 = "05052"
+                藥碼 = "04514"
             };
             medInfoClasses.Add(medInfoClass);
             List<medInfoClass> result = ExecuteUDPDPDRG(medInfoClasses);
