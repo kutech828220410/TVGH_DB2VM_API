@@ -36,6 +36,17 @@ namespace DB2VM_API.Controller
             return returnData.JsonSerializationt(true);
 
         }
+        [HttpPost("UDSDBBCM")]
+        public string get_UDSDBBCM([FromBody] returnData returnData)
+        {
+            MyTimerBasic myTimerBasic = new MyTimerBasic();
+            List<Dictionary<string, object>> result = UDSDBBCM();
+            returnData.Code = 200;
+            returnData.TimeTaken = $"{myTimerBasic}";
+            returnData.Data = result;
+            returnData.Result = $"";
+            return returnData.JsonSerializationt(true);
+        }
         private DB2Connection GetDB2Connection()
         {
             string DB2_server = $"{ConfigurationManager.AppSettings["DB2_server"]}:{ConfigurationManager.AppSettings["DB2_port"]}";
@@ -76,6 +87,41 @@ namespace DB2VM_API.Controller
                     }
                 }
             }
+        }
+        private List<Dictionary<string, object>> UDSDBBCM()
+        {
+            using (DB2Connection MyDb2Connection = new DB2Connection())
+            {
+                MyDb2Connection.Open();
+                string SP = "UDSDBBCM";
+                string procName = $"{DB2_schema}.{SP}";
+                using (DB2Command cmd = MyDb2Connection.CreateCommand())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = procName;
+                    cmd.Parameters.Add("@TSYSD", DB2Type.VarChar, 5).Value = "ADMUD";
+                    cmd.Parameters.Add("@TUDDRGNO", DB2Type.VarChar, 5).Value = $"";
+                    DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
+                    DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
+                    using (DB2DataReader reader = cmd.ExecuteReader())
+                    {
+                        List<Dictionary<string, object>> result = new List<Dictionary<string, object>>();
+                        while (reader.Read())
+                        {
+                            Dictionary<string, object> row = new Dictionary<string, object>();
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                string columnName = reader.GetName(i);
+                                object value = reader.IsDBNull(i) ? null : reader.GetValue(i);
+                                row.Add(columnName, value);
+                            }
+                            result.Add(row);
+                        }
+                        return result;
+                    }
+                }
+            }
+
         }
     }
 }
