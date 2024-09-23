@@ -1063,8 +1063,8 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                     用法劑量 = reader["DHADMIN"].ToString().Trim(),
                                     備註 = reader["DHNOTE"].ToString().Trim(),
                                     藥碼 = code[i],
-                                    更新時間 = dateTime.ToDateTimeString(),
-                                    
+                                    仿單 = $"https://www7.vghtpe.gov.tw/api/find-package-insert-by-udCode?udCode={code[i]}",
+                                    更新時間 = dateTime.ToDateTimeString(),                                   
                                 };
                                 medInfoClasses.Add(medInfoClass);
                             }
@@ -1099,9 +1099,10 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                 medInfoClass.健保價 = reader["UDPRICE"].ToString().Trim();
                                 medInfoClass.頻次代碼 = reader["UDFREQN"].ToString().Trim();
                                 medInfoClass.劑量 = reader["UDCMDOSA"].ToString().Trim();
+                                
                             }                           
                         }
-                    }
+                    }                  
                 }
                 return medInfoClasses;
             }
