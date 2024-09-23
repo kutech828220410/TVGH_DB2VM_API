@@ -90,7 +90,7 @@ namespace DB2VM_API.Controller
         }
         private List<Dictionary<string, object>> UDSDBBCM()
         {
-            using (DB2Connection MyDb2Connection = new DB2Connection())
+            using (DB2Connection MyDb2Connection = GetDB2Connection())
             {
                 MyDb2Connection.Open();
                 string SP = "UDSDBBCM";
