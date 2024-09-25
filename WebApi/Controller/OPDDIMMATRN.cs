@@ -23,8 +23,8 @@ namespace DB2VM_API
 
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             returnData.Method = "get_by_datetime";
-            //String MyDb2ConnectionString = $"server=10.30.253.249:51031;database=DBHIS;userid=XVGHF3 ;password=QWER1234;";
-            String MyDb2ConnectionString = $"server=10.30.253.248:51011;database=DBHIS;userid=XVGHF3 ;password=QWER1234;";
+            String MyDb2ConnectionString = $"server=10.30.253.249:51031;database=DBHIS;userid=XVGHF3 ;password=QWER1234;";
+            //String MyDb2ConnectionString = $"server=10.30.253.248:51011;database=DBHIS;userid=XVGHF3 ;password=QWER1234;";
             DB2Connection MyDb2Connection = new DB2Connection(MyDb2ConnectionString);
             List<batch_inventory_importClass> batch_Inventory_ImportClasses = new List<batch_inventory_importClass>();
             try
@@ -48,7 +48,8 @@ namespace DB2VM_API
                 DB2Command cmd = MyDb2Connection.CreateCommand();
                 //cmd.CommandText = $"SELECT * FROM VGHLNXVG.DIMMATRN where DIMDATE >='{date.ToDateTinyString()}' with ur;";
                 //cmd.CommandText = $"SELECT * FROM VGHLNXVG.DIMAUTRN where DIMDATE >='{date.ToDateTinyString()}' with ur;";
-                cmd.CommandText = $"SELECT * FROM VGHLNXTS.UD_DIMAUTRN where DIMDATE >='{date.ToDateTinyString()}' with ur;";
+                //cmd.CommandText = $"SELECT * FROM VGHLNXTS.UD_DIMAUTRN where DIMDATE >='{date.ToDateTinyString()}' with ur;";
+                cmd.CommandText = $"SELECT * FROM VGHLNXTS.DIMAUTRNUDNO where DIMDATE >='{date.ToDateTinyString()}' with ur;";
 
 
                 using (DB2DataReader reader = cmd.ExecuteReader())
