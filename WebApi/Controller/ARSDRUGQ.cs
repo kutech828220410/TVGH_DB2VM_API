@@ -119,6 +119,7 @@ namespace DB2VM_API.Controller
                         while (reader.Read())
                         {
                             string 處方狀態 = reader["ARNHDSTA"].ToString().Trim();
+                            string 開方日期 = reader["ARSBDATE"].ToString().Trim();
                             OrderClass OrderClass = new OrderClass
                             {
                                 藥局代碼 = "OPD",
@@ -128,14 +129,11 @@ namespace DB2VM_API.Controller
                                 藥袋條碼 = BarCode,
                                 藥品名稱 = reader["ARNHNAMB"].ToString().Trim(),
                                 病歷號 = reader["ARNHIST"].ToString().Trim(),
-                                //劑量單位 = reader[""].ToString().Trim(),
                                 單次劑量 = reader["ARNHDOSE"].ToString().Trim(),
                                 頻次 = reader["ARNHFQCY"].ToString().Trim(),
-                                //途徑 = reader[""].ToString().Trim(),
                                 交易量 = (reader["ARNHDQTY"].ToString().Trim().StringToInt32() * -1).ToString(),
-                                PRI_KEY = BarCode,
-                                狀態 = "已過帳",
-                                開方日期 = reader["ARSBDATE"].ToString().Trim()
+                                PRI_KEY = BarCode,         
+                                開方日期 = 開方日期.StringToDateTime().ToDateTimeString()
                             };
                             if(處方狀態 == "30") orderClasses.Add(OrderClass);
                         }
