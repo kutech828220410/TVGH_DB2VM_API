@@ -1107,6 +1107,39 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 return medInfoClasses;
             }
         }
+        //private List<medInfoClass> ExecuteUDPDPDRG(List<medInfoClass> medInfoClasses)
+        //{
+        //    using (DB2Connection MyDb2Connection = GetDB2Connection())
+        //    {
+        //        MyDb2Connection.Open();
+        //        string SP = "UDPDPDRG";
+        //        string procName = $"{DB2_schema}.{SP}";
+        //        foreach (var medInfoClass in medInfoClasses)
+        //        {
+        //            using (DB2Command cmd = MyDb2Connection.CreateCommand())
+        //            {
+        //                cmd.CommandType = CommandType.StoredProcedure;
+        //                cmd.CommandText = procName;
+        //                cmd.Parameters.Add("@TDRGNO", DB2Type.VarChar, 5).Value = medInfoClass.藥碼;
+        //                DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
+        //                DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
+        //                using (DB2DataReader reader = cmd.ExecuteReader())
+        //                {
+        //                    while (reader.Read())
+        //                    {
+        //                        medInfoClass.藥品名 = reader["UDARNAME"].ToString().Trim();
+        //                        medInfoClass.售價 = reader["UDWCOST"].ToString().Trim();
+        //                        medInfoClass.健保價 = reader["UDPRICE"].ToString().Trim();
+        //                        medInfoClass.頻次代碼 = reader["UDFREQN"].ToString().Trim();
+        //                        medInfoClass.劑量 = reader["UDCMDOSA"].ToString().Trim();
+                                
+        //                    }                           
+        //                }
+        //            }                  
+        //        }
+        //        return medInfoClasses;
+        //    }
+        //}
 
         private string age(string birthday)
         {

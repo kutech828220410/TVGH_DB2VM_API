@@ -47,6 +47,17 @@ namespace DB2VM_API.Controller
             returnData.Result = $"";
             return returnData.JsonSerializationt(true);
         }
+        [HttpPost("DRUGSPEC")]
+        public string get_DRUGSPEC([FromBody] returnData returnData)
+        {
+            MyTimerBasic myTimerBasic = new MyTimerBasic();
+            List<Dictionary<string, object>> result = DRUGSPEC();
+            returnData.Code = 200;
+            returnData.TimeTaken = $"{myTimerBasic}";
+            returnData.Data = result;
+            returnData.Result = $"";
+            return returnData.JsonSerializationt(true);
+        }
         private DB2Connection GetDB2Connection()
         {
             string DB2_server = $"{ConfigurationManager.AppSettings["DB2_server"]}:{ConfigurationManager.AppSettings["DB2_port"]}";
@@ -56,7 +67,6 @@ namespace DB2VM_API.Controller
             string MyDb2ConnectionString = $"server={DB2_server};database={DB2_database};userid={DB2_userid};password={DB2_password};";
             return new DB2Connection(MyDb2ConnectionString);
         }
-
         private List<medInterClass> ExecuteUDSDBBCM()
         {
             using (DB2Connection MyDb2Connection = GetDB2Connection())
@@ -103,6 +113,41 @@ namespace DB2VM_API.Controller
                     cmd.Parameters.Add("@TUDDRGNO", DB2Type.VarChar, 5).Value = $"";
                     DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
                     DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
+                    using (DB2DataReader reader = cmd.ExecuteReader())
+                    {
+                        List<Dictionary<string, object>> result = new List<Dictionary<string, object>>();
+                        while (reader.Read())
+                        {
+                            Dictionary<string, object> row = new Dictionary<string, object>();
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                string columnName = reader.GetName(i);
+                                object value = reader.IsDBNull(i) ? null : reader.GetValue(i);
+                                row.Add(columnName, value);
+                            }
+                            result.Add(row);
+                        }
+                        return result;
+                    }
+                }
+            }
+
+        }
+        private List<Dictionary<string, object>> DRUGSPEC()
+        {
+            using (DB2Connection MyDb2Connection = GetDB2Connection())
+            {
+                MyDb2Connection.Open();
+                string SP = "VGHLNXVG.DRUGSPEC";
+                string procName = $"{DB2_schema}.{SP}";
+                using (DB2Command cmd = MyDb2Connection.CreateCommand())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = procName;
+                    cmd.Parameters.Add("@UDDRGNO", DB2Type.VarChar, 5).Value = "05052";
+                    DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
+                    DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
+
                     using (DB2DataReader reader = cmd.ExecuteReader())
                     {
                         List<Dictionary<string, object>> result = new List<Dictionary<string, object>>();
