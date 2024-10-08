@@ -6,6 +6,6 @@
     "\\WebApi\\Controller",
     "\\WebApi\\Controller\\(API)VM調劑系統"
   ],
-  "SelectedNode": "\\DB2VM_API.sln",
+  "SelectedNode": "\\WebApi\\Controller\\OPDBBAR.cs",
   "PreviewInSolutionExplorer": false
 }
