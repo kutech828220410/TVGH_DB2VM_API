@@ -56,12 +56,12 @@ namespace DB2VM_API.Controller
 
                 for (int i = 0; i < orderClasses.Count; i++)
                 {
-                    if(orderClasses[i].備註 != "30")
+                    if(orderClasses[i].藥袋類型 != "30")
                     {
                         OrderClass orderClass_delete = sql_OrderClass.Where(temp => temp.批序 == orderClasses[i].批序).FirstOrDefault();
                         if (orderClass_delete != null) OrderClass_delete.Add(orderClass_delete);
                     }
-                    else if(orderClasses[i].備註 == "30")
+                    else if(orderClasses[i].藥袋類型 == "30")
                     {
                         OrderClass orderClass_add = sql_OrderClass.Where(temp => temp.批序 == orderClasses[i].批序).FirstOrDefault();
                         if(orderClass_add == null)
@@ -147,7 +147,7 @@ namespace DB2VM_API.Controller
                                 交易量 = (reader["ARNHDQTY"].ToString().Trim().StringToInt32() * -1).ToString(),
                                 PRI_KEY = BarCode,         
                                 開方日期 = 開方日期.StringToDateTime().ToDateTimeString(),
-                                備註 = reader["ARNHDSTA"].ToString().Trim()
+                                藥袋類型 = reader["ARNHDSTA"].ToString().Trim()
                             };
                             orderClasses.Add(OrderClass);
                         }
