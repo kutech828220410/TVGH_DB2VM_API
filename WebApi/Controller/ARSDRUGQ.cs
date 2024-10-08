@@ -23,7 +23,7 @@ namespace DB2VM_API.Controller
         [HttpGet]
         public string GET(string? BarCode)
         {
-            MyTimerBasic myTimerBasic = new MyTimerBasic();
+            //MyTimerBasic myTimerBasic = new MyTimerBasic();
             returnData returnData = new returnData();
             try
             {
@@ -33,8 +33,10 @@ namespace DB2VM_API.Controller
                     returnData.Result = "Barcode空白";
                     return returnData.JsonSerializationt(true);
                 }
+                MyTimerBasic myTimerBasic = new MyTimerBasic();
                 List<OrderClass> orderClasses = ExecuteARSDRUGQ(BarCode);
-
+                string time = myTimerBasic.ToString();
+                Logger.Log("ARSDRUGQ", time);
                 if (orderClasses.Count == 0)
                 {
                     if (BarCode.StringIsEmpty())
@@ -91,17 +93,24 @@ namespace DB2VM_API.Controller
                 list_醫囑資料_delete = OrderClass_delete.ClassToSQL<OrderClass, enum_醫囑資料>();
                 sQLControl_醫囑資料.AddRows(null, list_醫囑資料_add);
                 sQLControl_醫囑資料.DeleteExtra(null, list_醫囑資料_delete);
+                //List<object[]> list_醫囑 = sQLControl_醫囑資料.GetRowsByDefult(null, enum_醫囑資料.PRI_KEY.GetEnumName(), BarCode);
+                //List<OrderClass> sql_OrderClasses = list_醫囑.SQLToClass<OrderClass, enum_醫囑資料>();
+
 
                 returnData.Code = 200;
                 returnData.Data = orderClasses;
                 returnData.Result = $"取得醫令成功,共<{orderClasses.Count}>筆,新增<{list_醫囑資料_add.Count}>筆";
                 returnData.TimeTaken = myTimerBasic.ToString();
+                string json_out = returnData.JsonSerializationt(true);
+                //Logger.Log("ARSDRUGQ", json_out);
                 return returnData.JsonSerializationt(true);
             }
             catch (Exception e)
             {
                 returnData.Code = -200;
                 returnData.Result = $"Exception:{e.Message}";
+                string json_out = returnData.JsonSerializationt(true);
+                Logger.Log("ARSDRUGQ", json_out);
                 return returnData.JsonSerializationt(true);
             }
             
@@ -109,7 +118,7 @@ namespace DB2VM_API.Controller
         }
         private DB2Connection GetDB2Connection()
         {           
-            string MyDb2ConnectionString = $"server=10.30.253.249:51031;database=DBHIS;userid=XVGHF3 ;password=QWER1234;;";
+            string MyDb2ConnectionString = $"server=10.30.253.249:51031;database=DBHIS;userid=XVGHF3 ;password=QWER1234;";
             return new DB2Connection(MyDb2ConnectionString);
         }
         private List<OrderClass> ExecuteARSDRUGQ(string BarCode)
@@ -147,7 +156,8 @@ namespace DB2VM_API.Controller
                                 交易量 = (reader["ARNHDQTY"].ToString().Trim().StringToInt32() * -1).ToString(),
                                 PRI_KEY = BarCode,         
                                 開方日期 = 開方日期.StringToDateTime().ToDateTimeString(),
-                                藥袋類型 = reader["ARNHDSTA"].ToString().Trim()
+                                藥袋類型 = reader["ARNHDSTA"].ToString().Trim(),
+                                狀態 = "未過帳"
                             };
                             orderClasses.Add(OrderClass);
                         }

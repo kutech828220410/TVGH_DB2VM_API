@@ -24,8 +24,8 @@ namespace DB2VM
         [HttpGet]
         public string Get()
         {
-       
 
+            string json = "";
             String MyDb2ConnectionString = $"server={DB2_server};database={DB2_database};userid={DB2_userid};password={DB2_password};";
             DB2Connection MyDb2Connection = new DB2Connection(MyDb2ConnectionString);
             try
@@ -38,7 +38,22 @@ namespace DB2VM
             }
             MyDb2Connection.Close();
             MyDb2Connection.Dispose();
-            return $"DB2 Connecting sucess! , {MyDb2ConnectionString}";
+
+
+            string MyDb2ConnectionString_XVGHF3 = $"server=10.30.253.249:51031;database=DBHIS;userid=XVGHF3 ;password=QWER1234;";
+            MyDb2Connection = new DB2Connection(MyDb2ConnectionString_XVGHF3);
+            try
+            {
+                MyDb2Connection.Open();
+            }
+            catch
+            {
+                return $"DB2 Connecting failed! , {MyDb2ConnectionString_XVGHF3}";
+            }
+            MyDb2Connection.Close();
+            MyDb2Connection.Dispose();
+
+            return $"DB2 Connecting sucess! , {MyDb2ConnectionString_XVGHF3} , {MyDb2ConnectionString}";
 
 
         }
