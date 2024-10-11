@@ -1115,7 +1115,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 MyDb2Connection.Open();
                 string SP = "VGHLNXVG.DRUGSPEC";
                 string procName = $"{SP}";
-                DateTime today = DateTime.Now;
+                string today = DateTime.Today.ToDateString();
                 foreach (var medInfoClass in medInfoClasses)
                 {
                     string SPEC = "";
