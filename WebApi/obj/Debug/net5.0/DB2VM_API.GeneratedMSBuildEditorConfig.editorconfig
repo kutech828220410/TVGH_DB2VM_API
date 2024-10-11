@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = DB2VM_API
-build_property.ProjectDir = C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\
+build_property.ProjectDir = c:\users\administrator\source\repos\tvgh_db2vm_api\WebApi\

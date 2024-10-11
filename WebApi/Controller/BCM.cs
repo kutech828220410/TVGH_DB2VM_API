@@ -139,14 +139,18 @@ namespace DB2VM_API.Controller
             {
                 MyDb2Connection.Open();
                 string SP = "VGHLNXVG.DRUGSPEC";
-                string procName = $"{DB2_schema}.{SP}";
+                string procName = $"{SP}";
                 using (DB2Command cmd = MyDb2Connection.CreateCommand())
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = procName;
-                    cmd.Parameters.Add("@UDDRGNO", DB2Type.VarChar, 5).Value = "05052";
-                    DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
+                    cmd.Parameters.Add("@DRUGNO", DB2Type.VarChar, 5).Value = "05052";
+                    //cmd.Parameters.Add("@SDATE", DB2Type.Date).Value = "";
+                    DB2Parameter ARNAME = cmd.Parameters.Add("@ARNAME", DB2Type.VarChar, 60);
+                    DB2Parameter RDATE = cmd.Parameters.Add("@RDATE", DB2Type.DateTime);
+                    DB2Parameter SQLERRCD = cmd.Parameters.Add("@SQLERRCD", DB2Type.Integer);
                     DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
+
 
                     using (DB2DataReader reader = cmd.ExecuteReader())
                     {

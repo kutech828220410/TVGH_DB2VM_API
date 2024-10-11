@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\ConsoleApp_cmdi_day",
-    "\\WebApi",
-    "\\WebApi\\Controller",
-    "\\WebApi\\Controller\\(API)VM調劑系統"
+    "\\ConsoleApp_test_db2vm",
+    "\\WebApi"
   ],
-  "SelectedNode": "\\WebApi\\Controller\\OPDBBAR.cs",
+  "SelectedNode": "\\WebApi\\OrderClass.cs",
   "PreviewInSolutionExplorer": false
 }
