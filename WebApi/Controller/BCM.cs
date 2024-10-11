@@ -144,8 +144,8 @@ namespace DB2VM_API.Controller
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = procName;
-                    cmd.Parameters.Add("@DRUGNO", DB2Type.VarChar, 5).Value = "05052";
-                    //cmd.Parameters.Add("@SDATE", DB2Type.Date).Value = "";
+                    cmd.Parameters.Add("@DRUGNO", DB2Type.VarChar, 5).Value = "06120";
+                    cmd.Parameters.Add("@SDATE", DB2Type.Date).Value = "2024-10-11".ToDateString();
                     DB2Parameter ARNAME = cmd.Parameters.Add("@ARNAME", DB2Type.VarChar, 60);
                     DB2Parameter RDATE = cmd.Parameters.Add("@RDATE", DB2Type.DateTime);
                     DB2Parameter SQLERRCD = cmd.Parameters.Add("@SQLERRCD", DB2Type.Integer);
