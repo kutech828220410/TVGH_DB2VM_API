@@ -557,7 +557,8 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 //List<string> result = code.SelectMany(code => code.Split(",")).ToList();
                 List<medInfoClass> medInfoClass_1 = ExecuteUDPDPHLP(code);
                 List<medInfoClass> medInfoClass_2 = ExecuteUDPDPDRG(medInfoClass_1);
-                medInfoClass.update_med_info(API, medInfoClass_2);             
+                List<medInfoClass> medInfoClass_3 = ExecuteDRUGSPEC(medInfoClass_2);
+                medInfoClass.update_med_info(API, medInfoClass_3);             
               
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
@@ -1107,39 +1108,40 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 return medInfoClasses;
             }
         }
-        //private List<medInfoClass> ExecuteUDPDPDRG(List<medInfoClass> medInfoClasses)
-        //{
-        //    using (DB2Connection MyDb2Connection = GetDB2Connection())
-        //    {
-        //        MyDb2Connection.Open();
-        //        string SP = "UDPDPDRG";
-        //        string procName = $"{DB2_schema}.{SP}";
-        //        foreach (var medInfoClass in medInfoClasses)
-        //        {
-        //            using (DB2Command cmd = MyDb2Connection.CreateCommand())
-        //            {
-        //                cmd.CommandType = CommandType.StoredProcedure;
-        //                cmd.CommandText = procName;
-        //                cmd.Parameters.Add("@TDRGNO", DB2Type.VarChar, 5).Value = medInfoClass.藥碼;
-        //                DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
-        //                DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
-        //                using (DB2DataReader reader = cmd.ExecuteReader())
-        //                {
-        //                    while (reader.Read())
-        //                    {
-        //                        medInfoClass.藥品名 = reader["UDARNAME"].ToString().Trim();
-        //                        medInfoClass.售價 = reader["UDWCOST"].ToString().Trim();
-        //                        medInfoClass.健保價 = reader["UDPRICE"].ToString().Trim();
-        //                        medInfoClass.頻次代碼 = reader["UDFREQN"].ToString().Trim();
-        //                        medInfoClass.劑量 = reader["UDCMDOSA"].ToString().Trim();
-                                
-        //                    }                           
-        //                }
-        //            }                  
-        //        }
-        //        return medInfoClasses;
-        //    }
-        //}
+        private List<medInfoClass> ExecuteDRUGSPEC(List<medInfoClass> medInfoClasses)
+        {
+            using (DB2Connection MyDb2Connection = GetDB2Connection())
+            {
+                MyDb2Connection.Open();
+                string SP = "VGHLNXVG.DRUGSPEC";
+                string procName = $"{SP}";
+                DateTime today = DateTime.Now;
+                foreach (var medInfoClass in medInfoClasses)
+                {
+                    string SPEC = "";
+                    using (DB2Command cmd = MyDb2Connection.CreateCommand())
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = procName;
+                        cmd.Parameters.Add("@DRUGNO", DB2Type.VarChar, 5).Value = medInfoClass.藥碼;
+                        cmd.Parameters.Add("@SDATE", DB2Type.Date).Value = today;
+                        DB2Parameter ARNAME = cmd.Parameters.Add("@ARNAME", DB2Type.VarChar, 60);
+                        DB2Parameter RDATE = cmd.Parameters.Add("@RDATE", DB2Type.DateTime);
+                        DB2Parameter SQLERRCD = cmd.Parameters.Add("@SQLERRCD", DB2Type.Integer);
+                        DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
+                        using (DB2DataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                               SPEC += $"{reader["SPRSN"].ToString().Trim()}\n";
+                            }
+                        }
+                    }
+                    medInfoClass.健保規範 = SPEC;
+                }
+                return medInfoClasses;
+            }
+        }
 
         private string age(string birthday)
         {
