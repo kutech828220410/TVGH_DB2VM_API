@@ -3,8 +3,10 @@
     "",
     "\\ConsoleApp_cmdi_day",
     "\\ConsoleApp_test_db2vm",
-    "\\WebApi"
+    "\\WebApi",
+    "\\WebApi\\Controller",
+    "\\WebApi\\Controller\\(API)VM調劑系統"
   ],
-  "SelectedNode": "\\WebApi\\OrderClass.cs",
+  "SelectedNode": "\\WebApi\\Controller\\(API)VM調劑系統\\med_cart.cs",
   "PreviewInSolutionExplorer": false
 }

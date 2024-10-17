@@ -9,6 +9,8 @@ using SQLUI;
 using HIS_DB_Lib;
 using IBM.Data.DB2.Core;
 using System.Data;
+using System.Collections.Concurrent;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,6 +22,40 @@ namespace DB2VM_API.Controller
     {
         static private string API_Server = "http://127.0.0.1:4433/api/serversetting";
         static string DB2_schema = $"{ConfigurationManager.AppSettings["DB2_schema"]}";
+        [HttpGet]
+        public string get_pic()
+        {
+            MyTimerBasic myTimerBasic = new MyTimerBasic();
+            returnData returnData = new returnData();
+            try
+            {
+                string API = "http://127.0.0.1:4433";
+                List<medClass> medClasses = medClass.get_med_cloud(API);
+                ConcurrentBag<medClass> localList = new ConcurrentBag<medClass>();
+                List<medClass> medclass_replace = new List<medClass>();
+                Parallel.ForEach(medClasses, new ParallelOptions { MaxDegreeOfParallelism = 4 }, medclass =>
+                {
+                    medclass.圖片網址 = $"https://www7.vghtpe.gov.tw/api/find-zero-image-by-udCode?udCode={medclass.藥品碼}";
+                    localList.Add(medclass);
+                });
+                lock (medclass_replace)
+                {
+                    medclass_replace.AddRange(localList);
+                }
+                medCarInfoClass.update_med_page_cloud(API, medClasses);
+                returnData.Code = 200;
+                returnData.Result = $"取得藥品資料共{medClasses.Count}筆";
+                returnData.TimeTaken = $"{myTimerBasic}";
+                returnData.Data = medClasses;
+                return returnData.JsonSerializationt(true);
+            }
+            catch (Exception ex)
+            {
+                returnData.Code = -200;
+                returnData.Result = ex.Message;
+                return returnData.JsonSerializationt(true);
+            }
+        }
         [HttpPost("get_atc")]
         public string get_atc([FromBody] returnData returnData)
         {

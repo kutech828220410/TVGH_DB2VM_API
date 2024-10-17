@@ -69,6 +69,7 @@ namespace DB2VM
                 medClass.藥品碼 = reader["UDDRGNO"].ToString().Trim();
                 medClass.藥品名稱 = reader["UDARNAME"].ToString().Trim();
                 medClass.料號 = reader["UDSTOKNO"].ToString().Trim();
+                
 
                 藥品條碼1 = reader["UDBARCD1"].ToString().Trim();
                 藥品條碼2 = reader["UDBARCD2"].ToString().Trim();

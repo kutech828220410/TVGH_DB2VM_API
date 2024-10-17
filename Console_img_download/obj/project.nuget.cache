@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "GyWQuWZ+G0MYgky2BLVhQjp3aehDL4Lhrek33L8VbHVjtqnhmQWXcItiV141HE3lctmND4W5LWqIl96ZLzjv+A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\Console_img_download\\Console_img_download.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
