@@ -52,6 +52,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     returnData.Result = $"returnData.ValueAry 內容應為[藥局, 護理站]";
                     return returnData.JsonSerializationt(true);
                 }
+
                 List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
                 List<ServerSettingClass> serverSettingClass_API = serverSettingClasses.MyFind("Main", "網頁", "API01");
                 if (serverSettingClass_API.Count == 0)
@@ -66,11 +67,11 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 string 護理站 = returnData.ValueAry[1];
                 List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
                 medCarInfoClass.update_med_carinfo(API, bedList);
-                List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.get_bed_list_by_cart(API, returnData.ValueAry);
+                //List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.get_bed_list_by_cart(API, returnData.ValueAry);
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
-                returnData.Data = out_medCarInfoClass;
-                returnData.Result = $"取得{藥局} {護理站} 病床資訊共{out_medCarInfoClass.Count}筆";
+                returnData.Data = bedList;
+                returnData.Result = $"取得{藥局} {護理站} 病床資訊共{bedList.Count}筆";
                 return returnData.JsonSerializationt(true);
             }
             catch (Exception ex)
@@ -99,16 +100,10 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
             {
-                if (returnData.ValueAry == null)
+                if (returnData.ValueAry == null || returnData.ValueAry.Count != 1)
                 {
                     returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 無傳入資料";
-                    return returnData.JsonSerializationt(true);
-                }
-                if (returnData.ValueAry.Count != 1)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 內容應為[GUID]";
+                    returnData.Result = $"returnData.ValueAry 內容應為[\"GUID\"]";
                     return returnData.JsonSerializationt(true);
                 }
                 List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
@@ -1245,6 +1240,6 @@ namespace DB2VM_API.Controller._API_VM調劑系統
 
             return output.ToString();
         }
-
+        
     }
 }
