@@ -66,11 +66,12 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 string 藥局 = returnData.ValueAry[0];
                 string 護理站 = returnData.ValueAry[1];
                 List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
-                medCarInfoClass.update_med_carinfo(API, bedList);
+                List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
+                List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.update_med_carinfo(API, bedListInfo);
                 //List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.get_bed_list_by_cart(API, returnData.ValueAry);
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
-                returnData.Data = bedList;
+                returnData.Data = out_medCarInfoClass;
                 returnData.Result = $"取得{藥局} {護理站} 病床資訊共{bedList.Count}筆";
                 return returnData.JsonSerializationt(true);
             }
@@ -116,7 +117,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 }
 
                 string API = serverSettingClasses[0].Server;
-                medCarInfoClass targetPatient = medCarInfoClass.get_patient_by_GUID(API, returnData.ValueAry);
+                medCarInfoClass targetPatient = medCarInfoClass.get_patient_by_GUID_brief(API, returnData.ValueAry);
                 if (targetPatient == null)
                 {
                     returnData.Code = -200;
@@ -127,12 +128,17 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 string 護理站 = targetPatient.護理站;
                 string 床號 = targetPatient.床號;
                 List<medCarInfoClass> medCarInfoClasses = new List<medCarInfoClass> { targetPatient };
-                List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(medCarInfoClasses);
-                List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(bedListInfo);
-                if (bedListCpoe.Count == 0) bedListInfo[0].調劑狀態 = "Y";
+                List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(medCarInfoClasses);
+                if (bedListCpoe.Count == 0) 
+                {
+                    medCarInfoClasses[0].調劑狀態 = "Y";
+                    medCarInfoClass.update_med_carinfo(API, medCarInfoClasses);
+                }
+                else
+                {
+                    medCpoeClass.update_med_cpoe(API, bedListCpoe);
+                }
 
-                medCarInfoClass.update_med_carinfo(API, bedListInfo);
-                medCpoeClass.update_med_cpoe(API, bedListCpoe);
                 medCarInfoClass out_medCarInfoClass = medCarInfoClass.get_patient_by_GUID(API, returnData.ValueAry);
 
                 returnData.Code = 200;
