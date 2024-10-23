@@ -19,7 +19,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
     [ApiController]
     public class med_cart : ControllerBase
     {
-        static private string API_Server = "http://127.0.0.1:4433/api/serversetting";
+        static private string API01 = "http://127.0.0.1:4433";
         static string DB2_schema = $"{ConfigurationManager.AppSettings["DB2_schema"]}";
         /// <summary>
         ///以藥局和護理站取得占床資料
@@ -53,21 +53,12 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     return returnData.JsonSerializationt(true);
                 }
 
-                List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
-                List<ServerSettingClass> serverSettingClass_API = serverSettingClasses.MyFind("Main", "網頁", "API01");
-                if (serverSettingClass_API.Count == 0)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"找無Server資料!";
-                    return returnData.JsonSerializationt();
-                }
-
-                string API = serverSettingClass_API[0].Server;
+               
                 string 藥局 = returnData.ValueAry[0];
                 string 護理站 = returnData.ValueAry[1];
                 List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
                 List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
-                List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.update_med_carinfo(API, bedListInfo);
+                List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedListInfo);
                 //List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.get_bed_list_by_cart(API, returnData.ValueAry);
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
@@ -106,18 +97,8 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     returnData.Code = -200;
                     returnData.Result = $"returnData.ValueAry 內容應為[\"GUID\"]";
                     return returnData.JsonSerializationt(true);
-                }
-                List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
-                serverSettingClasses = serverSettingClasses.MyFind("Main", "網頁", "API01");
-                if (serverSettingClasses.Count == 0)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"找無Server資料!";
-                    return returnData.JsonSerializationt();
-                }
-
-                string API = serverSettingClasses[0].Server;
-                medCarInfoClass targetPatient = medCarInfoClass.get_patient_by_GUID_brief(API, returnData.ValueAry);
+                }              
+                medCarInfoClass targetPatient = medCarInfoClass.get_patient_by_GUID_brief(API01, returnData.ValueAry);
                 if (targetPatient == null)
                 {
                     returnData.Code = -200;
@@ -132,14 +113,14 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 if (bedListCpoe.Count == 0) 
                 {
                     medCarInfoClasses[0].調劑狀態 = "Y";
-                    medCarInfoClass.update_med_carinfo(API, medCarInfoClasses);
+                    medCarInfoClass.update_med_carinfo(API01, medCarInfoClasses);
                 }
                 else
                 {
-                    medCpoeClass.update_med_cpoe(API, bedListCpoe);
+                    medCpoeClass.update_med_cpoe(API01, bedListCpoe);
                 }
 
-                medCarInfoClass out_medCarInfoClass = medCarInfoClass.get_patient_by_GUID(API, returnData.ValueAry);
+                medCarInfoClass out_medCarInfoClass = medCarInfoClass.get_patient_by_GUID(API01, returnData.ValueAry);
 
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
@@ -174,28 +155,12 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
             {
-                List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
-                serverSettingClasses = serverSettingClasses.MyFind("Main", "網頁", "API01");
-                if (serverSettingClasses.Count == 0)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"找無Server資料";
-                    return returnData.JsonSerializationt();
-                }
-
-                if (returnData.ValueAry == null)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 無傳入資料";
-                    return returnData.JsonSerializationt(true);
-                }
-                if (returnData.ValueAry.Count != 2)
+                if (returnData.ValueAry == null || returnData.ValueAry.Count != 2)
                 {
                     returnData.Code = -200;
                     returnData.Result = $"returnData.ValueAry 內容應為[藥局, 護理站]";
                     return returnData.JsonSerializationt(true);
                 }
-
                 if (returnData.Value == null)
                 {
                     returnData.Code = -200;
@@ -205,14 +170,13 @@ namespace DB2VM_API.Controller._API_VM調劑系統
 
                 string 藥局 = returnData.ValueAry[0];
                 string 護理站 = returnData.ValueAry[1];
-                string API = serverSettingClasses[0].Server;
 
                 List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
                 List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
-                medCarInfoClass.update_med_carinfo(API, bedListInfo);
-                List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.get_bed_list_by_cart(API, returnData.ValueAry);
+                medCarInfoClass.update_med_carinfo(API01, bedListInfo);
+                List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.get_bed_list_by_cart(API01, returnData.ValueAry);
                 List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(out_medCarInfoClass);
-                medCpoeClass.update_med_cpoe(API, bedListCpoe);
+                medCpoeClass.update_med_cpoe(API01, bedListCpoe);
 
                 List<medCarInfoClass> update = new List<medCarInfoClass>();
                 foreach (var medCarInfoClass in out_medCarInfoClass)
@@ -226,9 +190,9 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                         update.Add(medCarInfoClass);
                     }
                 }
-                if (update.Count != 0) medCarInfoClass.update_med_carinfo(API, update);
+                if (update.Count != 0) medCarInfoClass.update_med_carinfo(API01, update);
 
-                List<medQtyClass> get_med_qty = medCpoeClass.get_med_qty(API, returnData.Value, returnData.ValueAry);
+                List<medQtyClass> get_med_qty = medCpoeClass.get_med_qty(API01, returnData.Value, returnData.ValueAry);
                 if (get_med_qty == null)
                 {
                     returnData.Code = 200;
@@ -267,36 +231,20 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
             {
-                if (returnData.ValueAry == null)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 無傳入資料";
-                    return returnData.JsonSerializationt(true);
-                }
-                if (returnData.ValueAry.Count != 1)
+                if (returnData.ValueAry == null || returnData.ValueAry.Count != 1)
                 {
                     returnData.Code = -200;
                     returnData.Result = $"returnData.ValueAry 內容應為[GUID]";
                     return returnData.JsonSerializationt(true);
                 }
-                List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
-                serverSettingClasses = serverSettingClasses.MyFind("Main", "網頁", "API01");
-                if (serverSettingClasses.Count == 0)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"找無Server資料!";
-                    return returnData.JsonSerializationt();
-                }
-                string API = serverSettingClasses[0].Server;
-                List<medCarInfoClass> bedList = new List<medCarInfoClass> { medCarInfoClass.get_patient_by_GUID(API, returnData.ValueAry) };
+                List<medCarInfoClass> bedList = new List<medCarInfoClass> { medCarInfoClass.get_patient_by_GUID(API01, returnData.ValueAry) };
                 List<medCpoeRecClass> medCpoe_change = ExecuteUDPDPORD(bedList);
-                medCpoeRecClass.update_med_CpoeRec(API, medCpoe_change);
-                List<medCarInfoClass> get_patient = medCpoeRecClass.get_medChange_by_GUID(API, returnData.ValueAry);
+                medCpoeRecClass.update_med_CpoeRec(API01, medCpoe_change);
+                List<medCarInfoClass> get_patient = medCpoeRecClass.get_medChange_by_GUID(API01, returnData.ValueAry);
 
                 string 藥局 = bedList[0].藥局;
                 string 護理站 = bedList[0].護理站;
                 string 床號 = bedList[0].床號;
-
 
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
@@ -337,31 +285,22 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     returnData.Result = "執行失敗：目前時間尚未超過下午三點。";
                     return returnData.JsonSerializationt(true);
                 }
-                if (returnData.ValueAry == null)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 無傳入資料";
-                    return returnData.JsonSerializationt(true);
-                }
-                if (returnData.ValueAry.Count != 2)
+                if (returnData.ValueAry == null || returnData.ValueAry.Count != 2)
                 {
                     returnData.Code = -200;
                     returnData.Result = $"returnData.ValueAry 內容應為[藥局, 護理站]";
                     return returnData.JsonSerializationt(true);
                 }
-                List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
-                serverSettingClasses = serverSettingClasses.MyFind("Main", "網頁", "API01");
-                string API = serverSettingClasses[0].Server;
                 string 藥局 = returnData.ValueAry[0];
                 string 護理站 = returnData.ValueAry[1];
 
                 List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
                 List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
-                List<medCarInfoClass> update_medCarInfoClass = medCarInfoClass.update_med_carinfo(API, bedListInfo);
+                List<medCarInfoClass> update_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedListInfo);
                 List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(update_medCarInfoClass);
-                List<medCpoeClass> update_medCpoeClass = medCpoeClass.update_med_cpoe(API, bedListCpoe);
+                List<medCpoeClass> update_medCpoeClass = medCpoeClass.update_med_cpoe(API01, bedListCpoe);
 
-                HIS_DB_Lib.returnData returnData_handover = medCpoeClass.handover(API, returnData.ValueAry);
+                HIS_DB_Lib.returnData returnData_handover = medCpoeClass.handover(API01, returnData.ValueAry);
 
                 returnData_handover.Code = 200;
                 returnData_handover.TimeTaken = $"{myTimerBasic}";
@@ -380,37 +319,19 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
             {
-                if (returnData.ValueAry == null)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 無傳入資料";
-                    return returnData.JsonSerializationt(true);
-                }
-                if (returnData.ValueAry.Count != 2)
+                if (returnData.ValueAry == null || returnData.ValueAry.Count != 2)
                 {
                     returnData.Code = -200;
                     returnData.Result = $"returnData.ValueAry 內容應為[藥局, 護理站]";
                     return returnData.JsonSerializationt(true);
-                }
-                List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
-                serverSettingClasses = serverSettingClasses.MyFind("Main", "網頁", "API01");
-                if (serverSettingClasses.Count == 0)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"找無Server資料!";
-                    return returnData.JsonSerializationt();
-                }
-
-                string API = serverSettingClasses[0].Server;
-                //string API = $"http://{Server}:4436";
+                }              
                 string 藥局 = returnData.ValueAry[0];
                 string 護理站 = returnData.ValueAry[1];
                 List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
                 List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
-                List<medCarInfoClass> update_medCarInfoClass = medCarInfoClass.update_med_carinfo(API, bedListInfo);
+                List<medCarInfoClass> update_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedListInfo);
                 List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(update_medCarInfoClass);
-                //List<string> valueAry = new List<string> { 藥局, 護理站 };
-                List<medCpoeClass> update_medCpoeClass = medCpoeClass.update_med_cpoe(API, bedListCpoe);
+                List<medCpoeClass> update_medCpoeClass = medCpoeClass.update_med_cpoe(API01, bedListCpoe);
 
                 List<medCarInfoClass> update = new List<medCarInfoClass>();
                 foreach (var medCarInfoClass in update_medCarInfoClass)
@@ -424,7 +345,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                         update.Add(medCarInfoClass);
                     }
                 }
-                if (update.Count != 0) medCarInfoClass.update_med_carinfo(API, update);
+                if (update.Count != 0) medCarInfoClass.update_med_carinfo(API01, update);
 
 
                 returnData.Code = 200;
@@ -446,31 +367,15 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
             {
-                if (returnData.ValueAry == null)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 無傳入資料";
-                    return returnData.JsonSerializationt(true);
-                }
-                if (returnData.ValueAry.Count != 2)
+                if (returnData.ValueAry == null || returnData.ValueAry.Count != 2)
                 {
                     returnData.Code = -200;
                     returnData.Result = $"returnData.ValueAry 內容應為[藥局, 護理站]";
                     return returnData.JsonSerializationt(true);
-                }
-                List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
-                serverSettingClasses = serverSettingClasses.MyFind("Main", "網頁", "API01");
-                if (serverSettingClasses.Count == 0)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"找無Server資料!";
-                    return returnData.JsonSerializationt();
-                }
-                string API = serverSettingClasses[0].Server;
-
-                List<medCarInfoClass> bedList = medCarInfoClass.get_bed_list_by_cart(API, returnData.ValueAry);
+                }              
+                List<medCarInfoClass> bedList = medCarInfoClass.get_bed_list_by_cart(API01, returnData.ValueAry);
                 List<medCpoeRecClass> medCpoe_change = ExecuteUDPDPORD(bedList);
-                List<medCpoeRecClass> update_medCpoe_change = medCpoeRecClass.update_med_CpoeRec(API, medCpoe_change);
+                List<medCpoeRecClass> update_medCpoe_change = medCpoeRecClass.update_med_CpoeRec(API01, medCpoe_change);
 
                 string 藥局 = returnData.ValueAry[0];
                 string 護理站 = returnData.ValueAry[1];
@@ -495,16 +400,6 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             try
             {
                
-                List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
-                serverSettingClasses = serverSettingClasses.MyFind("Main", "網頁", "API01");
-                if (serverSettingClasses.Count == 0)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"找無Server資料!";
-                    return returnData.JsonSerializationt();
-                }
-
-                string API = serverSettingClasses[0].Server;
                 string 藥局 = "UC02";
 
                 string[] list = { "C039", "C049", "C059", "C069", "C079", "C089", "C099", "C109", "C119", "C129", "BMT" };
@@ -518,7 +413,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     List<string> result = code.SelectMany(code => code.Split(",")).ToList();
                     List<medInfoClass> medInfoClass_1 = ExecuteUDPDPHLP(result);
                     List<medInfoClass> medInfoClass_2 = ExecuteUDPDPDRG(medInfoClass_1);
-                    medInfoClass.update_med_info(API, medInfoClass_2);
+                    medInfoClass.update_med_info(API01, medInfoClass_2);
                 }
 
               
@@ -540,26 +435,15 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         {
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
-            {
-               
-                List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
-                serverSettingClasses = serverSettingClasses.MyFind("Main", "網頁", "API01");
-                if (serverSettingClasses.Count == 0)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"找無Server資料!";
-                    return returnData.JsonSerializationt();
-                }
-
-                string API = serverSettingClasses[0].Server;
-                List<medClass> medClasses = medClass.get_med_cloud(API);
+            {              
+                List<medClass> medClasses = medClass.get_med_cloud(API01);
                 //List<medClass> select = medClasses.Where(temp => temp.藥品碼 == "04514" || temp.藥品碼 == "05412" || temp.藥品碼 == "04974").ToList();
                 List<string> code = medClasses.Select(temp => temp.藥品碼).ToList();
                 //List<string> result = code.SelectMany(code => code.Split(",")).ToList();
                 List<medInfoClass> medInfoClass_1 = ExecuteUDPDPHLP(code);
                 List<medInfoClass> medInfoClass_2 = ExecuteUDPDPDRG(medInfoClass_1);
                 List<medInfoClass> medInfoClass_3 = ExecuteDRUGSPEC(medInfoClass_2);
-                medInfoClass.update_med_info(API, medInfoClass_3);             
+                medInfoClass.update_med_info(API01, medInfoClass_3);             
               
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
