@@ -5,15 +5,17 @@ VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp_cmdi_day", "ConsoleApp_cmdi_day\ConsoleApp_cmdi_day.csproj", "{016134D5-D070-4F35-8A4E-7FB475D8E67A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp_test_db2vm", "ConsoleApp_test_db2vm\ConsoleApp_test_db2vm.csproj", "{5B883E78-3768-4EF5-AD08-3357F3E25280}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp_connect_testOut", "ConsoleApp_test_db2vm\ConsoleApp_connect_testOut.csproj", "{5B883E78-3768-4EF5-AD08-3357F3E25280}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DB2VM_API", "WebApi\DB2VM_API.csproj", "{79AE2450-5D8D-441E-AF47-9BEB5ACB25FC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp_撥補帳自動滾單", "ConsoleApp_撥補帳自動滾單\ConsoleApp_撥補帳自動滾單.csproj", "{56E5AFAF-59AC-438C-A909-21894CCDA1F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console_img_download", "Console_img_download\Console_img_download.csproj", "{21E2AC65-00E6-43D2-9E10-4C2863D69D5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console_img_download", "Console_img_download\Console_img_download.csproj", "{21E2AC65-00E6-43D2-9E10-4C2863D69D5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_img_test", "ConsoleApp_img_test\ConsoleApp_img_test.csproj", "{152E36A3-86FF-4255-99AF-BB9C0117E61E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp_img_test", "ConsoleApp_img_test\ConsoleApp_img_test.csproj", "{152E36A3-86FF-4255-99AF-BB9C0117E61E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_connect_testIn", "ConsoleApp_connect_testIn\ConsoleApp_connect_testIn.csproj", "{7920F5FA-9497-46EF-B2E1-0AE18BD1513C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{152E36A3-86FF-4255-99AF-BB9C0117E61E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{152E36A3-86FF-4255-99AF-BB9C0117E61E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{152E36A3-86FF-4255-99AF-BB9C0117E61E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7920F5FA-9497-46EF-B2E1-0AE18BD1513C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7920F5FA-9497-46EF-B2E1-0AE18BD1513C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7920F5FA-9497-46EF-B2E1-0AE18BD1513C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7920F5FA-9497-46EF-B2E1-0AE18BD1513C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
