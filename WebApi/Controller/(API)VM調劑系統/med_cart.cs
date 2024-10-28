@@ -580,7 +580,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         }
         private DB2Connection GetDB2Connection()
         {
-            string DB2_server = $"{ConfigurationManager.AppSettings["DB2_server"]}:{ConfigurationManager.AppSettings["DB2_port"]}";
+            string DB2_server = $"10.30.253.249:{ConfigurationManager.AppSettings["DB2_port"]}";
             string DB2_database = $"{ConfigurationManager.AppSettings["DB2_database"]}";
             string DB2_userid = $"{ConfigurationManager.AppSettings["DB2_user"]}";
             string DB2_password = $"{ConfigurationManager.AppSettings["DB2_password"]}";
@@ -756,6 +756,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                 DateTime 結束日期時間 = DateTime.ParseExact(日期時間, "yyyy-MM-dd HH:mm:ss", null);
                                 medCpoeClass medCpoeClass = new medCpoeClass
                                 {
+                                    GUID = Guid.NewGuid().ToString(),
                                     藥局 = medCarInfoClass.藥局,
                                     護理站 = medCarInfoClass.護理站,
                                     床號 = medCarInfoClass.床號,
@@ -806,7 +807,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                 //if (medCpoeClass.藥局代碼 == "UBTP") medCpoeClass.藥局名稱 = "中正樓臨床試驗藥局";
                                 //if (medCpoeClass.藥局代碼 == "UC02") medCpoeClass.藥局名稱 = "長青樓藥局";
                                 if (string.IsNullOrWhiteSpace(medCpoeClass.狀態)) medCpoeClass.狀態 = "New";
-                                if (medCpoeClass.藥局代碼 == "" && medCpoeClass.藥局代碼 == "UC02") prescription.Add(medCpoeClass);
+                                if (medCpoeClass.藥局代碼 == "" || medCpoeClass.藥局代碼 == "UC02") prescription.Add(medCpoeClass);
                             }
                         }
                     }
