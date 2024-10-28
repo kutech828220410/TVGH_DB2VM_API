@@ -236,7 +236,8 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     returnData.Result = $"returnData.ValueAry 內容應為[GUID]";
                     return returnData.JsonSerializationt(true);
                 }
-                List<medCarInfoClass> bedList = new List<medCarInfoClass> { medCarInfoClass.get_patient_by_GUID(API01, returnData.ValueAry) };
+
+                List<medCarInfoClass> bedList = new List<medCarInfoClass> { medCarInfoClass.get_patient_by_GUID_brief(API01, returnData.ValueAry) };
                 List<medCpoeRecClass> medCpoe_change = ExecuteUDPDPORD(bedList);
                 medCpoeRecClass.update_med_CpoeRec(API01, medCpoe_change);
                 List<medCarInfoClass> get_patient = medCpoeRecClass.get_medChange_by_GUID(API01, returnData.ValueAry);
