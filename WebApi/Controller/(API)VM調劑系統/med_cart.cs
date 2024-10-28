@@ -177,19 +177,19 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(out_medCarInfoClass);
                 medCpoeClass.update_med_cpoe(API01, bedListCpoe);
 
-                List<medCarInfoClass> update = new List<medCarInfoClass>();
-                foreach (var medCarInfoClass in out_medCarInfoClass)
-                {
-                    List<medCpoeClass> medCpoeClasses = bedListCpoe
-                        .Where(temp => temp.Master_GUID == medCarInfoClass.GUID)
-                        .ToList();
-                    if (medCpoeClasses.Count == 0 && medCarInfoClass.占床狀態 == "已佔床")
-                    {
-                        medCarInfoClass.調劑狀態 = "Y";
-                        update.Add(medCarInfoClass);
-                    }
-                }
-                if (update.Count != 0) medCarInfoClass.update_med_carinfo(API01, update);
+                //List<medCarInfoClass> update = new List<medCarInfoClass>();
+                //foreach (var medCarInfoClass in out_medCarInfoClass)
+                //{
+                //    List<medCpoeClass> medCpoeClasses = bedListCpoe
+                //        .Where(temp => temp.Master_GUID == medCarInfoClass.GUID)
+                //        .ToList();
+                //    if (medCpoeClasses.Count == 0 && medCarInfoClass.占床狀態 == "已佔床")
+                //    {
+                //        medCarInfoClass.調劑狀態 = "Y";
+                //        update.Add(medCarInfoClass);
+                //    }
+                //}
+                //if (update.Count != 0) medCarInfoClass.update_med_carinfo(API01, update);
 
                 List<medQtyClass> get_med_qty = medCpoeClass.get_med_qty(API01, returnData.Value, returnData.ValueAry);
                 if (get_med_qty == null)
@@ -297,7 +297,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
                 List<medCarInfoClass> update_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedListInfo);
                 List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(update_medCarInfoClass);
-                List<medCpoeClass> update_medCpoeClass = medCpoeClass.update_med_cpoe(API01, bedListCpoe);
+                medCpoeClass.update_med_cpoe(API01, bedListCpoe);
 
                 HIS_DB_Lib.returnData returnData_handover = medCpoeClass.handover(API01, returnData.ValueAry);
 
@@ -332,19 +332,19 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(update_medCarInfoClass);
                 List<medCpoeClass> update_medCpoeClass = medCpoeClass.update_med_cpoe(API01, bedListCpoe);
 
-                List<medCarInfoClass> update = new List<medCarInfoClass>();
-                foreach (var medCarInfoClass in update_medCarInfoClass)
-                {
-                    List<medCpoeClass> medCpoeClasses = bedListCpoe
-                        .Where(temp => temp.Master_GUID == medCarInfoClass.GUID)
-                        .ToList();
-                    if (medCpoeClasses.Count == 0 && medCarInfoClass.占床狀態 == "已佔床")
-                    {
-                        medCarInfoClass.調劑狀態 = "Y";
-                        update.Add(medCarInfoClass);
-                    }
-                }
-                if (update.Count != 0) medCarInfoClass.update_med_carinfo(API01, update);
+                //List<medCarInfoClass> update = new List<medCarInfoClass>();
+                //foreach (var medCarInfoClass in update_medCarInfoClass)
+                //{
+                //    List<medCpoeClass> medCpoeClasses = bedListCpoe
+                //        .Where(temp => temp.Master_GUID == medCarInfoClass.GUID)
+                //        .ToList();
+                //    if (medCpoeClasses.Count == 0 && medCarInfoClass.占床狀態 == "已佔床")
+                //    {
+                //        medCarInfoClass.調劑狀態 = "Y";
+                //        update.Add(medCarInfoClass);
+                //    }
+                //}
+                //if (update.Count != 0) medCarInfoClass.update_med_carinfo(API01, update);
 
 
                 returnData.Code = 200;
