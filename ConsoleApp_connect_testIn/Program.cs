@@ -8,20 +8,14 @@ namespace ConsoleApp_connect_testIn
         static void Main(string[] args)
         {
             mutex = new System.Threading.Mutex(true, "OnlyRun");
-            if (mutex.WaitOne(0, false))
+            while (true)
             {
-                while (true)
-                {
-                    Console.WriteLine($"{DateTime.Now.ToDateTimeString()}-測試通訊....");
-                    string json = Basic.Net.WEBApiGet("http://10.107.3.147:443/api/testin");
-                    Console.WriteLine($"{DateTime.Now.ToDateTimeString()}-{json} ok....");
-                    System.Threading.Thread.Sleep(5000);
-                }
+                Console.WriteLine($"{DateTime.Now.ToDateTimeString()}-測試通訊....");
+                string json = Basic.Net.WEBApiGet("http://10.107.3.147:443/api/testin");
+                Console.WriteLine($"{DateTime.Now.ToDateTimeString()}-{json} ok....");
+                System.Threading.Thread.Sleep(5000);
             }
-            else
-            {
-
-            }
+            
         }
     }
 }
