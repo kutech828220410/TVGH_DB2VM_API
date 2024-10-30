@@ -62,7 +62,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
                 returnData.Data = out_medCarInfoClass;
-                returnData.Result = $"取得{藥局} {護理站} 病床資訊共{bedList.Count}筆";
+                returnData.Result = $"取得住院{藥局} {護理站} 病床資訊共{bedList.Count}筆";
                 return returnData.JsonSerializationt(true);
             }
             catch (Exception ex)
@@ -119,7 +119,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     medCpoeClass.update_med_cpoe(API01, bedListCpoe);
                 }
 
-                medCarInfoClass out_medCarInfoClass = medCarInfoClass.get_patient_by_GUID(API01, returnData.ValueAry);
+                medCarInfoClass out_medCarInfoClass = medCarInfoClass.get_patient_by_GUID(API01,returnData.Value, returnData.ValueAry);
 
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";

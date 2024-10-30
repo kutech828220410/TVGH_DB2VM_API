@@ -580,7 +580,6 @@ C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\IBM
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\K4os.Compression.LZ4.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\K4os.Compression.LZ4.Streams.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\K4os.Hash.xxHash.dll
-C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\MySql.Data.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\Ubiety.Dns.Core.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\ZstdNet.dll
@@ -595,16 +594,12 @@ C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\Sys
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\System.Text.Encodings.Web.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\System.Text.Json.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\System.Windows.Extensions.dll
-C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\runtimes\freebsd\lib\netcoreapp3.1\System.Data.Odbc.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\runtimes\linux\lib\netcoreapp3.1\System.Data.Odbc.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\runtimes\osx\lib\netcoreapp3.1\System.Data.Odbc.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\runtimes\win\lib\netcoreapp3.1\System.Data.Odbc.dll
-C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
-C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\runtimes\win\lib\netstandard2.0\System.Security.AccessControl.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\runtimes\win\lib\netcoreapp3.1\System.Text.Encoding.CodePages.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\runtimes\win\lib\netcoreapp3.1\System.Windows.Extensions.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\Basic.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\HIS_DB_Lib.dll
@@ -673,3 +668,9 @@ C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\obj\Release\net5.0\DB2
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\obj\Release\net5.0\ref\DB2VM_API.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\obj\Release\net5.0\DB2VM_API.pdb
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\obj\Release\net5.0\DB2VM_API.genruntimeconfig.cache
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\Microsoft.OpenApi.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\obj\Release\net5.0\DB2VM_API.MvcApplicationPartsAssemblyInfo.cs

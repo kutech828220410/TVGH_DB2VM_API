@@ -96,7 +96,7 @@ namespace DB2VM_API.Controller
         }
         private DB2Connection GetDB2Connection()
         {
-            string DB2_server = $"{ConfigurationManager.AppSettings["DB2_server"]}:{ConfigurationManager.AppSettings["DB2_port"]}";
+            string DB2_server = $"10.30.253.249:{ConfigurationManager.AppSettings["DB2_port"]}";
             string DB2_database = $"{ConfigurationManager.AppSettings["DB2_database"]}";
             string DB2_userid = $"{ConfigurationManager.AppSettings["DB2_user"]}";
             string DB2_password = $"{ConfigurationManager.AppSettings["DB2_password"]}";
