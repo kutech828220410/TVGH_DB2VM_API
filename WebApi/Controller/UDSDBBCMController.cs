@@ -37,7 +37,9 @@ namespace DB2VM
             MyTimerBasic myTimerBasic = new MyTimerBasic();
 
             if (Code.StringIsEmpty()) Code = "";
-            String MyDb2ConnectionString = $"server={DB2_server};database={DB2_database};userid={DB2_userid};password={DB2_password};";
+            //String MyDb2ConnectionString = $"server={DB2_server};database={DB2_database};userid={DB2_userid};password={DB2_password};";
+            String MyDb2ConnectionString = $"server=10.30.253.249:51031;database={DB2_database};userid={DB2_userid};password={DB2_password};";
+
             DB2Connection MyDb2Connection = new DB2Connection(MyDb2ConnectionString);
 
             MyDb2Connection.Open();
@@ -69,7 +71,7 @@ namespace DB2VM
                 medClass.藥品碼 = reader["UDDRGNO"].ToString().Trim();
                 medClass.藥品名稱 = reader["UDARNAME"].ToString().Trim();
                 medClass.料號 = reader["UDSTOKNO"].ToString().Trim();
-                
+                medClass.圖片網址 = $"https://www7.vghtpe.gov.tw/api/find-zero-image-by-udCode?udCode={medClass.藥品碼}";
 
                 藥品條碼1 = reader["UDBARCD1"].ToString().Trim();
                 藥品條碼2 = reader["UDBARCD2"].ToString().Trim();
@@ -115,12 +117,14 @@ namespace DB2VM
                     if (value[(int)enum_雲端藥檔.料號].ObjectToString() != medClasses[i].料號) flag_replace = true;
                     if (value[(int)enum_雲端藥檔.藥品名稱].ObjectToString() != medClasses[i].藥品名稱) flag_replace = true;
                     if (value[(int)enum_雲端藥檔.藥品條碼2].ObjectToString() != medClasses[i].藥品條碼2) flag_replace = true;
+                    if (value[(int)enum_雲端藥檔.圖片網址].ObjectToString() != medClasses[i].圖片網址) flag_replace = true;
                     value[(int)enum_雲端藥檔.藥品碼] = medClasses[i].藥品碼;
                     value[(int)enum_雲端藥檔.料號] = medClasses[i].料號;
                     value[(int)enum_雲端藥檔.藥品名稱] = medClasses[i].藥品名稱;
                     //value[(int)enum_雲端藥檔.管制級別] = medClasses[i].管制級別;
                     value[(int)enum_雲端藥檔.藥品條碼2] = medClasses[i].藥品條碼2;
-                    if(flag_replace) list_藥檔資料_replace.Add(value);
+                    value[(int)enum_雲端藥檔.圖片網址] = medClasses[i].圖片網址;
+                    if (flag_replace) list_藥檔資料_replace.Add(value);
                 }
             }
             if (list_藥檔資料_add.Count > 0) sQLControl_藥檔資料.AddRows(null, list_藥檔資料_add);
