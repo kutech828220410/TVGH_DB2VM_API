@@ -37,6 +37,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         [HttpPost("get_bed_list_by_cart")]
         public string get_bed_list_by_cart([FromBody] returnData returnData)
         {
+            returnData.Method = "med_cart/get_bed_list_by_cart"
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
             {
@@ -59,6 +60,10 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
                 List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
                 List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedListInfo);
+                if(out_medCarInfoClass.Count == 0 || out_medCarInfoClass == null) 
+                {
+                
+                }
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
                 returnData.Data = out_medCarInfoClass;
