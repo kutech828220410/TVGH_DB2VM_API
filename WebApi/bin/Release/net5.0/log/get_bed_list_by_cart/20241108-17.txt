@@ -1,0 +1,60 @@
+20241108-17:30:23 - start to get data at 0.148ms
+20241108-17:30:23 - ExecuteUDPDPPF1 take 84.133ms
+20241108-17:30:25 - ExecuteUDPDPPF0 take 1835.046ms
+20241108-17:30:26 - update_med_carinfo take 1009.981ms
+20241108-17:30:33 - start to get data at 0.001ms
+20241108-17:30:33 - ExecuteUDPDPPF1 take 9.149ms
+20241108-17:30:34 - ExecuteUDPDPPF0 take 1729.078ms
+20241108-17:30:35 - update_med_carinfo take 546.733ms
+20241108-17:42:15 - start to get data at 0.001ms
+20241108-17:42:31 - ExecuteUDPDPPF1 take 15943.521ms
+20241108-17:42:32 - ExecuteUDPDPPF0 take 1456.972ms
+20241108-17:42:33 - update_med_carinfo take 873.360ms
+20241108-17:45:12 - start to get data at 0.139ms
+20241108-17:45:12 - ExecuteUDPDPPF1 take 47.924ms
+20241108-17:45:14 - ExecuteUDPDPPF0 take 2006.328ms
+20241108-17:45:15 - update_med_carinfo take 906.048ms
+20241108-17:45:38 - start to get data at 0.001ms
+20241108-17:45:38 - ExecuteUDPDPPF1 take 48.775ms
+20241108-17:45:40 - ExecuteUDPDPPF0 take 1725.590ms
+20241108-17:45:40 - update_med_carinfo take 55.680ms
+20241108-17:51:36 - start to get data at 0.138ms
+20241108-17:51:59 - ExecuteUDPDPPF1 take 22565.106ms
+20241108-17:52:01 - ExecuteUDPDPPF0 take 1889.965ms
+20241108-17:52:01 - update_med_carinfo take 0.247ms
+20241108-17:52:46 - start to get data at 0.001ms
+20241108-17:52:46 - ExecuteUDPDPPF1 take 27.255ms
+20241108-17:52:48 - ExecuteUDPDPPF0 take 2237.834ms
+20241108-17:52:48 - update_med_carinfo take 2.749ms
+20241108-17:52:56 - start to get data at 0.001ms
+20241108-17:52:56 - ExecuteUDPDPPF1 take 9.782ms
+20241108-17:52:58 - ExecuteUDPDPPF0 take 2159.547ms
+20241108-17:52:58 - update_med_carinfo take 2.845ms
+20241108-17:55:05 - start to get data at 0.001ms
+20241108-17:55:05 - ExecuteUDPDPPF1 take 8.525ms
+20241108-17:55:07 - ExecuteUDPDPPF0 take 2260.043ms
+20241108-17:55:07 - update_med_carinfo take 0.334ms
+20241108-17:55:46 - start to get data at 0.001ms
+20241108-17:55:46 - ExecuteUDPDPPF1 take 28.424ms
+20241108-17:55:48 - ExecuteUDPDPPF0 take 2094.992ms
+20241108-17:55:48 - update_med_carinfo take 0.564ms
+20241108-17:56:38 - start to get data at 0.001ms
+20241108-17:56:38 - ExecuteUDPDPPF1 take 11.405ms
+20241108-17:56:41 - ExecuteUDPDPPF0 take 3036.214ms
+20241108-17:56:41 - update_med_carinfo take 0.417ms
+20241108-17:57:59 - start to get data at 4730.417ms
+20241108-17:58:19 - ExecuteUDPDPPF1 take 20032.755ms
+20241108-17:58:25 - ExecuteUDPDPPF0 take 5808.442ms
+20241108-17:58:27 - update_med_carinfo take 2271.706ms
+20241108-17:59:19 - start to get data at 0.001ms
+20241108-17:59:19 - ExecuteUDPDPPF1 take 33.224ms
+20241108-17:59:20 - ExecuteUDPDPPF0 take 803.838ms
+20241108-17:59:20 - update_med_carinfo take 0.343ms
+20241108-17:59:46 - start to get data at 0.001ms
+20241108-17:59:46 - ExecuteUDPDPPF1 take 25.966ms
+20241108-17:59:47 - ExecuteUDPDPPF0 take 765.764ms
+20241108-17:59:47 - update_med_carinfo take 0.937ms
+20241108-17:59:57 - start to get data at 0.001ms
+20241108-17:59:57 - ExecuteUDPDPPF1 take 7.662ms
+20241108-17:59:57 - ExecuteUDPDPPF0 take 366.299ms
+20241108-17:59:57 - update_med_carinfo take 1.244ms

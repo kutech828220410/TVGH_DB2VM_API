@@ -63,9 +63,25 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
                 Logger.Log("get_bed_list_by_cart", $"ExecuteUDPDPPF0 take {myTimerBasic.ToString()}");
 
-                List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedListInfo);
+                //List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedListInfo);
                 Logger.Log("get_bed_list_by_cart", $"update_med_carinfo take {myTimerBasic.ToString()}");
 
+                string url = $"{API01}/api/med_cart/update_med_carinfo";
+                returnData rreturnData = new returnData();
+                returnData.Data = bedListInfo;
+                string json_in = returnData.JsonSerializationt();
+                string json_out = Net.WEBApiPostJson(url, json_in);
+                returnData = json_out.JsonDeserializet<returnData>();
+                if (returnData == null) return null;
+                if (returnData.Code != 200) return null;
+                List<medCarInfoClass> out_medCarInfoClass = returnData.Data.ObjToClass<List<medCarInfoClass>>();
+
+                //if (out_medCarInfoClass.Count == 0 || out_medCarInfoClass == null)
+                //{
+                //    returnData.Code = -200;
+                //    returnData.Result = $"out_medCarInfoClass 無資料";
+                //    return returnData.JsonSerializationt(true);
+                //}
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
                 returnData.Data = out_medCarInfoClass;
