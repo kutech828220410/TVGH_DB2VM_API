@@ -37,7 +37,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         [HttpPost("get_bed_list_by_cart")]
         public string get_bed_list_by_cart([FromBody] returnData returnData)
         {
-            returnData.Method = "med_cart/get_bed_list_by_cart"
+            returnData.Method = "med_cart/get_bed_list_by_cart";
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
             {
@@ -57,13 +57,15 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                
                 string 藥局 = returnData.ValueAry[0];
                 string 護理站 = returnData.ValueAry[1];
+                Logger.Log("get_bed_list_by_cart", $"start to get data at {myTimerBasic.ToString()}");
                 List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
+                Logger.Log("get_bed_list_by_cart", $"ExecuteUDPDPPF1 take {myTimerBasic.ToString()}");
                 List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
+                Logger.Log("get_bed_list_by_cart", $"ExecuteUDPDPPF0 take {myTimerBasic.ToString()}");
+
                 List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedListInfo);
-                if(out_medCarInfoClass.Count == 0 || out_medCarInfoClass == null) 
-                {
-                
-                }
+                Logger.Log("get_bed_list_by_cart", $"update_med_carinfo take {myTimerBasic.ToString()}");
+
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
                 returnData.Data = out_medCarInfoClass;
@@ -624,7 +626,8 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                 住院號 = reader["PCASENO"].ToString().Trim(),
                                 姓名 = ReplaceInvalidCharacters(reader["PNAMEC"].ToString()).Trim()
                             };
-                            if (!string.IsNullOrWhiteSpace(medCarInfoClass.姓名)) medCarInfoClass.占床狀態 = "已佔床";
+                            if (medCarInfoClass.姓名.StringIsEmpty() == false) medCarInfoClass.占床狀態 = "已佔床";
+                            //if (!string.IsNullOrWhiteSpace(medCarInfoClass.姓名)) medCarInfoClass.占床狀態 = "已佔床";
 
 
                             medCarInfoClasses.Add(medCarInfoClass);
@@ -703,7 +706,8 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                     if (key == "RTINR") medCarInfoClass.國際標準化比率 = value;
                                     if (key == "PBIRTH8")
                                     {
-                                        if (!string.IsNullOrWhiteSpace(value)) medCarInfoClass.年齡 = age(value);
+                                        //if (!string.IsNullOrWhiteSpace(value)) medCarInfoClass.年齡 = age(value);
+                                        if (value.StringIsEmpty() == false) medCarInfoClass.年齡 = age(value);
                                     }
 
                                     if (key == "HICD1") diseaseClass.國際疾病分類代碼1 = value;
