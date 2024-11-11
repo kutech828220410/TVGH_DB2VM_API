@@ -57,31 +57,25 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                
                 string 藥局 = returnData.ValueAry[0];
                 string 護理站 = returnData.ValueAry[1];
-                Logger.Log("get_bed_list_by_cart", $"start to get data at {myTimerBasic.ToString()}");
                 List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
-                Logger.Log("get_bed_list_by_cart", $"ExecuteUDPDPPF1 take {myTimerBasic.ToString()}");
-                List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
-                Logger.Log("get_bed_list_by_cart", $"ExecuteUDPDPPF0 take {myTimerBasic.ToString()}");
+                //List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
+                List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedList);
+                //string url = $"{API01}/api/med_cart/update_med_carinfo";
+                //returnData rreturnData = new returnData();
+                //returnData.Data = bedList;
+                //string json_in = returnData.JsonSerializationt();
+                //string json_out = Net.WEBApiPostJson(url, json_in);
+                //returnData = json_out.JsonDeserializet<returnData>();
+                //if (returnData == null) return null;
+                //if (returnData.Code != 200) return returnData.JsonSerializationt(true);
+                //List<medCarInfoClass> out_medCarInfoClass = returnData.Data.ObjToClass<List<medCarInfoClass>>();
 
-                //List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedListInfo);
-                Logger.Log("get_bed_list_by_cart", $"update_med_carinfo take {myTimerBasic.ToString()}");
-
-                string url = $"{API01}/api/med_cart/update_med_carinfo";
-                returnData rreturnData = new returnData();
-                returnData.Data = bedListInfo;
-                string json_in = returnData.JsonSerializationt();
-                string json_out = Net.WEBApiPostJson(url, json_in);
-                returnData = json_out.JsonDeserializet<returnData>();
-                if (returnData == null) return null;
-                if (returnData.Code != 200) return null;
-                List<medCarInfoClass> out_medCarInfoClass = returnData.Data.ObjToClass<List<medCarInfoClass>>();
-
-                //if (out_medCarInfoClass.Count == 0 || out_medCarInfoClass == null)
-                //{
-                //    returnData.Code = -200;
-                //    returnData.Result = $"out_medCarInfoClass 無資料";
-                //    return returnData.JsonSerializationt(true);
-                //}
+                if (out_medCarInfoClass.Count == 0 || out_medCarInfoClass == null)
+                {
+                    returnData.Code = -200;
+                    returnData.Result = $"out_medCarInfoClass 無資料";
+                    return returnData.JsonSerializationt(true);
+                }
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
                 returnData.Data = out_medCarInfoClass;
