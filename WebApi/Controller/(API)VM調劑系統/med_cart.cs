@@ -10,6 +10,10 @@ using HIS_DB_Lib;
 using IBM.Data.DB2.Core;
 using System.Data;
 using System.Text;
+using System.Collections.Concurrent;
+using MySql.Data.MySqlClient;
+
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,6 +24,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
     public class med_cart : ControllerBase
     {
         static private string API01 = "http://127.0.0.1:4433";
+        static private MySqlSslMode SSLMode = MySqlSslMode.None;
         static string DB2_schema = $"{ConfigurationManager.AppSettings["DB2_schema"]}";
         /// <summary>
         ///以藥局和護理站取得占床資料
@@ -39,8 +44,8 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         {
             returnData.Method = "med_cart/get_bed_list_by_cart";
             MyTimerBasic myTimerBasic = new MyTimerBasic();
-            try
-            {
+            //try
+            //{
                 if (returnData.ValueAry == null)
                 {
                     returnData.Code = -200;
@@ -59,7 +64,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 string 護理站 = returnData.ValueAry[1];
                 List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
                 //List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
-                List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedList);
+                //List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedList);
                 //string url = $"{API01}/api/med_cart/update_med_carinfo";
                 //returnData rreturnData = new returnData();
                 //returnData.Data = bedList;
@@ -70,7 +75,111 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 //if (returnData.Code != 200) return returnData.JsonSerializationt(true);
                 //List<medCarInfoClass> out_medCarInfoClass = returnData.Data.ObjToClass<List<medCarInfoClass>>();
 
-                if (out_medCarInfoClass.Count == 0 || out_medCarInfoClass == null)
+
+
+                //(string Server, string DB, string UserName, string Password, uint Port) = GetServerInfo("Main", "網頁", "藥檔資料");
+                //string API = GetServerAPI("Main", "網頁", "API01");
+
+                List<medCarInfoClass> medCart_sql_add = new List<medCarInfoClass>();
+                List<medCarInfoClass> medCart_sql_replace = new List<medCarInfoClass>();
+                List<medCarInfoClass> medCart_sql_delete = new List<medCarInfoClass>();
+
+
+                SQLControl sQLControl_med_carInfo = new SQLControl("10.107.3.147", "dbvm", "med_carInfo", "user", "66437068", 3309, SSLMode);
+                SQLControl sQLControl_med_cpoe = new SQLControl("10.107.3.147", "dbvm", "med_cpoe", "user", "66437068", 3309, SSLMode);
+
+                DateTime lestweek = DateTime.Now.AddDays(-30);
+                DateTime yesterday = DateTime.Now.AddDays(-0);
+                string starttime = lestweek.GetStartDate().ToDateString();
+                string endtime = yesterday.GetEndDate().ToDateString();
+                sQLControl_med_carInfo.DeleteByBetween(null, (int)enum_med_carInfo.更新時間, starttime, endtime);
+
+                List<medCarInfoClass> input_medCarInfo = bedList;
+
+                if (input_medCarInfo == null)
+                {
+                    returnData.Code = -200;
+                    returnData.Result = $"傳入Data資料異常";
+                    return returnData.JsonSerializationt();
+                }
+
+                List<object[]> list_med_carInfo = sQLControl_med_carInfo.GetRowsByDefult(null, (int)enum_med_carInfo.藥局, 藥局);
+                List<medCarInfoClass> sql_medCar = list_med_carInfo.SQLToClass<medCarInfoClass, enum_med_carInfo>();
+                List<medCarInfoClass> medCarInfo = sql_medCar.Where(temp => temp.護理站 == 護理站).ToList();
+                Dictionary<string, List<medCarInfoClass>> medCarInfoDictBedNum = medCarInfoClass.CoverToDictByBedNum(medCarInfo);
+
+                ConcurrentBag<medCarInfoClass> localList_add = new ConcurrentBag<medCarInfoClass>();
+                ConcurrentBag<medCarInfoClass> localList_delete = new ConcurrentBag<medCarInfoClass>();
+                ConcurrentBag<medCarInfoClass> localList_replace = new ConcurrentBag<medCarInfoClass>();
+                Parallel.ForEach(input_medCarInfo, new ParallelOptions { MaxDegreeOfParallelism = 10 }, medCarInfoClass =>
+                {
+                    medCarInfoClass targetPatient = new medCarInfoClass();
+
+                    string 床號 = medCarInfoClass.床號;
+                    if (medCarInfoClass.SortDictByBedNum(medCarInfoDictBedNum, 床號).Count != 0)
+                    {
+                        targetPatient = medCarInfoClass.SortDictByBedNum(medCarInfoDictBedNum, 床號)[0];
+                    }
+
+                    if (targetPatient.GUID.StringIsEmpty() == true)
+                    {
+                        medCarInfoClass.GUID = Guid.NewGuid().ToString();
+                        localList_add.Add(medCarInfoClass);
+                    }
+                    else
+                    {
+                        if (medCarInfoClass.病歷號 != targetPatient.病歷號)
+                        {
+                            medCarInfoClass.GUID = Guid.NewGuid().ToString();
+                            medCarInfoClass.異動 = "Y";
+                            localList_add.Add(medCarInfoClass);
+                            localList_delete.Add(targetPatient);
+                        }
+                        else
+                        {
+                            medCarInfoClass.GUID = targetPatient.GUID;
+                            medCarInfoClass.調劑狀態 = targetPatient.調劑狀態;
+                            localList_replace.Add(medCarInfoClass);
+                        }
+                    }
+                });
+                lock (medCart_sql_add) medCart_sql_add.AddRange(localList_add);
+                lock (medCart_sql_replace) medCart_sql_replace.AddRange(localList_replace);
+                lock (medCart_sql_delete) medCart_sql_delete.AddRange(localList_delete);
+
+                List<object[]> list_medCart_add = new List<object[]>();
+                List<object[]> list_medCart_replace = new List<object[]>();
+                List<object[]> list_medCart_delete = new List<object[]>();
+                list_medCart_add = medCart_sql_add.ClassToSQL<medCarInfoClass, enum_med_carInfo>();
+                list_medCart_replace = medCart_sql_replace.ClassToSQL<medCarInfoClass, enum_med_carInfo>();
+                list_medCart_delete = medCart_sql_delete.ClassToSQL<medCarInfoClass, enum_med_carInfo>();
+
+                if (list_medCart_add.Count > 0) sQLControl_med_carInfo.AddRows(null, list_medCart_add);
+                if (list_medCart_replace.Count > 0) sQLControl_med_carInfo.UpdateByDefulteExtra(null, list_medCart_replace);
+                if (list_medCart_delete.Count > 0)
+                {
+                    sQLControl_med_carInfo.DeleteExtra(null, list_medCart_delete);
+                    List<object[]> list_med_cpoe = sQLControl_med_cpoe.GetRowsByDefult(null, (int)enum_med_cpoe.藥局, 藥局);
+                    List<medCpoeClass> sql_medCpoe = list_med_cpoe.SQLToClass<medCpoeClass, enum_med_cpoe>();
+                    Dictionary<string, List<medCpoeClass>> medCpoeDict = medCpoeClass.CoverToDictByMasterGUID(sql_medCpoe);
+                    //List<medCpoeClass> filterCpoe = new List<medCpoeClass>();
+                    //for (int i = 0; medCart_sql_delete.Count > 0; i++)
+                    //{
+                    //    List<medCpoeClass> result = medCpoeClass.SortDictByMasterGUID(medCpoeDict, medCart_sql_delete[i].GUID);
+                    //    filterCpoe.AddRange(result);
+                    //}
+                    List<medCpoeClass> filterCpoe = sql_medCpoe
+                        .Where(cpoe => medCart_sql_delete.Any(medCart => medCart.GUID == cpoe.Master_GUID)).ToList();
+                    List<object[]> list_medCpoe_delete = filterCpoe.ClassToSQL<medCpoeClass, enum_med_cpoe>();
+                    if (list_medCpoe_delete.Count > 0) sQLControl_med_cpoe.DeleteExtra(null, list_medCpoe_delete);
+                }
+
+                List<object[]> list_bedList = sQLControl_med_carInfo.GetRowsByDefult(null, (int)enum_med_carInfo.藥局, 藥局);
+                List<medCarInfoClass> bedListt = list_bedList.SQLToClass<medCarInfoClass, enum_med_carInfo>();
+                List<medCarInfoClass> medCarInfoClasses = bedListt.Where(temp => temp.護理站 == 護理站).ToList();
+                medCarInfoClasses.Sort(new medCarInfoClass.ICP_By_bedNum());
+
+                if (medCarInfoClasses == null)
                 {
                     returnData.Code = -200;
                     returnData.Result = $"out_medCarInfoClass 無資料";
@@ -78,16 +187,16 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 }
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
-                returnData.Data = out_medCarInfoClass;
+                returnData.Data = medCarInfoClasses;
                 returnData.Result = $"取得住院{藥局} {護理站} 病床資訊共{bedList.Count}筆";
                 return returnData.JsonSerializationt(true);
-            }
-            catch (Exception ex)
-            {
-                returnData.Code = -200;
-                returnData.Result = $"Exception:{ex.Message}";
-                return returnData.JsonSerializationt(true);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    returnData.Code = -200;
+            //    returnData.Result = $"Exception:{ex.Message}";
+            //    return returnData.JsonSerializationt(true);
+            //}
         }
         /// <summary>
         ///以GUID取得病人詳細資料
@@ -124,17 +233,14 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 string 藥局 = targetPatient.藥局;
                 string 護理站 = targetPatient.護理站;
                 string 床號 = targetPatient.床號;
+
                 List<medCarInfoClass> medCarInfoClasses = new List<medCarInfoClass> { targetPatient };
-                List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(medCarInfoClasses);
-                if (bedListCpoe.Count == 0) 
-                {
-                    medCarInfoClasses[0].調劑狀態 = "Y";
-                    medCarInfoClass.update_med_carinfo(API01, medCarInfoClasses);
-                }
-                else
-                {
-                    medCpoeClass.update_med_cpoe(API01, bedListCpoe);
-                }
+                List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(medCarInfoClasses);
+                List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(bedListInfo);
+                if (bedListCpoe.Count == 0) medCarInfoClasses[0].調劑狀態 = "Y";
+                                   
+                medCarInfoClass.update_med_carinfo(API01, medCarInfoClasses);
+                medCpoeClass.update_med_cpoe(API01, bedListCpoe);
 
                 medCarInfoClass out_medCarInfoClass = medCarInfoClass.get_patient_by_GUID(API01,returnData.Value, returnData.ValueAry);
 
@@ -447,7 +553,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 return returnData.JsonSerializationt(true);
             }
         }
-        [HttpPost("get_medInfo")]
+        [HttpGet("get_medInfo")]
         public string get_medInfo([FromBody] returnData returnData)
         {
             MyTimerBasic myTimerBasic = new MyTimerBasic();
@@ -1147,6 +1253,28 @@ namespace DB2VM_API.Controller._API_VM調劑系統
 
             return output.ToString();
         }
-        
+        private (string Server, string DB, string UserName, string Password, uint Port) GetServerInfo(string Name, string Type, string Content)
+        {
+            List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet("http://127.0.0.1:4433");
+            ServerSettingClass serverSettingClass = serverSettingClasses.MyFind(Name, Type, Content).FirstOrDefault();
+            if (serverSettingClass == null)
+            {
+                throw new Exception("找無Server資料");
+            }
+            return (serverSettingClass.Server, serverSettingClass.DBName, serverSettingClass.User, serverSettingClass.Password, (uint)serverSettingClass.Port.StringToInt32());
+        }
+        private string GetServerAPI(string Name, string Type, string Content)
+        {
+            List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet("http://127.0.0.1:4433");
+            ServerSettingClass serverSettingClass = serverSettingClasses.MyFind(Name, Type, Content).FirstOrDefault();
+            if (serverSettingClass == null)
+            {
+                throw new Exception("找無Server資料");
+            }
+            return serverSettingClass.Server;
+        }
+
+
+
     }
 }
