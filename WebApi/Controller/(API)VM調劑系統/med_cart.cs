@@ -734,6 +734,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
 
                             medCarInfoClass medCarInfoClass = new medCarInfoClass
                             {
+                                GUID = Guid.NewGuid().ToString(),
                                 藥局 = phar,
                                 更新時間 = DateTime.Now.ToDateTimeString(),
                                 護理站 = reader["HNURSTA"].ToString().Trim(),
@@ -744,8 +745,6 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                             };
                             if (medCarInfoClass.姓名.StringIsEmpty() == false) medCarInfoClass.占床狀態 = "已佔床";
                             //if (!string.IsNullOrWhiteSpace(medCarInfoClass.姓名)) medCarInfoClass.占床狀態 = "已佔床";
-
-
                             medCarInfoClasses.Add(medCarInfoClass);
                         }
                         return medCarInfoClasses;
