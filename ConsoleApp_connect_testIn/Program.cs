@@ -13,7 +13,7 @@ namespace ConsoleApp_connect_testIn
                 Console.WriteLine($"{DateTime.Now.ToDateTimeString()}-測試通訊....");
                 string json = Basic.Net.WEBApiGet("http://10.107.3.147:443/api/testin");
                 Console.WriteLine($"{DateTime.Now.ToDateTimeString()}-{json} ok....");
-                System.Threading.Thread.Sleep(5000);
+                System.Threading.Thread.Sleep(3000);
             }
             
         }
