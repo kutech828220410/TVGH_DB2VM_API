@@ -57,3 +57,12 @@ C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_cmdi_day\obj\Relea
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_cmdi_day\obj\Release\net5.0\ref\ConsoleApp_cmdi_day.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_cmdi_day\obj\Release\net5.0\ConsoleApp_cmdi_day.pdb
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_cmdi_day\obj\Release\net5.0\ConsoleApp_cmdi_day.genruntimeconfig.cache
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_cmdi_day\bin\Release\net5.0\CSkin.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_cmdi_day\bin\Release\net5.0\AxOvkBase.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_cmdi_day\bin\Release\net5.0\AxAltairUDrvAsm4.5.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_cmdi_day\bin\Release\net5.0\AxOvkBaseAsm4.5.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_cmdi_day\bin\Release\net5.0\AxOvkMsr.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_cmdi_day\bin\Release\net5.0\AxAltairUDrv.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_cmdi_day\bin\Release\net5.0\stdole.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_cmdi_day\bin\Release\net5.0\HIS_DB_Lib.pdb
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_cmdi_day\bin\Release\net5.0\HIS_DB_Lib.dll.config

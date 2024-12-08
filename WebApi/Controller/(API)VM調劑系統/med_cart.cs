@@ -253,22 +253,27 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 })));
 
 
-                tasks.Clear();
+                //tasks.Clear();
                 if (bedListCpoe.Count == 0) medCarInfoClasses[0].調劑狀態 = "Y";
-                tasks.Add(Task.Run(new Action(delegate
-                {
-                    medCarInfoClass.update_med_carinfo(API01, medCarInfoClasses);
-                    str_result_temp += $"更新med_carinfo, {myTimerBasic}ms \n";
+                //tasks.Add(Task.Run(new Action(delegate
+                //{
+                //    medCarInfoClass.update_med_carinfo(API01, medCarInfoClasses);
+                //    str_result_temp += $"更新med_carinfo, {myTimerBasic}ms \n";
 
-                })));
-                tasks.Add(Task.Run(new Action(delegate
-                {
-                    medCpoeClass.update_med_cpoe(API01, bedListCpoe);
-                    str_result_temp += $"更新med_cpoe, {myTimerBasic}ms \n";
+                //})));
+                //tasks.Add(Task.Run(new Action(delegate
+                //{
+                //    medCpoeClass.update_med_cpoe(API01, bedListCpoe);
+                //    str_result_temp += $"更新med_cpoe, {myTimerBasic}ms \n";
 
-                })));
+                //})));
                 Task.WhenAll(tasks).Wait();
 
+                medCarInfoClass.update_med_carinfo(API01, bedListInfo);
+                str_result_temp += $"更新med_carinfo, {myTimerBasic}ms \n";
+
+                medCpoeClass.update_med_cpoe(API01, bedListCpoe);
+                str_result_temp += $"更新med_cpoe, {myTimerBasic}ms \n";
 
                 medCarInfoClass out_medCarInfoClass = medCarInfoClass.get_patient_by_GUID(API01,returnData.Value, returnData.ValueAry);
                 str_result_temp += $"取得病人所有資訊, {myTimerBasic}ms \n";
@@ -972,7 +977,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                 頻次屬性 = reader["UDFRQATR"].ToString().Trim(),
                                 藥品名 = reader["UDDRGNAM"].ToString().Trim(),
                                 途徑 = reader["UDROUTE"].ToString().Trim(),
-                                數量 = reader["UDLQNTY"].ToString().Trim(),
+                                數量 = reader["UDLQNTY"].ToString().Trim().StringToInt32().ToString(),
                                 劑量 = reader["UDDOSAGE"].ToString().Trim(),
                                 單位 = reader["UDDUNIT"].ToString().Trim(),
                                 期限 = reader["UDDURAT"].ToString().Trim(),
@@ -996,6 +1001,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                 交互作用 = reader["UDDDI"].ToString().Trim(),
                                 交互作用等級 = reader["UDDDIC"].ToString().Trim()
                             };
+                            if(medCpoeClass.數量 == "0" || medCpoeClass.藥碼 == "80086" ||medCpoeClass.藥碼 == "80112") continue;
                             if (reader["UDSTATUS"].ToString().Trim() == "80") medCpoeClass.狀態 = "DC";
                             if (reader["UDSTATUS"].ToString().Trim() == "30") medCpoeClass.狀態 = "New";
                             //if (medCpoeClass.藥局代碼 == "UB01") medCpoeClass.藥局名稱 = "中正樓總藥局";
@@ -1008,7 +1014,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                             //if (medCpoeClass.藥局代碼 == "UBTP") medCpoeClass.藥局名稱 = "中正樓臨床試驗藥局";
                             //if (medCpoeClass.藥局代碼 == "UC02") medCpoeClass.藥局名稱 = "長青樓藥局";
                             if (string.IsNullOrWhiteSpace(medCpoeClass.狀態)) medCpoeClass.狀態 = "New";
-                            if (medCpoeClass.藥局代碼 == "" || medCpoeClass.藥局代碼 == "UC02") prescription.Add(medCpoeClass);
+                            if (medCpoeClass.藥局代碼 == "" || medCpoeClass.藥局代碼 == "UC02" ) prescription.Add(medCpoeClass);
                         }
                     }
                 }

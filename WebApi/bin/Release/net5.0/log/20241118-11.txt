@@ -1,0 +1,2 @@
+20241118-11:12:59 - Exception : The process cannot access the file 'C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\log\Execute_SP\20241118-11.txt' because it is being used by another process.
+20241118-11:13:09 - Exception : The process cannot access the file 'C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\log\Execute_SP\20241118-11.txt' because it is being used by another process.

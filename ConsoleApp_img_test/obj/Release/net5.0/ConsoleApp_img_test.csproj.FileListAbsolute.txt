@@ -57,3 +57,12 @@ C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_img_test\obj\Relea
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_img_test\bin\Release\net5.0\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_img_test\bin\Release\net5.0\System.Text.Encodings.Web.dll
 C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_img_test\bin\Release\net5.0\System.Text.Json.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_img_test\bin\Release\net5.0\CSkin.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_img_test\bin\Release\net5.0\AxOvkBase.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_img_test\bin\Release\net5.0\AxAltairUDrvAsm4.5.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_img_test\bin\Release\net5.0\AxOvkBaseAsm4.5.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_img_test\bin\Release\net5.0\AxOvkMsr.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_img_test\bin\Release\net5.0\AxAltairUDrv.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_img_test\bin\Release\net5.0\stdole.dll
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_img_test\bin\Release\net5.0\HIS_DB_Lib.pdb
+C:\Users\Administrator\source\repos\TVGH_DB2VM_API\ConsoleApp_img_test\bin\Release\net5.0\HIS_DB_Lib.dll.config

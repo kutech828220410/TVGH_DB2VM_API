@@ -59,6 +59,13 @@ namespace DB2VM
                     returnData.Result = "Barcode空白";
                     return returnData.JsonSerializationt(true);
                 }
+                if(BarCode.Length > 12)
+                {
+                    Logger.Log("UDSDBBAR", $"Barcode{BarCode}");
+                    returnData.Code = -200;
+                    returnData.Result = $"Barcode{BarCode}錯誤";
+                    return returnData.JsonSerializationt(true);
+                }
                 Table table = OrderClass.init("http://127.0.0.1:4433");
                 sQLControl_醫囑資料 = new SQLControl(table);
 
