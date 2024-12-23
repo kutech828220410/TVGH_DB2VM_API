@@ -49,7 +49,7 @@ namespace DB2VM_API
                 //cmd.CommandText = $"SELECT * FROM VGHLNXVG.DIMMATRN where DIMDATE >='{date.ToDateTinyString()}' with ur;";
                 //cmd.CommandText = $"SELECT * FROM VGHLNXVG.DIMAUTRN where DIMDATE >='{date.ToDateTinyString()}' with ur;";
                 //cmd.CommandText = $"SELECT * FROM VGHLNXTS.UD_DIMAUTRN where DIMDATE >='{date.ToDateTinyString()}' with ur;";
-                cmd.CommandText = $"SELECT * FROM VGHLNXTS.DIMAUTRNUDNO where DIMDATE >='{date.ToDateTinyString()}' with ur;";
+                cmd.CommandText = $"SELECT * FROM VGHLNXVG.DIMAUTRNUDNO where DIMDATE >='{date.ToDateTinyString()}' with ur;";
 
 
                 using (DB2DataReader reader = cmd.ExecuteReader())

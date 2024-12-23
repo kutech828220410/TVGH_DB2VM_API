@@ -9,6 +9,10 @@
     "\\WebApi\\Controller",
     "\\WebApi\\Controller\\(API)VM調劑系統"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\Console_img_download\\Program.cs",
+=======
+  "SelectedNode": "\\WebApi\\Controller\\(API)VM調劑系統\\med_cart.cs",
+>>>>>>> Anna
   "PreviewInSolutionExplorer": false
 }

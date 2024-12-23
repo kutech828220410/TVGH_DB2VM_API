@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_test_db2vm\\ConsoleApp_test_db2vm.csproj",
-      "projectName": "ConsoleApp_test_db2vm",
-      "projectPath": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_test_db2vm\\ConsoleApp_test_db2vm.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_test_db2vm\\ConsoleApp_connect_testOut.csproj",
+      "projectName": "ConsoleApp_connect_testOut",
+      "projectPath": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_test_db2vm\\ConsoleApp_connect_testOut.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_test_db2vm\\obj\\",
       "projectStyle": "PackageReference",

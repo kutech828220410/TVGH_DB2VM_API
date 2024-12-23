@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iWftPBK43/iC+yIlxVP0jciMTmYgpfxieRG3uYE7pf8zvqCdhHmtWaeIoOZ5EALP/TTw2fuTfb67nojBHi2rWA==",
+  "dgSpecHash": "RpmcQrH5gCj98R8ywyy+a2EB4ev6uPDnJDsY4beu6TpgCp6z+iKakCefrhLnY4Ei/9/2bFeR6ImFwXbRZkpmFQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_test_db2vm\\ConsoleApp_test_db2vm.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_test_db2vm\\ConsoleApp_connect_testOut.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

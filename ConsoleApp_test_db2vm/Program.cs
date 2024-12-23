@@ -13,7 +13,7 @@ namespace ConsoleApp_test_db2vm
                 while (true)
                 {
                     Console.WriteLine($"{DateTime.Now.ToDateTimeString()}-測試通訊....");
-                    string json = Basic.Net.WEBApiGet("http://10.53.10.153:443/api/test");
+                    string json = Basic.Net.WEBApiGet("http://10.53.10.153:443/api/testout");
                     Console.WriteLine($"{DateTime.Now.ToDateTimeString()}-{json} ok....");
                     System.Threading.Thread.Sleep(5000);
                 }

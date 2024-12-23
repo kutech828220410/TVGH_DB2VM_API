@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------
+20241117-12:11:37 - [UDPDPDSP]cmd.ExecuteReader() , 3.760ms
+20241117-12:11:37 - [UDPDPDSP]get result dictionary , 100.913ms
+20241117-12:11:37 - [UDPDPDSP]get result done , 203.185ms
+20241117-12:11:53 - [UDPDPPF0]cmd.ExecuteReader() , 91.744ms
+20241117-12:11:53 - [UDPDPPF0]get result dictionary , 2.736ms
+20241117-12:11:53 - [UDPDPPF0]get result done , 2.219ms
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+20241117-12:11:54 - [UDPDPDSP]cmd.ExecuteReader() , 0.054ms
+20241117-12:11:54 - [UDPDPDSP]get result dictionary , 18.145ms
+20241117-12:11:54 - [UDPDPDSP]get result done , 10.533ms
+20241117-12:11:54 - [UDPDPPF0]cmd.ExecuteReader() , 73.577ms
+20241117-12:11:54 - [UDPDPPF0]get result dictionary , 10.691ms
+20241117-12:11:54 - [UDPDPPF0]get result done , 0.509ms
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+20241117-12:12:08 - [UDPDPDSP]cmd.ExecuteReader() , 0.035ms
+20241117-12:12:08 - [UDPDPDSP]get result dictionary , 39.799ms
+20241117-12:12:08 - [UDPDPDSP]get result done , 14.216ms
+20241117-12:12:08 - [UDPDPPF0]cmd.ExecuteReader() , 78.066ms
+20241117-12:12:08 - [UDPDPPF0]get result dictionary , 2.534ms
+20241117-12:12:08 - [UDPDPPF0]get result done , 0.452ms
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+20241117-12:12:10 - [UDPDPDSP]cmd.ExecuteReader() , 0.050ms
+20241117-12:12:10 - [UDPDPDSP]get result dictionary , 32.785ms
+20241117-12:12:10 - [UDPDPDSP]get result done , 10.192ms
+20241117-12:12:10 - [UDPDPPF0]cmd.ExecuteReader() , 95.789ms
+20241117-12:12:10 - [UDPDPPF0]get result dictionary , 60.626ms
+20241117-12:12:10 - [UDPDPPF0]get result done , 0.901ms
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+20241117-12:12:31 - [UDPDPDSP]cmd.ExecuteReader() , 0.105ms
+20241117-12:12:31 - [UDPDPDSP]get result dictionary , 22.770ms
+20241117-12:12:32 - [UDPDPDSP]get result done , 23.763ms
+20241117-12:12:32 - [UDPDPPF0]cmd.ExecuteReader() , 74.078ms
+20241117-12:12:32 - [UDPDPPF0]get result dictionary , 18.579ms
+20241117-12:12:32 - [UDPDPPF0]get result done , 0.674ms
+---------------------------------------------------------------------------

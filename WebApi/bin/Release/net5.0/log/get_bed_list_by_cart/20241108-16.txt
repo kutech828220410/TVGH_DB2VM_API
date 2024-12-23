@@ -1,0 +1,8 @@
+20241108-16:38:28 - start to get data at 0.269ms
+20241108-16:38:28 - ExecuteUDPDPPF1 take 108.940ms
+20241108-16:38:30 - ExecuteUDPDPPF0 take 2024.642ms
+20241108-16:38:32 - update_med_carinfo take 1680.816ms
+20241108-16:39:51 - start to get data at 0.001ms
+20241108-16:39:51 - ExecuteUDPDPPF1 take 9.965ms
+20241108-16:39:53 - ExecuteUDPDPPF0 take 1681.030ms
+20241108-16:39:55 - update_med_carinfo take 1591.295ms
