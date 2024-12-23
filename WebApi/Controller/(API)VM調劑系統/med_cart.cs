@@ -42,161 +42,186 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         [HttpPost("get_bed_list_by_cart")]
         public string get_bed_list_by_cart([FromBody] returnData returnData)
         {
-            returnData.Method = "med_cart/get_bed_list_by_cart";
-            MyTimerBasic myTimerBasic = new MyTimerBasic();
-            //try
-            //{
-                if (returnData.ValueAry == null)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 無傳入資料";
-                    return returnData.JsonSerializationt(true);
-                }
-                if (returnData.ValueAry.Count != 2)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 內容應為[藥局, 護理站]";
-                    return returnData.JsonSerializationt(true);
-                }
-
-               
+            try
+            {
+                returnData.Method = "med_cart/get_bed_list_by_cart";
+                MyTimerBasic myTimerBasic = new MyTimerBasic();
+                List<medCarInfoClass> medCarInfoClasses = new List<medCarInfoClass>();
+                List<medCarInfoClass> bedList = new List<medCarInfoClass>();
                 string 藥局 = returnData.ValueAry[0];
                 string 護理站 = returnData.ValueAry[1];
-                List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
-                //List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
-                //List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedList);
-                //string url = $"{API01}/api/med_cart/update_med_carinfo";
-                //returnData rreturnData = new returnData();
-                //returnData.Data = bedList;
-                //string json_in = returnData.JsonSerializationt();
-                //string json_out = Net.WEBApiPostJson(url, json_in);
-                //returnData = json_out.JsonDeserializet<returnData>();
-                //if (returnData == null) return null;
-                //if (returnData.Code != 200) return returnData.JsonSerializationt(true);
-                //List<medCarInfoClass> out_medCarInfoClass = returnData.Data.ObjToClass<List<medCarInfoClass>>();
-
-
-
-                //(string Server, string DB, string UserName, string Password, uint Port) = GetServerInfo("Main", "網頁", "藥檔資料");
-                //string API = GetServerAPI("Main", "網頁", "API01");
-
-                List<medCarInfoClass> medCart_sql_add = new List<medCarInfoClass>();
-                List<medCarInfoClass> medCart_sql_replace = new List<medCarInfoClass>();
-                List<medCarInfoClass> medCart_sql_delete = new List<medCarInfoClass>();
-
-
-                SQLControl sQLControl_med_carInfo = new SQLControl("10.107.3.147", "dbvm", "med_carInfo", "user", "66437068", 3309, SSLMode);
-                SQLControl sQLControl_med_cpoe = new SQLControl("10.107.3.147", "dbvm", "med_cpoe", "user", "66437068", 3309, SSLMode);
-
-                DateTime lestweek = DateTime.Now.AddDays(-30);
-                DateTime yesterday = DateTime.Now.AddDays(-0);
-                string starttime = lestweek.GetStartDate().ToDateString();
-                string endtime = yesterday.GetEndDate().ToDateString();
-                sQLControl_med_carInfo.DeleteByBetween(null, (int)enum_med_carInfo.更新時間, starttime, endtime);
-
-                List<medCarInfoClass> input_medCarInfo = bedList;
-
-                if (input_medCarInfo == null)
+                DateTime now = DateTime.Now;
+                if (now.TimeOfDay < new TimeSpan(15, 0, 0)) 
                 {
-                    returnData.Code = -200;
-                    returnData.Result = $"傳入Data資料異常";
-                    return returnData.JsonSerializationt();
-                }
-
-                List<object[]> list_med_carInfo = sQLControl_med_carInfo.GetRowsByDefult(null, (int)enum_med_carInfo.藥局, 藥局);
-                List<medCarInfoClass> sql_medCar = list_med_carInfo.SQLToClass<medCarInfoClass, enum_med_carInfo>();
-                List<medCarInfoClass> medCarInfo = sql_medCar.Where(temp => temp.護理站 == 護理站).ToList();
-                Dictionary<string, List<medCarInfoClass>> medCarInfoDictBedNum = medCarInfoClass.CoverToDictByBedNum(medCarInfo);
-
-                ConcurrentBag<medCarInfoClass> localList_add = new ConcurrentBag<medCarInfoClass>();
-                ConcurrentBag<medCarInfoClass> localList_delete = new ConcurrentBag<medCarInfoClass>();
-                ConcurrentBag<medCarInfoClass> localList_replace = new ConcurrentBag<medCarInfoClass>();
-                Parallel.ForEach(input_medCarInfo, new ParallelOptions { MaxDegreeOfParallelism = 10 }, medCarInfoClass =>
-                {
-                    medCarInfoClass targetPatient = new medCarInfoClass();
-
-                    string 床號 = medCarInfoClass.床號;
-                    if (medCarInfoClass.SortDictByBedNum(medCarInfoDictBedNum, 床號).Count != 0)
+                    if (returnData.ValueAry == null)
                     {
-                        targetPatient = medCarInfoClass.SortDictByBedNum(medCarInfoDictBedNum, 床號)[0];
+                        returnData.Code = -200;
+                        returnData.Result = $"returnData.ValueAry 無傳入資料";
+                        return returnData.JsonSerializationt(true);
+                    }
+                    if (returnData.ValueAry.Count != 2)
+                    {
+                        returnData.Code = -200;
+                        returnData.Result = $"returnData.ValueAry 內容應為[藥局, 護理站]";
+                        return returnData.JsonSerializationt(true);
                     }
 
-                    if (targetPatient.GUID.StringIsEmpty() == true)
+
+                    
+                    bedList = ExecuteUDPDPPF1(藥局, 護理站);
+                    //List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
+                    //List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedList);
+                    //string url = $"{API01}/api/med_cart/update_med_carinfo";
+                    //returnData rreturnData = new returnData();
+                    //returnData.Data = bedList;
+                    //string json_in = returnData.JsonSerializationt();
+                    //string json_out = Net.WEBApiPostJson(url, json_in);
+                    //returnData = json_out.JsonDeserializet<returnData>();
+                    //if (returnData == null) return null;
+                    //if (returnData.Code != 200) return returnData.JsonSerializationt(true);
+                    //List<medCarInfoClass> out_medCarInfoClass = returnData.Data.ObjToClass<List<medCarInfoClass>>();
+
+
+
+                    //(string Server, string DB, string UserName, string Password, uint Port) = GetServerInfo("Main", "網頁", "藥檔資料");
+                    //string API = GetServerAPI("Main", "網頁", "API01");
+
+                    List<medCarInfoClass> medCart_sql_add = new List<medCarInfoClass>();
+                    List<medCarInfoClass> medCart_sql_replace = new List<medCarInfoClass>();
+                    List<medCarInfoClass> medCart_sql_delete = new List<medCarInfoClass>();
+
+
+                    SQLControl sQLControl_med_carInfo = new SQLControl("10.107.3.147", "dbvm", "med_carInfo", "user", "66437068", 3309, SSLMode);
+                    SQLControl sQLControl_med_cpoe = new SQLControl("10.107.3.147", "dbvm", "med_cpoe", "user", "66437068", 3309, SSLMode);
+
+                    DateTime lestweek = DateTime.Now.AddDays(-30);
+                    DateTime yesterday = DateTime.Now.AddDays(-0);
+                    string starttime = lestweek.GetStartDate().ToDateString();
+                    string endtime = yesterday.GetEndDate().ToDateString();
+                    sQLControl_med_carInfo.DeleteByBetween(null, (int)enum_med_carInfo.更新時間, starttime, endtime);
+
+                    List<medCarInfoClass> input_medCarInfo = bedList;
+
+                    if (input_medCarInfo == null)
                     {
-                        medCarInfoClass.GUID = Guid.NewGuid().ToString();
-                        localList_add.Add(medCarInfoClass);
+                        returnData.Code = -200;
+                        returnData.Result = $"傳入Data資料異常";
+                        return returnData.JsonSerializationt();
                     }
-                    else
+
+                    List<object[]> list_med_carInfo = sQLControl_med_carInfo.GetRowsByDefult(null, (int)enum_med_carInfo.藥局, 藥局);
+                    List<medCarInfoClass> sql_medCar = list_med_carInfo.SQLToClass<medCarInfoClass, enum_med_carInfo>();
+                    List<medCarInfoClass> medCarInfo = sql_medCar.Where(temp => temp.護理站 == 護理站).ToList();
+                    Dictionary<string, List<medCarInfoClass>> medCarInfoDictBedNum = medCarInfoClass.CoverToDictByBedNum(medCarInfo);
+
+                    ConcurrentBag<medCarInfoClass> localList_add = new ConcurrentBag<medCarInfoClass>();
+                    ConcurrentBag<medCarInfoClass> localList_delete = new ConcurrentBag<medCarInfoClass>();
+                    ConcurrentBag<medCarInfoClass> localList_replace = new ConcurrentBag<medCarInfoClass>();
+                    Parallel.ForEach(input_medCarInfo, new ParallelOptions { MaxDegreeOfParallelism = 10 }, medCarInfoClass =>
                     {
-                        if (medCarInfoClass.病歷號 != targetPatient.病歷號)
+                        medCarInfoClass targetPatient = new medCarInfoClass();
+
+                        string 床號 = medCarInfoClass.床號;
+                        if (medCarInfoClass.SortDictByBedNum(medCarInfoDictBedNum, 床號).Count != 0)
+                        {
+                            targetPatient = medCarInfoClass.SortDictByBedNum(medCarInfoDictBedNum, 床號)[0];
+                        }
+
+                        if (targetPatient.GUID.StringIsEmpty() == true)
                         {
                             medCarInfoClass.GUID = Guid.NewGuid().ToString();
-                            medCarInfoClass.異動 = "Y";
                             localList_add.Add(medCarInfoClass);
-                            localList_delete.Add(targetPatient);
                         }
                         else
                         {
-                            medCarInfoClass.GUID = targetPatient.GUID;
-                            medCarInfoClass.調劑狀態 = targetPatient.調劑狀態;
-                            localList_replace.Add(medCarInfoClass);
+                            if (medCarInfoClass.病歷號 != targetPatient.病歷號)
+                            {
+                                medCarInfoClass.GUID = Guid.NewGuid().ToString();
+                                medCarInfoClass.異動 = "Y";
+                                localList_add.Add(medCarInfoClass);
+                                localList_delete.Add(targetPatient);
+                            }
+                            else
+                            {
+                                medCarInfoClass.GUID = targetPatient.GUID;
+                                medCarInfoClass.調劑狀態 = targetPatient.調劑狀態;
+                                localList_replace.Add(medCarInfoClass);
+                            }
                         }
+                    });
+                    lock (medCart_sql_add) medCart_sql_add.AddRange(localList_add);
+                    lock (medCart_sql_replace) medCart_sql_replace.AddRange(localList_replace);
+                    lock (medCart_sql_delete) medCart_sql_delete.AddRange(localList_delete);
+
+                    List<object[]> list_medCart_add = new List<object[]>();
+                    List<object[]> list_medCart_replace = new List<object[]>();
+                    List<object[]> list_medCart_delete = new List<object[]>();
+                    list_medCart_add = medCart_sql_add.ClassToSQL<medCarInfoClass, enum_med_carInfo>();
+                    list_medCart_replace = medCart_sql_replace.ClassToSQL<medCarInfoClass, enum_med_carInfo>();
+                    list_medCart_delete = medCart_sql_delete.ClassToSQL<medCarInfoClass, enum_med_carInfo>();
+
+                    if (list_medCart_add.Count > 0) sQLControl_med_carInfo.AddRows(null, list_medCart_add);
+                    if (list_medCart_replace.Count > 0) sQLControl_med_carInfo.UpdateByDefulteExtra(null, list_medCart_replace);
+                    if (list_medCart_delete.Count > 0)
+                    {
+                        sQLControl_med_carInfo.DeleteExtra(null, list_medCart_delete);
+                        List<object[]> list_med_cpoe = sQLControl_med_cpoe.GetRowsByDefult(null, (int)enum_med_cpoe.藥局, 藥局);
+                        List<medCpoeClass> sql_medCpoe = list_med_cpoe.SQLToClass<medCpoeClass, enum_med_cpoe>();
+                        Dictionary<string, List<medCpoeClass>> medCpoeDict = medCpoeClass.CoverToDictByMasterGUID(sql_medCpoe);
+                        //List<medCpoeClass> filterCpoe = new List<medCpoeClass>();
+                        //for (int i = 0; medCart_sql_delete.Count > 0; i++)
+                        //{
+                        //    List<medCpoeClass> result = medCpoeClass.SortDictByMasterGUID(medCpoeDict, medCart_sql_delete[i].GUID);
+                        //    filterCpoe.AddRange(result);
+                        //}
+                        List<medCpoeClass> filterCpoe = sql_medCpoe
+                            .Where(cpoe => medCart_sql_delete.Any(medCart => medCart.GUID == cpoe.Master_GUID)).ToList();
+                        List<object[]> list_medCpoe_delete = filterCpoe.ClassToSQL<medCpoeClass, enum_med_cpoe>();
+                        if (list_medCpoe_delete.Count > 0) sQLControl_med_cpoe.DeleteExtra(null, list_medCpoe_delete);
                     }
-                });
-                lock (medCart_sql_add) medCart_sql_add.AddRange(localList_add);
-                lock (medCart_sql_replace) medCart_sql_replace.AddRange(localList_replace);
-                lock (medCart_sql_delete) medCart_sql_delete.AddRange(localList_delete);
 
-                List<object[]> list_medCart_add = new List<object[]>();
-                List<object[]> list_medCart_replace = new List<object[]>();
-                List<object[]> list_medCart_delete = new List<object[]>();
-                list_medCart_add = medCart_sql_add.ClassToSQL<medCarInfoClass, enum_med_carInfo>();
-                list_medCart_replace = medCart_sql_replace.ClassToSQL<medCarInfoClass, enum_med_carInfo>();
-                list_medCart_delete = medCart_sql_delete.ClassToSQL<medCarInfoClass, enum_med_carInfo>();
+                    List<object[]> list_bedList = sQLControl_med_carInfo.GetRowsByDefult(null, (int)enum_med_carInfo.藥局, 藥局);
+                    List<medCarInfoClass> bedListt = list_bedList.SQLToClass<medCarInfoClass, enum_med_carInfo>();
+                    medCarInfoClasses = bedListt.Where(temp => temp.護理站 == 護理站).ToList();
+                    medCarInfoClasses.Sort(new medCarInfoClass.ICP_By_bedNum());
 
-                if (list_medCart_add.Count > 0) sQLControl_med_carInfo.AddRows(null, list_medCart_add);
-                if (list_medCart_replace.Count > 0) sQLControl_med_carInfo.UpdateByDefulteExtra(null, list_medCart_replace);
-                if (list_medCart_delete.Count > 0)
+                    if (medCarInfoClasses == null)
+                    {
+                        returnData.Code = -200;
+                        returnData.Result = $"out_medCarInfoClass 無資料";
+                        return returnData.JsonSerializationt(true);
+                    }
+                }
+                else
                 {
-                    sQLControl_med_carInfo.DeleteExtra(null, list_medCart_delete);
-                    List<object[]> list_med_cpoe = sQLControl_med_cpoe.GetRowsByDefult(null, (int)enum_med_cpoe.藥局, 藥局);
-                    List<medCpoeClass> sql_medCpoe = list_med_cpoe.SQLToClass<medCpoeClass, enum_med_cpoe>();
-                    Dictionary<string, List<medCpoeClass>> medCpoeDict = medCpoeClass.CoverToDictByMasterGUID(sql_medCpoe);
-                    //List<medCpoeClass> filterCpoe = new List<medCpoeClass>();
-                    //for (int i = 0; medCart_sql_delete.Count > 0; i++)
-                    //{
-                    //    List<medCpoeClass> result = medCpoeClass.SortDictByMasterGUID(medCpoeDict, medCart_sql_delete[i].GUID);
-                    //    filterCpoe.AddRange(result);
-                    //}
-                    List<medCpoeClass> filterCpoe = sql_medCpoe
-                        .Where(cpoe => medCart_sql_delete.Any(medCart => medCart.GUID == cpoe.Master_GUID)).ToList();
-                    List<object[]> list_medCpoe_delete = filterCpoe.ClassToSQL<medCpoeClass, enum_med_cpoe>();
-                    if (list_medCpoe_delete.Count > 0) sQLControl_med_cpoe.DeleteExtra(null, list_medCpoe_delete);
+                    SQLControl sQLControl_med_carInfo = new SQLControl("10.107.3.147", "dbvm", "med_carInfo", "user", "66437068", 3309, SSLMode);
+                    List<object[]> list_bedList = sQLControl_med_carInfo.GetRowsByDefult(null, (int)enum_med_carInfo.藥局, 藥局);
+                    List<medCarInfoClass> bedListt = list_bedList.SQLToClass<medCarInfoClass, enum_med_carInfo>();
+                    medCarInfoClasses = bedListt.Where(temp => temp.護理站 == 護理站).ToList();
+                    medCarInfoClasses.Sort(new medCarInfoClass.ICP_By_bedNum());
+
+                    if (medCarInfoClasses == null)
+                    {
+                        returnData.Code = -200;
+                        returnData.Result = $"out_medCarInfoClass 無資料";
+                        return returnData.JsonSerializationt(true);
+                    }
                 }
 
-                List<object[]> list_bedList = sQLControl_med_carInfo.GetRowsByDefult(null, (int)enum_med_carInfo.藥局, 藥局);
-                List<medCarInfoClass> bedListt = list_bedList.SQLToClass<medCarInfoClass, enum_med_carInfo>();
-                List<medCarInfoClass> medCarInfoClasses = bedListt.Where(temp => temp.護理站 == 護理站).ToList();
-                medCarInfoClasses.Sort(new medCarInfoClass.ICP_By_bedNum());
 
-                if (medCarInfoClasses == null)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = $"out_medCarInfoClass 無資料";
-                    return returnData.JsonSerializationt(true);
-                }
+                
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
                 returnData.Data = medCarInfoClasses;
                 returnData.Result = $"取得住院{藥局} {護理站} 病床資訊共{bedList.Count}筆";
                 return returnData.JsonSerializationt(true);
-            //}
-            //catch (Exception ex)
-            //{
-            //    returnData.Code = -200;
-            //    returnData.Result = $"Exception:{ex.Message}";
-            //    return returnData.JsonSerializationt(true);
-            //}
+            }
+            catch (Exception ex)
+            {
+                returnData.Code = -200;
+                returnData.Result = $"Exception:{ex.Message}";
+                return returnData.JsonSerializationt(true);
+            }
         }
         /// <summary>
         ///以GUID取得病人詳細資料
@@ -217,66 +242,79 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
             {
+                medCarInfoClass out_medCarInfoClass = new medCarInfoClass();
+                string 藥局 = "";
+                string 護理站 = "";
+                string 床號 = "";
                 string str_result_temp = "";
-                List<Task> tasks = new List<Task>();
-                if (returnData.ValueAry == null || returnData.ValueAry.Count != 1)
+                DateTime now = DateTime.Now;
+                if (now.TimeOfDay < new TimeSpan(15, 0, 0))
                 {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 內容應為[\"GUID\"]";
-                    return returnData.JsonSerializationt(true);
-                }              
-                medCarInfoClass targetPatient = medCarInfoClass.get_patient_by_GUID_brief(API01, returnData.ValueAry);
-                str_result_temp += $"取得病人住院號, {myTimerBasic}ms \n"; 
-                if (targetPatient == null)
-                {
-                    returnData.Code = -200;
-                    returnData.Result = "無對應的病人資料";
-                    return returnData.JsonSerializationt(true);
+                    List<Task> tasks = new List<Task>();
+                    if (returnData.ValueAry == null || returnData.ValueAry.Count != 1)
+                    {
+                        returnData.Code = -200;
+                        returnData.Result = $"returnData.ValueAry 內容應為[\"GUID\"]";
+                        return returnData.JsonSerializationt(true);
+                    }
+                    medCarInfoClass targetPatient = medCarInfoClass.get_patient_by_GUID_brief(API01, returnData.ValueAry);
+                    str_result_temp += $"取得病人住院號, {myTimerBasic}ms \n";
+                    if (targetPatient == null)
+                    {
+                        returnData.Code = -200;
+                        returnData.Result = "無對應的病人資料";
+                        return returnData.JsonSerializationt(true);
+                    }
+                    藥局 = targetPatient.藥局;
+                    護理站 = targetPatient.護理站;
+                    床號 = targetPatient.床號;
+                    List<medCarInfoClass> medCarInfoClasses = new List<medCarInfoClass> { targetPatient };
+                    List<medCarInfoClass> bedListInfo = new List<medCarInfoClass>();
+                    List<medCpoeClass> bedListCpoe = new List<medCpoeClass>();
+                    tasks.Add(Task.Run(new Action(delegate
+                    {
+                        bedListInfo = ExecuteUDPDPPF0(medCarInfoClasses);
+                        str_result_temp += $"取得病人個人資料, {myTimerBasic}ms \n";
+
+                    })));
+                    tasks.Add(Task.Run(new Action(delegate
+                    {
+                        bedListCpoe = ExecuteUDPDPDSP(medCarInfoClasses);
+                        str_result_temp += $"取得病人處方, {myTimerBasic}ms \n";
+
+                    })));
+
+
+                    //tasks.Clear();
+                    if (bedListCpoe.Count == 0) medCarInfoClasses[0].調劑狀態 = "Y";
+                    //tasks.Add(Task.Run(new Action(delegate
+                    //{
+                    //    medCarInfoClass.update_med_carinfo(API01, medCarInfoClasses);
+                    //    str_result_temp += $"更新med_carinfo, {myTimerBasic}ms \n";
+
+                    //})));
+                    //tasks.Add(Task.Run(new Action(delegate
+                    //{
+                    //    medCpoeClass.update_med_cpoe(API01, bedListCpoe);
+                    //    str_result_temp += $"更新med_cpoe, {myTimerBasic}ms \n";
+
+                    //})));
+                    Task.WhenAll(tasks).Wait();
+
+                    medCarInfoClass.update_med_carinfo(API01, bedListInfo);
+                    str_result_temp += $"更新med_carinfo, {myTimerBasic}ms \n";
+
+                    medCpoeClass.update_med_cpoe(API01, bedListCpoe);
+                    str_result_temp += $"更新med_cpoe, {myTimerBasic}ms \n";
+
+                    out_medCarInfoClass = medCarInfoClass.get_patient_by_GUID(API01, returnData.Value, returnData.ValueAry);
+                    str_result_temp += $"取得病人所有資訊, {myTimerBasic}ms \n";
                 }
-                string 藥局 = targetPatient.藥局;
-                string 護理站 = targetPatient.護理站;
-                string 床號 = targetPatient.床號;
-                List<medCarInfoClass> medCarInfoClasses = new List<medCarInfoClass> { targetPatient };
-                List<medCarInfoClass> bedListInfo = new List<medCarInfoClass>();
-                List<medCpoeClass> bedListCpoe = new List<medCpoeClass>();
-                tasks.Add(Task.Run(new Action(delegate
+                else
                 {
-                    bedListInfo = ExecuteUDPDPPF0(medCarInfoClasses);
-                    str_result_temp += $"取得病人個人資料, {myTimerBasic}ms \n";
+                    out_medCarInfoClass = medCarInfoClass.get_patient_by_GUID(API01, returnData.Value, returnData.ValueAry);
+                }
 
-                })));
-                tasks.Add(Task.Run(new Action(delegate
-                {
-                    bedListCpoe = ExecuteUDPDPDSP(medCarInfoClasses);
-                    str_result_temp += $"取得病人處方, {myTimerBasic}ms \n";
-
-                })));
-
-
-                //tasks.Clear();
-                if (bedListCpoe.Count == 0) medCarInfoClasses[0].調劑狀態 = "Y";
-                //tasks.Add(Task.Run(new Action(delegate
-                //{
-                //    medCarInfoClass.update_med_carinfo(API01, medCarInfoClasses);
-                //    str_result_temp += $"更新med_carinfo, {myTimerBasic}ms \n";
-
-                //})));
-                //tasks.Add(Task.Run(new Action(delegate
-                //{
-                //    medCpoeClass.update_med_cpoe(API01, bedListCpoe);
-                //    str_result_temp += $"更新med_cpoe, {myTimerBasic}ms \n";
-
-                //})));
-                Task.WhenAll(tasks).Wait();
-
-                medCarInfoClass.update_med_carinfo(API01, bedListInfo);
-                str_result_temp += $"更新med_carinfo, {myTimerBasic}ms \n";
-
-                medCpoeClass.update_med_cpoe(API01, bedListCpoe);
-                str_result_temp += $"更新med_cpoe, {myTimerBasic}ms \n";
-
-                medCarInfoClass out_medCarInfoClass = medCarInfoClass.get_patient_by_GUID(API01,returnData.Value, returnData.ValueAry);
-                str_result_temp += $"取得病人所有資訊, {myTimerBasic}ms \n";
 
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
@@ -311,50 +349,63 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
             {
-                if (returnData.ValueAry == null || returnData.ValueAry.Count != 2)
+                List<medQtyClass> get_med_qty = new List<medQtyClass>();
+                DateTime now = DateTime.Now;
+                string 藥局 = "";
+                string 護理站 = "";
+                if (now.TimeOfDay < new TimeSpan(15, 0, 0))
                 {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 內容應為[藥局, 護理站]";
-                    return returnData.JsonSerializationt(true);
+                    if (returnData.ValueAry == null || returnData.ValueAry.Count != 2)
+                    {
+                        returnData.Code = -200;
+                        returnData.Result = $"returnData.ValueAry 內容應為[藥局, 護理站]";
+                        return returnData.JsonSerializationt(true);
+                    }
+                    if (returnData.Value == null)
+                    {
+                        returnData.Code = -200;
+                        returnData.Result = $"returnData.Value 無傳入資料";
+                        return returnData.JsonSerializationt(true);
+                    }
+
+                    藥局 = returnData.ValueAry[0];
+                    護理站 = returnData.ValueAry[1];
+
+                    List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
+                    List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
+                    medCarInfoClass.update_med_carinfo(API01, bedListInfo);
+                    List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.get_bed_list_by_cart(API01, returnData.ValueAry);
+                    List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(out_medCarInfoClass);
+                    medCpoeClass.update_med_cpoe(API01, bedListCpoe);
+
+                    //List<medCarInfoClass> update = new List<medCarInfoClass>();
+                    //foreach (var medCarInfoClass in out_medCarInfoClass)
+                    //{
+                    //    List<medCpoeClass> medCpoeClasses = bedListCpoe
+                    //        .Where(temp => temp.Master_GUID == medCarInfoClass.GUID)
+                    //        .ToList();
+                    //    if (medCpoeClasses.Count == 0 && medCarInfoClass.占床狀態 == "已佔床")
+                    //    {
+                    //        medCarInfoClass.調劑狀態 = "Y";
+                    //        update.Add(medCarInfoClass);
+                    //    }
+                    //}
+                    //if (update.Count != 0) medCarInfoClass.update_med_carinfo(API01, update);
+
+                    get_med_qty = medCpoeClass.get_med_qty(API01, returnData.Value, returnData.ValueAry);
+                    if (get_med_qty == null)
+                    {
+                        returnData.Code = 200;
+                        returnData.Result = $"無藥品處方資料";
+                        return returnData.JsonSerializationt(true);
+                    }
                 }
-                if (returnData.Value == null)
+                else
                 {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.Value 無傳入資料";
-                    return returnData.JsonSerializationt(true);
+                    get_med_qty = medCpoeClass.get_med_qty(API01, returnData.Value, returnData.ValueAry);
                 }
 
-                string 藥局 = returnData.ValueAry[0];
-                string 護理站 = returnData.ValueAry[1];
 
-                List<medCarInfoClass> bedList = ExecuteUDPDPPF1(藥局, 護理站);
-                List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
-                medCarInfoClass.update_med_carinfo(API01, bedListInfo);
-                List<medCarInfoClass> out_medCarInfoClass = medCarInfoClass.get_bed_list_by_cart(API01, returnData.ValueAry);
-                List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(out_medCarInfoClass);
-                medCpoeClass.update_med_cpoe(API01, bedListCpoe);
-
-                //List<medCarInfoClass> update = new List<medCarInfoClass>();
-                //foreach (var medCarInfoClass in out_medCarInfoClass)
-                //{
-                //    List<medCpoeClass> medCpoeClasses = bedListCpoe
-                //        .Where(temp => temp.Master_GUID == medCarInfoClass.GUID)
-                //        .ToList();
-                //    if (medCpoeClasses.Count == 0 && medCarInfoClass.占床狀態 == "已佔床")
-                //    {
-                //        medCarInfoClass.調劑狀態 = "Y";
-                //        update.Add(medCarInfoClass);
-                //    }
-                //}
-                //if (update.Count != 0) medCarInfoClass.update_med_carinfo(API01, update);
-
-                List<medQtyClass> get_med_qty = medCpoeClass.get_med_qty(API01, returnData.Value, returnData.ValueAry);
-                if (get_med_qty == null)
-                {
-                    returnData.Code = 200;
-                    returnData.Result = $"無藥品處方資料";
-                    return returnData.JsonSerializationt(true);
-                }
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
                 returnData.Data = get_med_qty;
@@ -387,22 +438,33 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
             {
-                if (returnData.ValueAry == null || returnData.ValueAry.Count != 1)
+                DateTime now = DateTime.Now;
+                string 藥局 = "";
+                string 護理站 = "";
+                string 床號 = "";
+                List<medCarInfoClass> get_patient = new List<medCarInfoClass>();
+                if (now.TimeOfDay < new TimeSpan(15, 0, 0))
                 {
-                    returnData.Code = -200;
-                    returnData.Result = $"returnData.ValueAry 內容應為[GUID]";
-                    return returnData.JsonSerializationt(true);
+                    if (returnData.ValueAry == null || returnData.ValueAry.Count != 1)
+                    {
+                        returnData.Code = -200;
+                        returnData.Result = $"returnData.ValueAry 內容應為[GUID]";
+                        return returnData.JsonSerializationt(true);
+                    }
+
+                    List<medCarInfoClass> bedList = new List<medCarInfoClass> { medCarInfoClass.get_patient_by_GUID_brief(API01, returnData.ValueAry) };
+                    List<medCpoeRecClass> medCpoe_change = ExecuteUDPDPORD(bedList);
+                    medCpoeRecClass.update_med_CpoeRec(API01, medCpoe_change);
+                    get_patient = medCpoeRecClass.get_medChange_by_GUID(API01, returnData.ValueAry);
+
+                    藥局 = bedList[0].藥局;
+                    護理站 = bedList[0].護理站;
+                    床號 = bedList[0].床號;
                 }
-
-                List<medCarInfoClass> bedList = new List<medCarInfoClass> { medCarInfoClass.get_patient_by_GUID_brief(API01, returnData.ValueAry) };
-                List<medCpoeRecClass> medCpoe_change = ExecuteUDPDPORD(bedList);
-                medCpoeRecClass.update_med_CpoeRec(API01, medCpoe_change);
-                List<medCarInfoClass> get_patient = medCpoeRecClass.get_medChange_by_GUID(API01, returnData.ValueAry);
-
-                string 藥局 = bedList[0].藥局;
-                string 護理站 = bedList[0].護理站;
-                string 床號 = bedList[0].床號;
-
+                else
+                {
+                    get_patient = medCpoeRecClass.get_medChange_by_GUID(API01, returnData.ValueAry);
+                }
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
                 returnData.Data = get_patient;
@@ -615,127 +677,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 return returnData.JsonSerializationt(true);
             }
         }
-        [HttpGet("UDPDPPF1")]
-        public string UDPDPPF1()
-        {
-            MyTimerBasic myTimerBasic = new MyTimerBasic();
-            returnData returnData = new returnData();
-            string 藥局 = "UC02";
-            string 護理站 = "C039";
-            string Server = "";
-            List<medCarInfoClass> medCarInfoClasses = ExecuteUDPDPPF1(藥局, 護理站);
-            //List<medCarInfoClass> output_medCarInfoClass = medCarInfoClass.update_bed_list(Server, medCarInfoClasses);
-            returnData.Code = 200;
-            returnData.TimeTaken = $"{myTimerBasic}";
-            returnData.Data = medCarInfoClasses;
-            returnData.Result = $"取得 {護理站} 的病床資訊共{medCarInfoClasses.Count}筆";
-            return returnData.JsonSerializationt(true);
-        }
-        [HttpGet("UDPDPPF0")]
-        public string UDPDPPF0()
-        {
-            MyTimerBasic myTimerBasic = new MyTimerBasic();
-            returnData returnData = new returnData();
-            List<medCarInfoClass> medCarInfoClassList = new List<medCarInfoClass>();
-            medCarInfoClass v1 = new medCarInfoClass
-            {
-                病歷號 = "9394632",
-                住院號 = "31620090"
-            };
-            medCarInfoClassList.Add(v1);
-            List<medCarInfoClass> medCarInfoClasses = ExecuteUDPDPPF0(medCarInfoClassList);
-
-            returnData.Code = 200;
-            returnData.TimeTaken = $"{myTimerBasic}";
-            returnData.Data = medCarInfoClasses;
-            returnData.Result = $"取得病人資料";
-            return returnData.JsonSerializationt(true);
-        }
-        [HttpGet("UDPDPDSP")]
-        public string UDPDPDSP()
-        {
-            MyTimerBasic myTimerBasic = new MyTimerBasic();
-            returnData returnData = new returnData();
-            List<medCarInfoClass> medCarInfoClassList = new List<medCarInfoClass>();
-            medCarInfoClass v1 = new medCarInfoClass
-            {
-                藥局 = "UC02",
-                護理站 = "C079",
-                住院號 = "31695645"
-            };
-            medCarInfoClassList.Add(v1);
-            List<medCpoeClass> medCarInfoClasses = ExecuteUDPDPDSP(medCarInfoClassList);
-
-            returnData.Code = 200;
-            returnData.TimeTaken = $"{myTimerBasic}";
-            returnData.Data = medCarInfoClasses;
-            returnData.Result = $"取得病床處方共{medCarInfoClasses.Count}筆";
-            return returnData.JsonSerializationt(true);
-        }
-        [HttpGet("UDPDPORD")]
-        public string UDPDPORD()
-        {
-            MyTimerBasic myTimerBasic = new MyTimerBasic();
-            returnData returnData = new returnData();
-            List<medCarInfoClass> medCarInfoClassList = new List<medCarInfoClass>();
-            medCarInfoClass v1 = new medCarInfoClass
-            {
-                藥局 = "UC02",
-                護理站 = "C079",
-                住院號 = "31641549"
-            };
-            medCarInfoClassList.Add(v1);
-            List<medCpoeRecClass> medCarInfoClasses = ExecuteUDPDPORD(medCarInfoClassList);
-            returnData.Code = 200;
-            returnData.TimeTaken = $"{myTimerBasic}";
-            returnData.Data = medCarInfoClasses;
-            returnData.Result = $"取得病床處方共{medCarInfoClasses.Count}筆";
-            return returnData.JsonSerializationt(true);
-        }
-        [HttpPost("UDPDPORD")]
-        public string Post_UDPDPORD([FromBody] returnData returnData)
-        {
-            MyTimerBasic myTimerBasic = new MyTimerBasic();
-            List<medCarInfoClass> medCarInfoClassList = returnData.Data.ObjToClass<List<medCarInfoClass>>();
-            List<medCpoeRecClass> medCarInfoClasses = ExecuteUDPDPORD(medCarInfoClassList);
-            returnData.Code = 200;
-            returnData.TimeTaken = $"{myTimerBasic}";
-            returnData.Data = medCarInfoClasses;
-            returnData.Result = $"取得病床處方共{medCarInfoClasses.Count}筆";
-            return returnData.JsonSerializationt(true);
-        }
-        [HttpGet("UDPDPHLP")]
-        public string UDPDPHLP()
-        {
-            MyTimerBasic myTimerBasic = new MyTimerBasic();
-            string code = "04514";
-            List<string> codes = new List<string>() { code };
-            List<medInfoClass> result = ExecuteUDPDPHLP(codes);
-            returnData returnData = new returnData();
-            returnData.Code = 200;
-            returnData.TimeTaken = $"{myTimerBasic}";
-            returnData.Data = result;
-            //returnData.Result = $"取得病床處方共{medCarInfoClasses.Count}筆";
-            return returnData.JsonSerializationt(true);
-        }
-        [HttpGet("UDPDPDRG")]
-        public string UDPDPDRG()
-        {
-            MyTimerBasic myTimerBasic = new MyTimerBasic();
-            List<medInfoClass> medInfoClasses = new List<medInfoClass>();
-            medInfoClass medInfoClass = new medInfoClass
-            {
-                藥碼 = "04514"
-            };
-            medInfoClasses.Add(medInfoClass);
-            List<medInfoClass> result = ExecuteUDPDPDRG(medInfoClasses);
-            returnData returnData = new returnData();
-            returnData.Code = 200;
-            returnData.TimeTaken = $"{myTimerBasic}";
-            returnData.Data = result;
-            //returnData.Result = $"取得病床處方共{medCarInfoClasses.Count}筆";
-            return returnData.JsonSerializationt(true);
-        }
+      
         private DB2Connection GetDB2Connection()
         {
             string DB2_server = $"10.30.253.249:{ConfigurationManager.AppSettings["DB2_port"]}";
