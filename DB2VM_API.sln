@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp_img_test", "Cons
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp_connect_testIn", "ConsoleApp_connect_testIn\ConsoleApp_connect_testIn.csproj", "{7920F5FA-9497-46EF-B2E1-0AE18BD1513C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_medInfo", "ConsoleApp_medInfo\ConsoleApp_medInfo.csproj", "{38DA7EBA-6B2D-47C4-AB80-617C57683CBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp_medCartData", "ConsoleApp_medInfo\ConsoleApp_medCartData.csproj", "{38DA7EBA-6B2D-47C4-AB80-617C57683CBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -72,7 +72,16 @@ namespace DB2VM
                 medClass.藥品名稱 = reader["UDARNAME"].ToString().Trim();
                 medClass.料號 = reader["UDSTOKNO"].ToString().Trim();
                 //medClass.圖片網址 = $"https://www7.vghtpe.gov.tw/api/find-zero-image-by-udCode?udCode={medClass.藥品碼}";
-                medClass.圖片網址 = $"https://www7.vghtpe.gov.tw/api/find-image-by-udCode-page?udCode={medClass.藥品碼}&page=1";
+                //if(medClass.藥品名稱.Contains(" cap "))
+                string 藥品名稱 = medClass.藥品名稱;
+                if(藥品名稱.ToLower().Contains(" cap ") || 藥品名稱.ToLower().Contains(" tab "))
+                {
+                    medClass.圖片網址 = $"https://www7.vghtpe.gov.tw/api/find-image-by-udCode-page?udCode={medClass.藥品碼}&page=2";
+                }
+                else
+                {
+                    medClass.圖片網址 = $"https://www7.vghtpe.gov.tw/api/find-image-by-udCode-page?udCode={medClass.藥品碼}&page=1";
+                }
 
                 藥品條碼1 = reader["UDBARCD1"].ToString().Trim();
                 藥品條碼2 = reader["UDBARCD2"].ToString().Trim();

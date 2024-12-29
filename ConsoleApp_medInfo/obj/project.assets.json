@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_medInfo\\ConsoleApp_medInfo.csproj",
-      "projectName": "ConsoleApp_medInfo",
-      "projectPath": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_medInfo\\ConsoleApp_medInfo.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_medInfo\\ConsoleApp_medCartData.csproj",
+      "projectName": "ConsoleApp_medCartData",
+      "projectPath": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_medInfo\\ConsoleApp_medCartData.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Administrator\\source\\repos\\TVGH_DB2VM_API\\ConsoleApp_medInfo\\obj\\",
       "projectStyle": "PackageReference",
