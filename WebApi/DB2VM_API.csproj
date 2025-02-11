@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="5.0.3" />
     <PackageReference Include="IBM.Data.DB2.Core" Version="3.1.0.600" />
     <PackageReference Include="MySql.Data" Version="8.0.29" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
@@ -37,6 +38,9 @@
     </Reference>
     <Reference Include="HIS_DB_Lib">
       <HintPath>..\0.DLL\HIS_DB_Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="MyOffice">
+      <HintPath>..\0.DLL\MyOffice.dll</HintPath>
     </Reference>
     <Reference Include="SQLUI">
       <HintPath>..\0.DLL\SQLUI.dll</HintPath>

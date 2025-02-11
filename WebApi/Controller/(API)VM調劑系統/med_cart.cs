@@ -12,6 +12,12 @@ using System.Data;
 using System.Text;
 using System.Collections.Concurrent;
 using MySql.Data.MySqlClient;
+using System.IO;
+using OfficeOpenXml;
+using MyOffice;
+
+
+
 
 
 
@@ -170,7 +176,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                         sQLControl_med_carInfo.DeleteExtra(null, list_medCart_delete);
                         List<object[]> list_med_cpoe = sQLControl_med_cpoe.GetRowsByDefult(null, (int)enum_med_cpoe.藥局, 藥局);
                         List<medCpoeClass> sql_medCpoe = list_med_cpoe.SQLToClass<medCpoeClass, enum_med_cpoe>();
-                        Dictionary<string, List<medCpoeClass>> medCpoeDict = medCpoeClass.CoverToDictByMasterGUID(sql_medCpoe);
+                        Dictionary<string, List<medCpoeClass>> medCpoeDict = medCpoeClass.ToDictByMasterGUID(sql_medCpoe);
                         //List<medCpoeClass> filterCpoe = new List<medCpoeClass>();
                         //for (int i = 0; medCart_sql_delete.Count > 0; i++)
                         //{
@@ -541,6 +547,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             returnData returnData = new returnData();
             string 藥局 = "UC02";
             string[] list = { "C039", "C049", "C059", "C069", "C079", "C089", "C099", "C109", "C119", "C129", "BMT" };
+
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
             {
@@ -554,8 +561,35 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     bedList = ExecuteUDPDPPF1(藥局, 護理站);
                     List<medCarInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList);
                     List<medCarInfoClass> update_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedListInfo);
+
+                    ///開始
+
+                    ///結束
                     List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(update_medCarInfoClass);
                     update_medCpoeClass = medCpoeClass.update_med_cpoe(API01, bedListCpoe);
+                    //SQLControl sQLControl_med_cpoe = new SQLControl("127.0.0.1", "dbvm", "med_cpoe", "user", "66437068", 3306, SSLMode);
+
+
+
+                    //List<medCpoeClass> input_medCpoe = bedListCpoe;
+                    //if (input_medCpoe == null)
+                    //{
+                    //    returnData.Code = -200;
+                    //    returnData.Result = $"傳入Data資料異常";
+                    //    return returnData.JsonSerializationt();
+                    //}
+
+
+
+
+                    //List<object[]> list_medCpoe_add = input_medCpoe.ClassToSQL<medCpoeClass, enum_med_cpoe>();
+
+
+
+                    //if (list_medCpoe_add.Count > 0) sQLControl_med_cpoe.AddRows(null, list_medCpoe_add);
+
+
+
                     病床清單 += bedListInfo.Count;
                     returnData.TimeTaken = $"{myTimerBasic}";
                     returnData.Result = $"取得 {護理站} 病床資訊共{bedList.Count}筆";
@@ -594,10 +628,10 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     bedList = medCarInfoClass.get_bed_list_by_cart(API01, value);
                     List<medCpoeRecClass> medCpoe_change = ExecuteUDPDPORD(bedList);
                     List<medCpoeRecClass> update_medCpoe_change = medCpoeRecClass.update_med_CpoeRec(API01, medCpoe_change);
-                    returnData.Data = update_medCpoe_change;
-                    returnData.Result = $"取得{藥局} {護理站} 處方異動資料共{update_medCpoe_change.Count}筆";
-                    Logger.Log("get_medChange", returnData.JsonSerializationt());
-                    Logger.Log("get_medChange", Message);
+                    returnData.Data = medCpoe_change;
+                    returnData.Result = $"取得{藥局} {護理站} 處方異動資料共{medCpoe_change.Count}筆";
+                    //Logger.Log("get_medChange", returnData.JsonSerializationt());
+                    //Logger.Log("get_medChange", Message);
                 }
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
@@ -607,6 +641,46 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             {
                 returnData.Code = -200;
                 returnData.Result = $"Exception:{ex.Message}";
+                Logger.Log("get_medChange", returnData.JsonSerializationt());
+                Logger.Log("get_medChange", Message);
+                return returnData.JsonSerializationt(true);
+            }
+        }
+        [HttpGet("get_bedStatus")]
+        public string get_bedStatus()
+        {
+            returnData returnData = new returnData();
+            string 藥局 = "UC02";
+            //string[] list = { "C039" };
+            string[] list = { "C039", "C049", "C059", "C069", "C079", "C089", "C099", "C109", "C119", "C129", "BMT" };
+
+            MyTimerBasic myTimerBasic = new MyTimerBasic();
+            try
+            {
+                string 護理站 = "";
+                List<medCarInfoClass> bedList = new List<medCarInfoClass>();
+                for (int i = 0; i < list.Length; i++)
+                {
+                    護理站 = list[i];
+                    List<string> value = new List<string>() { 藥局, 護理站 };
+                    bedList = medCarInfoClass.get_bed_list_by_cart(API01, value);
+                    List<bedStatusClass> bedStatus = ExecuteUDPDPBED(bedList);
+                    bedStatusClass.update_med_CpoeRec(API01, bedStatus);
+                    returnData.Data = bedStatus;
+                    returnData.Result = $"取得{藥局} {護理站} 處方異動資料共{bedStatus.Count}筆";
+                    //Logger.Log("get_medChange", returnData.JsonSerializationt());
+                    //Logger.Log("get_medChange", Message);
+                }
+                returnData.Code = 200;
+                returnData.TimeTaken = $"{myTimerBasic}";
+                return returnData.JsonSerializationt(true);
+            }
+            catch (Exception ex)
+            {
+                returnData.Code = -200;
+                returnData.Result = $"Exception:{ex.Message}";
+                Logger.Log("get_medChange", returnData.JsonSerializationt());
+                Logger.Log("get_medChange", Message);
                 return returnData.JsonSerializationt(true);
             }
         }
@@ -626,7 +700,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 List<medInfoClass> medInfoClass_1 = ExecuteUDPDPHLP(result);
                 List<medInfoClass> medInfoClass_2 = ExecuteUDPDPDRG(medInfoClass_1);
                 medInfoClass.update_med_info(API01, medInfoClass_2);
-                
+
                 returnData.Code = 200;
                 returnData.TimeTaken = $"{myTimerBasic}";
                 returnData.Data = "";
@@ -701,7 +775,9 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                             {
                                 GUID = Guid.NewGuid().ToString(),
                                 藥局 = phar,
+                                PRI_KEY = reader["HISTNUM"].ToString().Trim(),
                                 更新時間 = DateTime.Now.ToDateTimeString(),
+                                調劑時間 = DateTime.MinValue.ToDateTimeString(),
                                 護理站 = reader["HNURSTA"].ToString().Trim(),
                                 床號 = reader["HBEDNO"].ToString().Trim(),
                                 病歷號 = reader["HISTNUM"].ToString().Trim(),
@@ -897,9 +973,12 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                 藥局 = medCarInfoClass.藥局,
                                 護理站 = medCarInfoClass.護理站,
                                 床號 = medCarInfoClass.床號,
+                                姓名 = medCarInfoClass.姓名,
+                                PRI_KEY = reader["UDORDSEQ"].ToString().Trim(),                           
                                 Master_GUID = medCarInfoClass.GUID,
                                 更新時間 = updateTime,
                                 住院號 = reader["UDCASENO"].ToString().Trim(),
+                                病歷號 = medCarInfoClass.病歷號,
                                 序號 = reader["UDORDSEQ"].ToString().Trim(),
                                 開始時間 = 開始日期時間.ToDateTimeString_6(),
                                 結束時間 = 結束日期時間.ToDateTimeString_6(),
@@ -911,11 +990,11 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                 數量 = reader["UDLQNTY"].ToString().Trim().StringToInt32().ToString(),
                                 劑量 = reader["UDDOSAGE"].ToString().Trim(),
                                 單位 = reader["UDDUNIT"].ToString().Trim(),
-                                期限 = reader["UDDURAT"].ToString().Trim(),
-                                自動包藥機 = reader["UDDSPMF"].ToString().Trim(),
-                                化癌分類 = reader["UDCHEMO"].ToString().Trim(),
+                                //期限 = reader["UDDURAT"].ToString().Trim(),
+                                //自動包藥機 = reader["UDDSPMF"].ToString().Trim(),
+                                //化癌分類 = reader["UDCHEMO"].ToString().Trim(),
                                 自購 = reader["UDSELF"].ToString().Trim(),
-                                血液製劑註記 = reader["UDALBUMI"].ToString().Trim(),
+                                //血液製劑註記 = reader["UDALBUMI"].ToString().Trim(),
                                 處方醫師 = reader["UDORSIGN"].ToString().Trim(),
                                 處方醫師姓名 = reader["UDSIGNAM"].ToString().Trim(),
                                 操作人員 = reader["UDLUSER"].ToString().Trim(),
@@ -923,17 +1002,24 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                 大瓶點滴 = reader["UDCNT02"].ToString().Trim(),
                                 LKFLAG = reader["UDBRFNM"].ToString().Trim(),
                                 排序 = reader["UDRANK"].ToString().Trim(),
-                                判讀藥師代碼 = reader["PHARNUM"].ToString().Trim(),
-                                判讀FLAG = reader["FLAG"].ToString().Trim(),
+                                //判讀藥師代碼 = reader["PHARNUM"].ToString().Trim(),
+                                //判讀FLAG = reader["FLAG"].ToString().Trim(),
                                 勿磨 = reader["UDNGT"].ToString().Trim(),
-                                抗生素等級 = reader["UDANTICG"].ToString().Trim(),
+                                //抗生素等級 = reader["UDANTICG"].ToString().Trim(),
                                 重複用藥 = reader["UDSAMEDG"].ToString().Trim(),
-                                配藥天數 = reader["UDDSPDY"].ToString().Trim(),
-                                交互作用 = reader["UDDDI"].ToString().Trim(),
-                                交互作用等級 = reader["UDDDIC"].ToString().Trim()
+                                //配藥天數 = reader["UDDSPDY"].ToString().Trim(),
+                                //交互作用 = reader["UDDDI"].ToString().Trim(),
+                                //交互作用等級 = reader["UDDDIC"].ToString().Trim()
                             };
-                            if(medCpoeClass.數量 == "0" || medCpoeClass.藥碼 == "80086" ||medCpoeClass.藥碼 == "80112") continue;
-                            if (medcode.Contains(medCpoeClass.藥碼)) medCpoeClass.調劑狀態 = "Y";
+                            //if(medCpoeClass.數量 == "0" || medCpoeClass.藥碼 == "80086" ||medCpoeClass.藥碼 == "80112") continue;
+                            //if (medcode.Contains(medCpoeClass.藥碼)) medCpoeClass.調劑狀態 = "Y";
+                            bool flag = searchCode(medCpoeClass.藥碼);
+                            if (flag)
+                            {
+                                medCpoeClass.公藥 = "Y";
+                                medCpoeClass.調劑狀態 = "Y";
+                            }
+                            if (medCpoeClass.途徑 == "IVA" || medCpoeClass.途徑 == "IVD") medCpoeClass.針劑 = "Y";
                             if (medCpoeClass.途徑 == "PO") medCpoeClass.大瓶點滴 = "";
                             if (reader["UDSTATUS"].ToString().Trim() == "80") medCpoeClass.狀態 = "DC";
                             if (reader["UDSTATUS"].ToString().Trim() == "30") medCpoeClass.狀態 = "New";
@@ -946,7 +1032,8 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                             //if (medCpoeClass.藥局代碼 == "EW01") medCpoeClass.藥局名稱 = "思源樓神經再生藥局";
                             //if (medCpoeClass.藥局代碼 == "UBTP") medCpoeClass.藥局名稱 = "中正樓臨床試驗藥局";
                             //if (medCpoeClass.藥局代碼 == "UC02") medCpoeClass.藥局名稱 = "長青樓藥局";
-                            if (string.IsNullOrWhiteSpace(medCpoeClass.狀態)) medCpoeClass.狀態 = "New";
+                            if(medCpoeClass.狀態.StringIsEmpty()) medCpoeClass.狀態 = "New";
+                            //if (string.IsNullOrWhiteSpace(medCpoeClass.狀態)) medCpoeClass.狀態 = "New";
                             if (medCpoeClass.藥局代碼 == "" || medCpoeClass.藥局代碼 == "UC02" ) prescription.Add(medCpoeClass);
                         }
                     }
@@ -956,7 +1043,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
 
             return prescription;
         }
-        private List<medCpoeRecClass> ExecuteUDPDPORD(List<medCarInfoClass> medCarInfoClasses)
+        private List<medCpoeRecClass> ExecuteUDPDPORD(List<medCarInfoClass> medCarInfoClasses) //處方歷程
         {
             using (DB2Connection MyDb2Connection = GetDB2Connection())
             {
@@ -1049,6 +1136,73 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     }
                 }
                 return medCpoeRecClasses;
+            }
+
+        }
+        private List<bedStatusClass> ExecuteUDPDPBED(List<medCarInfoClass> medCarInfoClasses) //轉床紀錄
+        {
+            using (DB2Connection MyDb2Connection = GetDB2Connection())
+            {
+                MyDb2Connection.Open();
+                string procName = $"{DB2_schema}.UDPDPBED";
+                List<bedStatusClass> bedStatusClasses = new List<bedStatusClass>();
+                foreach (var medCarInfoClass in medCarInfoClasses)
+                {
+                    if (medCarInfoClass.住院號.StringIsEmpty()) continue;
+                    string time = DateTime.Now.ToString("HHmm");
+
+                    using (DB2Command cmd = MyDb2Connection.CreateCommand())
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = procName;
+                        cmd.Parameters.Add("@TCASENO", DB2Type.VarChar, 8).Value = medCarInfoClass.住院號;
+                        cmd.Parameters.Add("@TTIME1", DB2Type.VarChar, 4).Value = "0000";
+                        cmd.Parameters.Add("@TTIME2", DB2Type.VarChar, 4).Value = time;
+                        DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
+                        try
+                        {
+                            using (DB2DataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {                 
+                                    string 轉床 = reader["MOVETIME"].ToString().Trim();
+                                    string 時間 = $"{轉床.Substring(0, 4)}-{轉床.Substring(4, 2)}-{轉床.Substring(6, 2)} {轉床.Substring(8, 2)}:{轉床.Substring(10, 2)}:{轉床.Substring(12, 2)}";
+                                    string 轉床前護理站 = reader["STATION_OLD"].ToString().Trim();
+                                    string 轉床前床號 = reader["BED_OLD"].ToString().Trim();
+                                    string 轉床後護理站 = reader["STATION_NEW"].ToString().Trim();
+                                    string 轉床後床號 = reader["BED_NEW"].ToString().Trim();
+                                    bedStatusClass bedStatusClass = new bedStatusClass
+                                    {
+                                        GUID = Guid.NewGuid().ToString(),
+                                        Master_GUID = medCarInfoClass.GUID,
+                                        PRI_KEY = reader["MOVETIME"].ToString().Trim(), //轉床時間
+                                        轉床時間 = 時間,
+                                        姓名 = medCarInfoClass.姓名,
+                                        住院號 = reader["UDCASENO"].ToString().Trim(),
+                                        病歷號 = reader["UDHISTNO"].ToString().Trim(),
+                                        轉床前護理站床號 = $"{轉床前護理站}-{轉床前床號}",
+                                        轉床後護理站床號 = $"{轉床後護理站}-{轉床後床號}"
+                                    };
+                                    if (bedStatusClass.轉床前護理站床號 == "X000-0") bedStatusClass.狀態 = "轉入";
+                                    if (bedStatusClass.轉床後護理站床號 == "X000-0") bedStatusClass.狀態 = "轉出";
+                                    if (bedStatusClass.轉床前護理站床號 != "X000-0" && bedStatusClass.轉床後護理站床號 != "X000-0") bedStatusClass.狀態 = "轉床";
+
+
+
+                                    bedStatusClasses.Add(bedStatusClass);
+
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"DB2Exception: {ex.Message}");
+                            Logger.Log("ExecuteUDPDPORD", $"DB2Exception: {ex.Message}");
+                        }
+
+                    }
+                }
+                return bedStatusClasses;
             }
 
         }
@@ -1288,6 +1442,38 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                 throw new Exception("找無Server資料");
             }
             return serverSettingClass.Server;
+        }
+        private bool searchCode(string code)
+        {
+            string fullFile = @"C:\Users\Administrator\Desktop\藥品管理\medManage.xlsx";
+            byte[] fileBytes = ReadFile(fullFile);
+            DataTable dataTable = MyOffice.ExcelClass.NPOI_LoadFile(fileBytes);
+            List<object[]> list_公藥清單 = dataTable.DataTableToRowList();
+            List<object[]> list_公藥清單_buff = list_公藥清單.GetRows((int)enum_medManage.藥品碼, code);
+            if (list_公藥清單_buff.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
+        public static byte[] ReadFile(string filePath)
+        {
+            if (!System.IO.File.Exists(filePath))
+            {
+                throw new FileNotFoundException("檔案不存在", filePath);
+            }
+            return System.IO.File.ReadAllBytes(filePath);
+        }
+        public enum enum_medManage
+        {
+            項次,
+            藥品碼,
+            藥名
         }
 
 

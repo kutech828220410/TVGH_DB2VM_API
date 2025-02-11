@@ -1,0 +1,36 @@
+20250206-23:08:20 - {"Data":[],"Code":0,"Method":"","Result":"取得 C039 病床資訊共50筆","Value":"","ValueAry":[],"TimeTaken":"14773.987ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:08:20 - ---------------------------------------------------------------------------
+20250206-23:10:00 - {"Data":[],"Code":0,"Method":"","Result":"取得 C039 病床資訊共50筆","Value":"","ValueAry":[],"TimeTaken":"40690.017ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:10:00 - ---------------------------------------------------------------------------
+20250206-23:11:49 - {"Data":[],"Code":0,"Method":"","Result":"取得 C039 病床資訊共50筆","Value":"","ValueAry":[],"TimeTaken":"26918.820ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:11:49 - ---------------------------------------------------------------------------
+20250206-23:14:24 - {"Data":[],"Code":0,"Method":"","Result":"取得 C049 病床資訊共49筆","Value":"","ValueAry":[],"TimeTaken":"33861.307ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:14:24 - ---------------------------------------------------------------------------
+20250206-23:14:31 - {"Data":[],"Code":0,"Method":"","Result":"取得 C059 病床資訊共50筆","Value":"","ValueAry":[],"TimeTaken":"7630.300ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:14:31 - ---------------------------------------------------------------------------
+20250206-23:14:39 - {"Data":[],"Code":0,"Method":"","Result":"取得 C069 病床資訊共50筆","Value":"","ValueAry":[],"TimeTaken":"7847.090ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:14:39 - ---------------------------------------------------------------------------
+20250206-23:14:49 - {"Data":[],"Code":0,"Method":"","Result":"取得 C079 病床資訊共50筆","Value":"","ValueAry":[],"TimeTaken":"9607.188ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:14:49 - ---------------------------------------------------------------------------
+20250206-23:18:25 - {"Data":[],"Code":0,"Method":"","Result":"取得 C039 病床資訊共50筆","Value":"","ValueAry":[],"TimeTaken":"19929.192ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:18:25 - ---------------------------------------------------------------------------
+20250206-23:18:30 - {"Data":[],"Code":0,"Method":"","Result":"取得 C049 病床資訊共49筆","Value":"","ValueAry":[],"TimeTaken":"5172.049ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:18:30 - ---------------------------------------------------------------------------
+20250206-23:18:36 - {"Data":[],"Code":0,"Method":"","Result":"取得 C059 病床資訊共50筆","Value":"","ValueAry":[],"TimeTaken":"6307.328ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:18:36 - ---------------------------------------------------------------------------
+20250206-23:18:44 - {"Data":[],"Code":0,"Method":"","Result":"取得 C069 病床資訊共50筆","Value":"","ValueAry":[],"TimeTaken":"7414.970ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:18:44 - ---------------------------------------------------------------------------
+20250206-23:18:50 - {"Data":[],"Code":0,"Method":"","Result":"取得 C079 病床資訊共50筆","Value":"","ValueAry":[],"TimeTaken":"6541.570ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:18:50 - ---------------------------------------------------------------------------
+20250206-23:18:57 - {"Data":[],"Code":0,"Method":"","Result":"取得 C089 病床資訊共50筆","Value":"","ValueAry":[],"TimeTaken":"6640.899ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:18:57 - ---------------------------------------------------------------------------
+20250206-23:19:06 - {"Data":[],"Code":0,"Method":"","Result":"取得 C099 病床資訊共50筆","Value":"","ValueAry":[],"TimeTaken":"8958.905ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:19:06 - ---------------------------------------------------------------------------
+20250206-23:19:13 - {"Data":[],"Code":0,"Method":"","Result":"取得 C109 病床資訊共34筆","Value":"","ValueAry":[],"TimeTaken":"6805.607ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:19:13 - ---------------------------------------------------------------------------
+20250206-23:19:16 - {"Data":[],"Code":0,"Method":"","Result":"取得 C119 病床資訊共32筆","Value":"","ValueAry":[],"TimeTaken":"3455.860ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:19:16 - ---------------------------------------------------------------------------
+20250206-23:19:18 - {"Data":[],"Code":0,"Method":"","Result":"取得 C129 病床資訊共26筆","Value":"","ValueAry":[],"TimeTaken":"2242.207ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:19:18 - ---------------------------------------------------------------------------
+20250206-23:19:22 - {"Data":[],"Code":0,"Method":"","Result":"取得 BMT 病床資訊共8筆","Value":"","ValueAry":[],"TimeTaken":"3241.625ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250206-23:19:22 - ---------------------------------------------------------------------------
