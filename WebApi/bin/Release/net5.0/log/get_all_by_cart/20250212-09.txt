@@ -1,0 +1,22 @@
+20250212-09:45:56 - {"Data":[],"Code":0,"Method":"","Result":"取得 C039 病床資訊共0筆","Value":"","ValueAry":[],"TimeTaken":"28601.676ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250212-09:45:56 - ---------------------------------------------------------------------------
+20250212-09:46:01 - {"Data":[],"Code":0,"Method":"","Result":"取得 C049 病床資訊共0筆","Value":"","ValueAry":[],"TimeTaken":"5014.743ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250212-09:46:01 - ---------------------------------------------------------------------------
+20250212-09:46:07 - {"Data":[],"Code":0,"Method":"","Result":"取得 C059 病床資訊共0筆","Value":"","ValueAry":[],"TimeTaken":"6329.431ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250212-09:46:07 - ---------------------------------------------------------------------------
+20250212-09:46:13 - {"Data":[],"Code":0,"Method":"","Result":"取得 C069 病床資訊共0筆","Value":"","ValueAry":[],"TimeTaken":"6240.081ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250212-09:46:13 - ---------------------------------------------------------------------------
+20250212-09:46:19 - {"Data":[],"Code":0,"Method":"","Result":"取得 C079 病床資訊共0筆","Value":"","ValueAry":[],"TimeTaken":"6114.382ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250212-09:46:19 - ---------------------------------------------------------------------------
+20250212-09:46:25 - {"Data":[],"Code":0,"Method":"","Result":"取得 C089 病床資訊共0筆","Value":"","ValueAry":[],"TimeTaken":"5686.494ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250212-09:46:25 - ---------------------------------------------------------------------------
+20250212-09:46:33 - {"Data":[],"Code":0,"Method":"","Result":"取得 C099 病床資訊共0筆","Value":"","ValueAry":[],"TimeTaken":"8403.928ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250212-09:46:33 - ---------------------------------------------------------------------------
+20250212-09:46:40 - {"Data":[],"Code":0,"Method":"","Result":"取得 C109 病床資訊共0筆","Value":"","ValueAry":[],"TimeTaken":"6607.929ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250212-09:46:40 - ---------------------------------------------------------------------------
+20250212-09:46:43 - {"Data":[],"Code":0,"Method":"","Result":"取得 C119 病床資訊共0筆","Value":"","ValueAry":[],"TimeTaken":"2451.045ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250212-09:46:43 - ---------------------------------------------------------------------------
+20250212-09:46:44 - {"Data":[],"Code":0,"Method":"","Result":"取得 C129 病床資訊共0筆","Value":"","ValueAry":[],"TimeTaken":"1470.911ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250212-09:46:44 - ---------------------------------------------------------------------------
+20250212-09:46:46 - {"Data":[],"Code":0,"Method":"","Result":"取得 BMT 病床資訊共0筆","Value":"","ValueAry":[],"TimeTaken":"2010.329ms","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250212-09:46:46 - ---------------------------------------------------------------------------
