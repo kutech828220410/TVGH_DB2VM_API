@@ -1,0 +1,1 @@
+20250220-02:05:08 - Exception : The process cannot access the file 'C:\Users\Administrator\source\repos\TVGH_DB2VM_API\WebApi\bin\Release\net5.0\log\Execute_SP\20250220-02.txt' because it is being used by another process.

@@ -60,8 +60,8 @@ namespace DB2VM_API.Controller
         public string get_atc([FromBody] returnData returnData)
         {
             MyTimerBasic myTimerBasic = new MyTimerBasic();
-            List<ServerSettingClass> serverSettingClasses = ServerSettingClassMethod.WebApiGet($"{API_Server}");
-            serverSettingClasses = serverSettingClasses.MyFind("Main", "網頁", "API01");
+            List<sys_serverSettingClass> serverSettingClasses = sys_serverSettingClassMethod.WebApiGet($"{API_Server}");
+            sys_serverSettingClass serverSettingClass = serverSettingClasses.MyFind("Main", "網頁", "API01").FirstOrDefault();           
             string API = serverSettingClasses[0].Server;
             List<medInterClass> medInterClasses = ExecuteUDSDBBCM();
             medInterClass.update_med_inter(API, medInterClasses);
@@ -77,6 +77,18 @@ namespace DB2VM_API.Controller
         {
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             List<Dictionary<string, object>> result = UDSDBBCM();
+            returnData.Code = 200;
+            returnData.TimeTaken = $"{myTimerBasic}";
+            returnData.Data = result;
+            returnData.Result = $"";
+            return returnData.JsonSerializationt(true);
+        }
+        [HttpGet("BBCM")]
+        public string BBCM(string ?code)
+        {
+            MyTimerBasic myTimerBasic = new MyTimerBasic();
+            List<Dictionary<string, object>> result = UDSDBBCM(code);
+            returnData returnData = new returnData();
             returnData.Code = 200;
             returnData.TimeTaken = $"{myTimerBasic}";
             returnData.Data = result;
@@ -136,6 +148,11 @@ namespace DB2VM_API.Controller
         }
         private List<Dictionary<string, object>> UDSDBBCM()
         {
+            string code = "";
+            return UDSDBBCM(code);
+        }
+        private List<Dictionary<string, object>> UDSDBBCM(string code)
+        {
             using (DB2Connection MyDb2Connection = GetDB2Connection())
             {
                 MyDb2Connection.Open();
@@ -146,7 +163,7 @@ namespace DB2VM_API.Controller
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = procName;
                     cmd.Parameters.Add("@TSYSD", DB2Type.VarChar, 5).Value = "ADMUD";
-                    cmd.Parameters.Add("@TUDDRGNO", DB2Type.VarChar, 5).Value = $"";
+                    cmd.Parameters.Add("@TUDDRGNO", DB2Type.VarChar, 5).Value = $"{code}";
                     DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
                     DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
                     using (DB2DataReader reader = cmd.ExecuteReader())
