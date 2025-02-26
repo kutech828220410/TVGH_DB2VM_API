@@ -1675,7 +1675,14 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         }
         private bool iceMed(string code)
         {
-            List<string> listIceMed = new List<string>() { "01990","03852","03809" };
+            //List<string> listIceMed = new List<string>() { "01990","03852","03809" };
+            List<string> listIceMed = new List<string>
+            {
+                "02096", "05792", "00053", "04881", "03175", "04868", "05400", "05872",
+                "05758", "03809", "04425", "05439", "01989", "01990", "01754", "00081",
+                "03852", "02713", "05851", "00282", "05653", "01909", "01668", "03637",
+                "03636", "06021", "03190", "05743", "01855", "05596", "06200"
+            };
             if (listIceMed.Contains(code))
             {
                 return true;
