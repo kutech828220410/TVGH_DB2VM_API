@@ -1,18 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ConsoleApp_cmdi_day",
-    "\\ConsoleApp_connect_testIn",
-    "\\ConsoleApp_test_db2vm",
-    "\\Console_img_download",
     "\\WebApi",
+    "\\WebApi\\bin",
     "\\WebApi\\Controller",
     "\\WebApi\\Controller\\(API)VM調劑系統"
   ],
-<<<<<<< HEAD
-  "SelectedNode": "\\Console_img_download\\Program.cs",
-=======
   "SelectedNode": "\\WebApi\\Controller\\(API)VM調劑系統\\med_cart.cs",
->>>>>>> Anna
   "PreviewInSolutionExplorer": false
 }
