@@ -559,25 +559,34 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                     護理站 = list[i];
                     List<patientInfoClass> bedList_first = ExecuteUDPDPPF1(藥局, 護理站);
                     List<patientInfoClass> bedListInfo = ExecuteUDPDPPF0(bedList_first);
-                    //returnData returnData_medCarInfoClass = medCarInfoClass.update_med_carinfo(API01, bedListInfo);
-                    //if(returnData_medCarInfoClass.Code != 200)
-                    //{
-                    //    Logger.Log("update_med_carinfo", returnData_medCarInfoClass.JsonSerializationt());
-                    //    Logger.Log("update_med_carinfo", Message);
-                    //    returnData_medCarInfoClass.Data = bedListInfo;
-                    //    return returnData_medCarInfoClass.JsonSerializationt(true);
-                    //}
-                    //List<medCarInfoClass> update_medCarInfoClass = returnData_medCarInfoClass.Data.ObjToClass<List<medCarInfoClass>>();
+                    returnData returnData_patientClass = patientInfoClass.update_patientInfo(API01, bedListInfo);
+                    if (returnData_patientClass.Code != 200)
+                    {
+                        Logger.Log("update_patientInfo", returnData_patientClass.JsonSerializationt());
+                        Logger.Log("update_patientInfo", Message);
+                        returnData_patientClass.Data = bedListInfo;
+                        return returnData_patientClass.JsonSerializationt(true);
+                    }
+                    List<patientInfoClass> update_patientInfoClass = returnData_patientClass.Data.ObjToClass<List<patientInfoClass>>();
 
-                    //List<medCpoeClass> bedListCpoe = ExecuteUDPDPDSP(update_medCarInfoClass);
-                    //returnData returnData_medCpoeClass = medCpoeClass.update_med_cpoe(API01, bedListCpoe);
-                    //if(returnData_medCpoeClass.Code != 200)
-                    //{
-                    //    Logger.Log("update_med_cpoe", returnData_medCpoeClass.JsonSerializationt());
-                    //    Logger.Log("update_med_cpoe", Message);
-                    //    returnData_medCpoeClass.Data = bedListCpoe;
-                    //    return returnData_medCpoeClass.JsonSerializationt(true);
-                    //}
+                    (List<medCpoeClass> bedListCpoe, List<OrderClass> OrderClasses) = ExecuteUDPDPDSP(update_patientInfoClass);
+                    List<Task> tasks = new List<Task>();
+                    returnData returnData_medCpoeClass = new returnData();
+                    tasks.Add(Task.Run(new Action(delegate
+                    {
+                        returnData_medCpoeClass = medCpoeClass.update_med_cpoe(API01, bedListCpoe);
+
+                    })));
+                    tasks.Add(Task.Run(new Action(delegate
+                    {
+
+                    })));
+                    if (returnData_medCpoeClass.Code != 200)
+                    {
+                        Logger.Log("update_med_cpoe", returnData_medCpoeClass.JsonSerializationt());
+                        Logger.Log("update_med_cpoe", Message);
+                        return returnData_medCpoeClass.JsonSerializationt(true);
+                    }
 
                 }
                 
@@ -834,12 +843,12 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             try
             {
                 string 護理站 = "";
-                List<medCarInfoClass> bedList = new List<medCarInfoClass>();
+                List<patientInfoClass> bedList = new List<patientInfoClass>();
                 for (int i = 0; i < list.Length; i++)
                 {
                     護理站 = list[i];
                     List<string> value = new List<string>() { 藥局, 護理站 };
-                    bedList = medCarInfoClass.get_bed_list_by_cart(API01, value);
+                    bedList = patientInfoClass.get_bed_list_by_cart(API01, value);
                     List<medCpoeRecClass> medCpoe_change = ExecuteUDPDPORD(bedList);
                     List<medCpoeRecClass> update_medCpoe_change = medCpoeRecClass.update_med_CpoeRec(API01, medCpoe_change);
                     returnData.Data = medCpoe_change;
@@ -872,12 +881,12 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             try
             {
                 string 護理站 = "";
-                List<medCarInfoClass> bedList = new List<medCarInfoClass>();
+                List<patientInfoClass> bedList = new List<patientInfoClass>();
                 for (int i = 0; i < list.Length; i++)
                 {
                     護理站 = list[i];
                     List<string> value = new List<string>() { 藥局, 護理站 };
-                    bedList = medCarInfoClass.get_bed_list_by_cart(API01, value);
+                    bedList = patientInfoClass.get_bed_list_by_cart(API01, value);
                     List<bedStatusClass> bedStatus = ExecuteUDPDPBED(bedList);
                     bedStatusClass.update_med_CpoeRec(API01, bedStatus);
                     returnData.Data = bedStatus;
@@ -1296,7 +1305,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         //    Logger.LogAddLine("Execute_SP");
         //    return patientInfoClasses;
         //}
-        private List<medCpoeClass> ExecuteUDPDPDSP(List<medCarInfoClass> patientInfoClasses)
+        private (List<medCpoeClass>, List<OrderClass>) ExecuteUDPDPDSP(List<patientInfoClass> patientInfoClasses)
         {
             DB2Connection MyDb2Connection = GetDB2Connection();
             try
@@ -1307,7 +1316,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             catch (Exception e)
             {
                 Logger.Log($"Exception : {e.Message}");
-                return null;
+                return (null,null);
             }
             finally
             {
@@ -1316,12 +1325,13 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             }
 
         }
-        private List<medCpoeClass> ExecuteUDPDPDSP(DB2Connection MyDb2Connection ,List<medCarInfoClass> patientInfoClasses)
+        private (List<medCpoeClass>, List<OrderClass>) ExecuteUDPDPDSP(DB2Connection MyDb2Connection ,List<patientInfoClass> patientInfoClasses)
         {
             Logger.LogAddLine("Execute_SP");
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             string procName = $"{DB2_schema}.UDPDPDSP";
             List<medCpoeClass> prescription = new List<medCpoeClass>();
+            List<OrderClass> orderClasses = new List<OrderClass>();
             DateTime now = DateTime.Now;
             string time = now.ToString("HHmm");
             string updateTime = now.ToDateTimeString();
@@ -1400,11 +1410,12 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                             OrderClass orderClass = new OrderClass
                             {
                                 GUID = Guid.NewGuid().ToString(),
+                                藥袋類型 = "UD",
                                 藥局代碼 = medCarInfoClass.藥局,
                                 病房 = medCarInfoClass.護理站,
                                 床號 = medCarInfoClass.床號,
                                 病人姓名 = medCarInfoClass.姓名,
-                                //PRI_KEY = reader["UDORDSEQ"].ToString().Trim(), //批序
+                                PRI_KEY = medCpoeClass.GUID,
                                 產出時間 = updateTime,
                                 病歷號 = medCarInfoClass.病歷號,
                                 批序 = reader["UDORDSEQ"].ToString().Trim(),
@@ -1420,52 +1431,51 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                 費用別 = reader["UDSELF"].ToString().Trim(),
                                 醫師代碼 = reader["UDORSIGN"].ToString().Trim(),
                                 備註 = reader["UDCNT02"].ToString().Trim(), //大頻點滴
-                                //LKFLAG = reader["UDBRFNM"].ToString().Trim(),
-                                //排序 = reader["UDRANK"].ToString().Trim(),                               
-                                //勿磨 = reader["UDNGT"].ToString().Trim(),
-                                //重複用藥 = reader["UDSAMEDG"].ToString().Trim(),
                                 天數 = reader["UDDSPDY"].ToString().Trim(),
                                 狀態 = "未過帳"
                      
                             };
                             
-                            //if (orderClass.單次劑量.StartsWith("X"))
-                            //{
-                            //    if (orderClass.單次劑量.Length == 2 || orderClass.單次劑量.Length == 3)
-                            //    {
-                            //        continue;
-                            //    }
-                            //}
-                            //if (orderClass.藥品碼.Length == 5 && orderClass.藥品碼.StartsWith("8"))
-                            //{
-                            //    orderClass.公藥 = "Y";
-                            //    orderClass.狀態 = "已過帳";
-                            //}
-                            //else
-                            //{
-                            //    bool flag_公藥 = pubMed(orderClass.藥品碼);
-                            //    if (flag_公藥)
-                            //    {
-                            //        orderClass.公藥 = "Y";
-                            //        orderClass.調劑狀態 = "Y";
-                            //    }
-                            //}
-                            //if (orderClass.備註 == "L") orderClass.備註 = "大瓶點滴";
-                            //if (orderClass.途徑 == "PO") orderClass.備註 = "";
-                            //if (iceMed(orderClass.藥品碼)) orderClass.冷儲 = "Y";
-                            //if (orderClass.藥品名稱.ToLower().Contains(" cap ") || orderClass.藥品名.ToLower().Contains(" tab ")) orderClass.口服 = "Y";
-                            //if (orderClass.途徑 == "IVA" || orderClass.途徑 == "IVD") orderClass.針劑 = "Y";
-                            if (orderClass.藥局代碼 == "" || orderClass.藥局代碼 == "UC02" ) prescription.Add(medCpoeClass);
-
+                            if (medCpoeClass.劑量.StartsWith("X"))
+                            {
+                                if (medCpoeClass.劑量.Length == 2 || medCpoeClass.劑量.Length == 3)
+                                {
+                                    continue;
+                                }
+                            }
+                            if (medCpoeClass.藥碼.Length == 5 && medCpoeClass.藥碼.StartsWith("8"))
+                            {
+                                medCpoeClass.公藥 = "Y";
+                                medCpoeClass.狀態 = "已過帳";
+                            }
+                            else
+                            {
+                                bool flag_公藥 = pubMed(medCpoeClass.藥碼);
+                                if (flag_公藥)
+                                {
+                                    medCpoeClass.公藥 = "Y";
+                                    medCpoeClass.調劑狀態 = "Y";
+                                }
+                            }
+                            if (medCpoeClass.大瓶點滴 == "L") medCpoeClass.大瓶點滴 = "大瓶點滴";
+                            if (medCpoeClass.途徑 == "PO") medCpoeClass.大瓶點滴 = "";
+                            if (iceMed(medCpoeClass.藥碼)) medCpoeClass.冷儲 = "Y";
+                            if (medCpoeClass.藥品名.ToLower().Contains(" cap ") || medCpoeClass.藥品名.ToLower().Contains(" tab ")) medCpoeClass.口服 = "Y";
+                            if (medCpoeClass.途徑 == "IVA" || medCpoeClass.途徑 == "IVD") medCpoeClass.針劑 = "Y";
+                            if (medCpoeClass.藥局代碼 == "" || medCpoeClass.藥局代碼 == "UC02") 
+                            {
+                                prescription.Add(medCpoeClass);
+                                orderClasses.Add(orderClass);
+                            } 
                         }
                     }
                 }
             }
             Logger.Log("Execute_SP", $"[UDPDPDSP]get result done , {myTimerBasic}");
 
-            return prescription;
+            return (prescription, orderClasses);
         }
-        private List<medCpoeRecClass> ExecuteUDPDPORD(List<medCarInfoClass> patientInfoClasses) //處方歷程
+        private List<medCpoeRecClass> ExecuteUDPDPORD(List<patientInfoClass> patientInfoClasses) //處方歷程
         {
             using (DB2Connection MyDb2Connection = GetDB2Connection())
             {
@@ -1562,7 +1572,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             }
 
         }
-        private List<bedStatusClass> ExecuteUDPDPBED(List<medCarInfoClass> patientInfoClasses) //轉床紀錄
+        private List<bedStatusClass> ExecuteUDPDPBED(List<patientInfoClass> patientInfoClasses) //轉床紀錄
         {
             using (DB2Connection MyDb2Connection = GetDB2Connection())
             {
@@ -1676,51 +1686,51 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         //        return medInfoClasses;
         //    }
         //}
-        private List<medClass> ExecuteUDPDPHLP(List<medClass> medClasses)
-        {
-            using (DB2Connection MyDb2Connection = GetDB2Connection())
-            {
-                MyDb2Connection.Open();
-                string SP = "UDPDPHLP";
-                string procName = $"{DB2_schema}.{SP}";
-                List<medInfoClass> medInfoClasses = new List<medInfoClass>();
-                foreach(var medclass in medClasses)
-                {
-                    using (DB2Command cmd = MyDb2Connection.CreateCommand()) 
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = procName;
-                        cmd.Parameters.Add("@UDDRGNO", DB2Type.VarChar, 5).Value = medclass.藥品碼;
-                        DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
-                        DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
-                        using (DB2DataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                string update_time = reader["DHUPDT"].ToString().Trim();
-                                DateTime dateTime = DateTime.Parse(update_time);
-                                medclass.藥理分類序號 = reader["DHSEQNO"].ToString().Trim(); //序號
-                                medclass.藥理分類代碼 = reader["DHCHARNO"].ToString().Trim(); //分類號
-                                medclass.藥理分類名 = reader["DHCHARNM"].ToString().Trim(); //類別名
-                                //medclass.藥品名稱 = reader["DHGNAME"].ToString().Trim(); //藥品通名
-                                medclass.藥品學名 = reader["DHTNAME"].ToString().Trim(); //藥品商品名
-                                medclass.類別 = reader["DHRXCLAS"].ToString().Trim(); //藥品分類
-                                medclass.治療分類名 = reader["DHTXCLAS"].ToString().Trim(); //藥品治療分類
-                                medclass.適應症 = reader["DHINDICA"].ToString().Trim(); //適應症
-                                medclass.使用說明 = reader["DHADMIN"].ToString().Trim(); //用法劑量
-                                medclass.備註 = reader["DHNOTE"].ToString().Trim(); //備註
-                                //藥碼 = medClasses[i].藥品碼;
-                                medclass.仿單網址 = $"https://www7.vghtpe.gov.tw/api/find-package-insert-by-udCode?udCode={medclass.藥品碼}";
-                                //更新時間 = dateTime.ToDateTimeString();
+        //private List<medClass> ExecuteUDPDPHLP(List<medClass> medClasses)
+        //{
+        //    using (DB2Connection MyDb2Connection = GetDB2Connection())
+        //    {
+        //        MyDb2Connection.Open();
+        //        string SP = "UDPDPHLP";
+        //        string procName = $"{DB2_schema}.{SP}";
+        //        List<medInfoClass> medInfoClasses = new List<medInfoClass>();
+        //        foreach(var medclass in medClasses)
+        //        {
+        //            using (DB2Command cmd = MyDb2Connection.CreateCommand()) 
+        //            {
+        //                cmd.CommandType = CommandType.StoredProcedure;
+        //                cmd.CommandText = procName;
+        //                cmd.Parameters.Add("@UDDRGNO", DB2Type.VarChar, 5).Value = medclass.藥品碼;
+        //                DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
+        //                DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
+        //                using (DB2DataReader reader = cmd.ExecuteReader())
+        //                {
+        //                    while (reader.Read())
+        //                    {
+        //                        string update_time = reader["DHUPDT"].ToString().Trim();
+        //                        DateTime dateTime = DateTime.Parse(update_time);
+        //                        medclass.藥理分類序號 = reader["DHSEQNO"].ToString().Trim(); //序號
+        //                        medclass.藥理分類代碼 = reader["DHCHARNO"].ToString().Trim(); //分類號
+        //                        medclass.藥理分類名 = reader["DHCHARNM"].ToString().Trim(); //類別名
+        //                        //medclass.藥品名稱 = reader["DHGNAME"].ToString().Trim(); //藥品通名
+        //                        medclass.藥品學名 = reader["DHTNAME"].ToString().Trim(); //藥品商品名
+        //                        medclass.類別 = reader["DHRXCLAS"].ToString().Trim(); //藥品分類
+        //                        medclass.治療分類名 = reader["DHTXCLAS"].ToString().Trim(); //藥品治療分類
+        //                        medclass.適應症 = reader["DHINDICA"].ToString().Trim(); //適應症
+        //                        medclass.使用說明 = reader["DHADMIN"].ToString().Trim(); //用法劑量
+        //                        medclass.備註 = reader["DHNOTE"].ToString().Trim(); //備註
+        //                        //藥碼 = medClasses[i].藥品碼;
+        //                        medclass.仿單網址 = $"https://www7.vghtpe.gov.tw/api/find-package-insert-by-udCode?udCode={medclass.藥品碼}";
+        //                        //更新時間 = dateTime.ToDateTimeString();
                                 
-                                //medInfoClasses.Add(medInfoClass);
-                            }
-                        }
-                    };
-                }               
-                return medClasses;
-            }
-        }
+        //                        //medInfoClasses.Add(medInfoClass);
+        //                    }
+        //                }
+        //            };
+        //        }               
+        //        return medClasses;
+        //    }
+        //}
         //private List<medInfoClass> ExecuteUDPDPDRG(List<medInfoClass> medInfoClasses)
         //{
         //    using (DB2Connection MyDb2Connection = GetDB2Connection())
@@ -1754,75 +1764,75 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         //        return medInfoClasses;
         //    }
         //}
-        private List<medClass> ExecuteUDPDPDRG(List<medClass> medClasses)
-        {
-            using (DB2Connection MyDb2Connection = GetDB2Connection())
-            {
-                MyDb2Connection.Open();
-                string SP = "UDPDPDRG";
-                string procName = $"{DB2_schema}.{SP}";
-                foreach (var medclass in medClasses)
-                {
-                    using (DB2Command cmd = MyDb2Connection.CreateCommand())
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = procName;
-                        cmd.Parameters.Add("@TDRGNO", DB2Type.VarChar, 5).Value = medclass.藥品碼;
-                        DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
-                        DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
-                        using (DB2DataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                medclass.藥品名稱 = reader["UDARNAME"].ToString().Trim();
-                                //medInfoClass.售價 = reader["UDWCOST"].ToString().Trim();
-                                //medInfoClass.健保價 = reader["UDPRICE"].ToString().Trim();
-                                medclass.建議頻次 = reader["UDFREQN"].ToString().Trim();
-                                medclass.建議劑量 = reader["UDCMDOSA"].ToString().Trim();
+        //private List<medClass> ExecuteUDPDPDRG(List<medClass> medClasses)
+        //{
+        //    using (DB2Connection MyDb2Connection = GetDB2Connection())
+        //    {
+        //        MyDb2Connection.Open();
+        //        string SP = "UDPDPDRG";
+        //        string procName = $"{DB2_schema}.{SP}";
+        //        foreach (var medclass in medClasses)
+        //        {
+        //            using (DB2Command cmd = MyDb2Connection.CreateCommand())
+        //            {
+        //                cmd.CommandType = CommandType.StoredProcedure;
+        //                cmd.CommandText = procName;
+        //                cmd.Parameters.Add("@TDRGNO", DB2Type.VarChar, 5).Value = medclass.藥品碼;
+        //                DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
+        //                DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
+        //                using (DB2DataReader reader = cmd.ExecuteReader())
+        //                {
+        //                    while (reader.Read())
+        //                    {
+        //                        medclass.藥品名稱 = reader["UDARNAME"].ToString().Trim();
+        //                        //medInfoClass.售價 = reader["UDWCOST"].ToString().Trim();
+        //                        //medInfoClass.健保價 = reader["UDPRICE"].ToString().Trim();
+        //                        medclass.建議頻次 = reader["UDFREQN"].ToString().Trim();
+        //                        medclass.建議劑量 = reader["UDCMDOSA"].ToString().Trim();
 
-                            }
-                        }
-                    }
-                }
+        //                    }
+        //                }
+        //            }
+        //        }
                 
-                return medClasses;
-            }
-        }
-        private List<medPriceClass> ExecuteUDPDPDRGPrice(List<medClass> medClasses)
-        {
-            using (DB2Connection MyDb2Connection = GetDB2Connection())
-            {
-                MyDb2Connection.Open();
-                string SP = "UDPDPDRG";
-                string procName = $"{DB2_schema}.{SP}";
-                List<medPriceClass> medPriceClasses = new List<medPriceClass>();
-                foreach (var medclass in medClasses)
-                {
-                    using (DB2Command cmd = MyDb2Connection.CreateCommand())
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = procName;
-                        cmd.Parameters.Add("@TDRGNO", DB2Type.VarChar, 5).Value = medclass.藥品碼;
-                        DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
-                        DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
-                        using (DB2DataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                medPriceClass medPriceClass = new medPriceClass() 
-                                {
-                                    藥品碼 = medclass.藥品碼,
-                                    售價 = reader["UDWCOST"].ToString().Trim(),
-                                    健保價 = reader["UDPRICE"].ToString().Trim()
-                                };
-                                medPriceClasses.Add(medPriceClass);
-                            }
-                        }
-                    }
-                }
-                return medPriceClasses;
-            }
-        }
+        //        return medClasses;
+        //    }
+        //}
+        //private List<medPriceClass> ExecuteUDPDPDRGPrice(List<medClass> medClasses)
+        //{
+        //    using (DB2Connection MyDb2Connection = GetDB2Connection())
+        //    {
+        //        MyDb2Connection.Open();
+        //        string SP = "UDPDPDRG";
+        //        string procName = $"{DB2_schema}.{SP}";
+        //        List<medPriceClass> medPriceClasses = new List<medPriceClass>();
+        //        foreach (var medclass in medClasses)
+        //        {
+        //            using (DB2Command cmd = MyDb2Connection.CreateCommand())
+        //            {
+        //                cmd.CommandType = CommandType.StoredProcedure;
+        //                cmd.CommandText = procName;
+        //                cmd.Parameters.Add("@TDRGNO", DB2Type.VarChar, 5).Value = medclass.藥品碼;
+        //                DB2Parameter RET = cmd.Parameters.Add("@RET", DB2Type.Integer);
+        //                DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
+        //                using (DB2DataReader reader = cmd.ExecuteReader())
+        //                {
+        //                    while (reader.Read())
+        //                    {
+        //                        medPriceClass medPriceClass = new medPriceClass() 
+        //                        {
+        //                            藥品碼 = medclass.藥品碼,
+        //                            售價 = reader["UDWCOST"].ToString().Trim(),
+        //                            健保價 = reader["UDPRICE"].ToString().Trim()
+        //                        };
+        //                        medPriceClasses.Add(medPriceClass);
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        return medPriceClasses;
+        //    }
+        //}
         //private List<medInfoClass> ExecuteDRUGSPEC(List<medInfoClass> medInfoClasses)
         //{
         //    using (DB2Connection MyDb2Connection = GetDB2Connection())
@@ -1857,40 +1867,40 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         //        return medInfoClasses;
         //    }
         //}
-        private List<medClass> ExecuteDRUGSPEC(List<medClass> medClasses)
-        {
-            using (DB2Connection MyDb2Connection = GetDB2Connection())
-            {
-                MyDb2Connection.Open();
-                string SP = "VGHLNXVG.DRUGSPEC";
-                string procName = $"{SP}";
-                string today = DateTime.Today.ToDateString();
-                foreach (var medclass in medClasses)
-                {
-                    string SPEC = "";
-                    using (DB2Command cmd = MyDb2Connection.CreateCommand())
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = procName;
-                        cmd.Parameters.Add("@DRUGNO", DB2Type.VarChar, 5).Value = medclass.藥品碼;
-                        cmd.Parameters.Add("@SDATE", DB2Type.Date).Value = today;
-                        DB2Parameter ARNAME = cmd.Parameters.Add("@ARNAME", DB2Type.VarChar, 60);
-                        DB2Parameter RDATE = cmd.Parameters.Add("@RDATE", DB2Type.DateTime);
-                        DB2Parameter SQLERRCD = cmd.Parameters.Add("@SQLERRCD", DB2Type.Integer);
-                        DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
-                        using (DB2DataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                SPEC += $"{reader["SPRSN"].ToString().Trim()}\n";
-                            }
-                        }
-                    }
-                    medclass.健保規範 = SPEC;
-                }
-                return medClasses;
-            }
-        }
+        //private List<medClass> ExecuteDRUGSPEC(List<medClass> medClasses)
+        //{
+        //    using (DB2Connection MyDb2Connection = GetDB2Connection())
+        //    {
+        //        MyDb2Connection.Open();
+        //        string SP = "VGHLNXVG.DRUGSPEC";
+        //        string procName = $"{SP}";
+        //        string today = DateTime.Today.ToDateString();
+        //        foreach (var medclass in medClasses)
+        //        {
+        //            string SPEC = "";
+        //            using (DB2Command cmd = MyDb2Connection.CreateCommand())
+        //            {
+        //                cmd.CommandType = CommandType.StoredProcedure;
+        //                cmd.CommandText = procName;
+        //                cmd.Parameters.Add("@DRUGNO", DB2Type.VarChar, 5).Value = medclass.藥品碼;
+        //                cmd.Parameters.Add("@SDATE", DB2Type.Date).Value = today;
+        //                DB2Parameter ARNAME = cmd.Parameters.Add("@ARNAME", DB2Type.VarChar, 60);
+        //                DB2Parameter RDATE = cmd.Parameters.Add("@RDATE", DB2Type.DateTime);
+        //                DB2Parameter SQLERRCD = cmd.Parameters.Add("@SQLERRCD", DB2Type.Integer);
+        //                DB2Parameter RETMSG = cmd.Parameters.Add("@RETMSG", DB2Type.VarChar, 60);
+        //                using (DB2DataReader reader = cmd.ExecuteReader())
+        //                {
+        //                    while (reader.Read())
+        //                    {
+        //                        SPEC += $"{reader["SPRSN"].ToString().Trim()}\n";
+        //                    }
+        //                }
+        //            }
+        //            medclass.健保規範 = SPEC;
+        //        }
+        //        return medClasses;
+        //    }
+        //}
 
 
         private string age(string birthday)
