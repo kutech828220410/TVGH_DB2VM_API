@@ -1,10 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\ConsoleApp_medInfo",
+    "\\ConsoleApp_UDDATA",
     "\\WebApi",
-    "\\WebApi\\bin",
     "\\WebApi\\Controller",
-    "\\WebApi\\Controller\\(API)VM調劑系統"
+    "\\WebApi\\Controller\\(API)VM調劑系統",
+    "\\WebApi\\Controller\\藥檔"
   ],
   "SelectedNode": "\\DB2VM_API.sln",
   "PreviewInSolutionExplorer": false

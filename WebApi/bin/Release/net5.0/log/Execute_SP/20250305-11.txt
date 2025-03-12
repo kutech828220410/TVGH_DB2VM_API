@@ -1,0 +1,1759 @@
+20250305-11:40:18 - [UDPDPPF0]cmd.ExecuteReader() , 24.854ms
+20250305-11:40:18 - [UDPDPPF0]get result dictionary , 1.476ms
+20250305-11:40:18 - [UDPDPPF0]get result done , 1.817ms
+20250305-11:40:18 - [UDPDPPF0]cmd.ExecuteReader() , 25.226ms
+20250305-11:40:18 - [UDPDPPF0]get result dictionary , 0.783ms
+20250305-11:40:18 - [UDPDPPF0]get result done , 0.217ms
+20250305-11:40:18 - [UDPDPPF0]cmd.ExecuteReader() , 18.185ms
+20250305-11:40:18 - [UDPDPPF0]get result dictionary , 0.753ms
+20250305-11:40:18 - [UDPDPPF0]get result done , 0.227ms
+20250305-11:40:18 - [UDPDPPF0]cmd.ExecuteReader() , 29.743ms
+20250305-11:40:18 - [UDPDPPF0]get result dictionary , 1.031ms
+20250305-11:40:18 - [UDPDPPF0]get result done , 0.211ms
+20250305-11:40:18 - [UDPDPPF0]cmd.ExecuteReader() , 13.802ms
+20250305-11:40:18 - [UDPDPPF0]get result dictionary , 0.807ms
+20250305-11:40:18 - [UDPDPPF0]get result done , 0.213ms
+20250305-11:40:18 - [UDPDPPF0]cmd.ExecuteReader() , 38.724ms
+20250305-11:40:18 - [UDPDPPF0]get result dictionary , 1.104ms
+20250305-11:40:18 - [UDPDPPF0]get result done , 0.238ms
+20250305-11:40:18 - [UDPDPPF0]cmd.ExecuteReader() , 17.055ms
+20250305-11:40:18 - [UDPDPPF0]get result dictionary , 0.903ms
+20250305-11:40:18 - [UDPDPPF0]get result done , 0.313ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 34.645ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.776ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.244ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 23.610ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.755ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.218ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 13.504ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.800ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.242ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 26.083ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.834ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.210ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 18.959ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.771ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.258ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 19.922ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.874ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.248ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 15.978ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 1.005ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.234ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 10.779ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.747ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.243ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 22.666ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.780ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.208ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 51.165ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.769ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.262ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 12.496ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.779ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.290ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 20.589ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.713ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.233ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 15.487ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.689ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.205ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 31.164ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.773ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.251ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 12.205ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.693ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.229ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 14.723ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.744ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.261ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 10.480ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.836ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.229ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 12.455ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.753ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.272ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 10.055ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.752ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.235ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 40.601ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.757ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.275ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 23.194ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.733ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.250ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 29.795ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.807ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.254ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 15.488ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.822ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.295ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 15.356ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.779ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.223ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 29.875ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.837ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.256ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 24.165ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.862ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.313ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 13.235ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.896ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.308ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 23.009ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.848ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.265ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 14.010ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.772ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.260ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 18.104ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.760ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.227ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 37.056ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.860ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.310ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 78.199ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.907ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.304ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 40.224ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 0.931ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 0.283ms
+20250305-11:40:19 - [UDPDPPF0]cmd.ExecuteReader() , 120.945ms
+20250305-11:40:19 - [UDPDPPF0]get result dictionary , 1.947ms
+20250305-11:40:19 - [UDPDPPF0]get result done , 1.196ms
+20250305-11:40:20 - [UDPDPPF0]cmd.ExecuteReader() , 92.478ms
+20250305-11:40:20 - [UDPDPPF0]get result dictionary , 0.861ms
+20250305-11:40:20 - [UDPDPPF0]get result done , 1.318ms
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 0.039ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 16.075ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 4.050ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 5.395ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.485ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 1.862ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 0.986ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 14.324ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 2.397ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 9.407ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.907ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 4.841ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.425ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 12.675ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 2.550ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 10.713ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.917ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 3.956ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.286ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 4.785ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.457ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 6.912ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.387ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 7.511ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.676ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 4.610ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.572ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 7.276ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.714ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 3.744ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.226ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 5.997ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.686ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 5.324ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.556ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 5.629ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.656ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 7.279ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.509ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 4.368ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.424ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 7.773ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.462ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 3.549ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.279ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 3.406ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.168ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 3.983ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.313ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 5.831ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.469ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 4.522ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.506ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 10.227ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 2.102ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 9.119ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.871ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 9.246ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.815ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 9.742ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.987ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 8.174ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.777ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 5.833ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.474ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 7.528ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.688ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 4.845ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.313ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 7.601ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.653ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 10.245ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.865ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 8.707ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.736ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 3.400ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.110ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 2.150ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.256ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 6.917ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 3.447ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 9.261ms
+20250305-11:40:20 - [UDPDPDSP]cmd.ExecuteReader() , 1.961ms
+20250305-11:40:20 - [UDPDPDSP]get result dictionary , 4.859ms
+20250305-11:40:20 - [UDPDPDSP]get result done , 1.401ms
+20250305-11:40:21 - [UDPDPPF0]cmd.ExecuteReader() , 21.428ms
+20250305-11:40:21 - [UDPDPPF0]get result dictionary , 0.780ms
+20250305-11:40:21 - [UDPDPPF0]get result done , 0.301ms
+20250305-11:40:21 - [UDPDPPF0]cmd.ExecuteReader() , 9.395ms
+20250305-11:40:21 - [UDPDPPF0]get result dictionary , 0.645ms
+20250305-11:40:21 - [UDPDPPF0]get result done , 0.224ms
+20250305-11:40:21 - [UDPDPPF0]cmd.ExecuteReader() , 45.725ms
+20250305-11:40:21 - [UDPDPPF0]get result dictionary , 1.052ms
+20250305-11:40:21 - [UDPDPPF0]get result done , 0.901ms
+20250305-11:40:21 - [UDPDPPF0]cmd.ExecuteReader() , 11.951ms
+20250305-11:40:21 - [UDPDPPF0]get result dictionary , 0.746ms
+20250305-11:40:21 - [UDPDPPF0]get result done , 0.194ms
+20250305-11:40:21 - [UDPDPPF0]cmd.ExecuteReader() , 9.911ms
+20250305-11:40:21 - [UDPDPPF0]get result dictionary , 0.763ms
+20250305-11:40:21 - [UDPDPPF0]get result done , 0.241ms
+20250305-11:40:21 - [UDPDPPF0]cmd.ExecuteReader() , 9.230ms
+20250305-11:40:21 - [UDPDPPF0]get result dictionary , 0.671ms
+20250305-11:40:21 - [UDPDPPF0]get result done , 0.183ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 8.782ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.593ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.193ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 30.342ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.782ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.239ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 19.960ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.878ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.245ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 67.081ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.777ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.243ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 35.704ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.840ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.217ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 10.898ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.784ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.220ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 7.868ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.651ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.196ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 49.235ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.844ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.265ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 49.963ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.812ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.241ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 26.783ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.779ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.214ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 54.014ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.876ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.239ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 15.685ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.688ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.222ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 12.458ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.778ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.245ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 10.445ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.750ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.227ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 10.569ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.806ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.243ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 22.842ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.798ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.235ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 110.141ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 1.118ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.393ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 8.136ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.806ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.262ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 15.488ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.713ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.216ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 13.983ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.712ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.212ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 36.364ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.873ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.272ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 8.784ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.925ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.334ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 8.245ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.699ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.201ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 12.013ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.810ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.239ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 7.735ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.742ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.228ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 6.792ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.695ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.240ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 5.243ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.753ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.233ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 20.640ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.795ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.225ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 29.433ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.743ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.197ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 8.331ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.719ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.215ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 35.644ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.922ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.269ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 14.779ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.776ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.233ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 25.800ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.918ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.295ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 10.910ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.730ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.188ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 9.157ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.718ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.221ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 21.591ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 1.011ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.332ms
+20250305-11:40:22 - [UDPDPPF0]cmd.ExecuteReader() , 16.981ms
+20250305-11:40:22 - [UDPDPPF0]get result dictionary , 0.825ms
+20250305-11:40:22 - [UDPDPPF0]get result done , 0.233ms
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+20250305-11:40:22 - [UDPDPDSP]cmd.ExecuteReader() , 0.015ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 10.731ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.903ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 7.364ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.497ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 6.509ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.664ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 3.608ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.237ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 4.617ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.378ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 6.364ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.455ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 6.780ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.353ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 6.249ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.555ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 5.110ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.515ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 7.105ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.648ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 4.145ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.380ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 6.402ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.658ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 4.109ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 2.063ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 4.797ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.279ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 9.060ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.945ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 10.269ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.950ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 10.089ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.747ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 4.437ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.246ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 4.593ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.387ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 10.022ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.892ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 4.016ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.223ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 4.921ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.358ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 7.251ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.704ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 2.564ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.162ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 5.000ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.398ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 7.139ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.489ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 10.571ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 2.069ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 4.091ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.178ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 3.036ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.227ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 3.778ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.302ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 3.688ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.124ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 5.900ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.645ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 4.200ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.294ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 8.156ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.614ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 11.371ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.760ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 5.173ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.410ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 7.606ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.680ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 5.666ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.529ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 5.240ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.588ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 2.677ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.331ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 5.700ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.661ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 7.053ms
+20250305-11:40:23 - [UDPDPDSP]cmd.ExecuteReader() , 1.665ms
+20250305-11:40:23 - [UDPDPDSP]get result dictionary , 3.111ms
+20250305-11:40:23 - [UDPDPDSP]get result done , 1.153ms
+20250305-11:40:24 - [UDPDPPF0]cmd.ExecuteReader() , 26.336ms
+20250305-11:40:24 - [UDPDPPF0]get result dictionary , 0.870ms
+20250305-11:40:24 - [UDPDPPF0]get result done , 0.296ms
+20250305-11:40:24 - [UDPDPPF0]cmd.ExecuteReader() , 6.632ms
+20250305-11:40:24 - [UDPDPPF0]get result dictionary , 0.730ms
+20250305-11:40:24 - [UDPDPPF0]get result done , 0.253ms
+20250305-11:40:24 - [UDPDPPF0]cmd.ExecuteReader() , 12.577ms
+20250305-11:40:24 - [UDPDPPF0]get result dictionary , 0.645ms
+20250305-11:40:24 - [UDPDPPF0]get result done , 0.213ms
+20250305-11:40:24 - [UDPDPPF0]cmd.ExecuteReader() , 39.523ms
+20250305-11:40:24 - [UDPDPPF0]get result dictionary , 0.971ms
+20250305-11:40:24 - [UDPDPPF0]get result done , 0.303ms
+20250305-11:40:24 - [UDPDPPF0]cmd.ExecuteReader() , 47.810ms
+20250305-11:40:24 - [UDPDPPF0]get result dictionary , 1.052ms
+20250305-11:40:24 - [UDPDPPF0]get result done , 0.476ms
+20250305-11:40:24 - [UDPDPPF0]cmd.ExecuteReader() , 51.774ms
+20250305-11:40:24 - [UDPDPPF0]get result dictionary , 0.909ms
+20250305-11:40:24 - [UDPDPPF0]get result done , 0.356ms
+20250305-11:40:24 - [UDPDPPF0]cmd.ExecuteReader() , 58.996ms
+20250305-11:40:24 - [UDPDPPF0]get result dictionary , 1.000ms
+20250305-11:40:24 - [UDPDPPF0]get result done , 0.294ms
+20250305-11:40:24 - [UDPDPPF0]cmd.ExecuteReader() , 93.961ms
+20250305-11:40:24 - [UDPDPPF0]get result dictionary , 0.951ms
+20250305-11:40:24 - [UDPDPPF0]get result done , 0.325ms
+20250305-11:40:24 - [UDPDPPF0]cmd.ExecuteReader() , 29.994ms
+20250305-11:40:24 - [UDPDPPF0]get result dictionary , 0.885ms
+20250305-11:40:24 - [UDPDPPF0]get result done , 0.292ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 14.175ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.797ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.219ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 22.754ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.901ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.270ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 31.422ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.990ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.529ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 19.638ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.746ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.229ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 17.078ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.751ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.235ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 25.461ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.823ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.235ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 32.659ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.757ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.233ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 23.551ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.749ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.229ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 9.274ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.711ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.197ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 8.299ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.666ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.196ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 28.050ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.849ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.207ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 21.842ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.750ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.202ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 23.975ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.732ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.207ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 18.120ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.779ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.197ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 27.328ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.778ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.260ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 28.380ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.821ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.262ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 57.019ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.822ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.245ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 75.354ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.788ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.218ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 18.224ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.788ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.265ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 35.210ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.794ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.237ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 10.681ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.804ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.235ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 29.094ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.875ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.239ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 34.184ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.823ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.244ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 24.936ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.783ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.247ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 19.765ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.740ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.222ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 25.025ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.789ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.226ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 40.624ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.857ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.268ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 23.239ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.798ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.273ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 10.499ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.722ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.270ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 27.424ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.849ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.294ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 15.302ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.826ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.210ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 58.617ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.885ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.246ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 43.391ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 1.094ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.616ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 11.413ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.804ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.210ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 27.335ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.990ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.390ms
+20250305-11:40:25 - [UDPDPPF0]cmd.ExecuteReader() , 29.194ms
+20250305-11:40:25 - [UDPDPPF0]get result dictionary , 0.974ms
+20250305-11:40:25 - [UDPDPPF0]get result done , 0.294ms
+20250305-11:40:26 - [UDPDPPF0]cmd.ExecuteReader() , 20.543ms
+20250305-11:40:26 - [UDPDPPF0]get result dictionary , 0.828ms
+20250305-11:40:26 - [UDPDPPF0]get result done , 0.208ms
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 0.015ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 9.144ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.497ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 3.438ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.334ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 1.101ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 0.956ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 12.661ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 2.491ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 9.752ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 2.062ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 5.624ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.563ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 2.241ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.260ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 17.160ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 2.781ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 7.155ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.803ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 3.949ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.162ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 4.528ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.238ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 2.775ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.260ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 2.887ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.362ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 6.443ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.778ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 5.692ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.686ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 4.616ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.366ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 10.766ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 2.164ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 4.913ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.507ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 7.187ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.522ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 8.850ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.979ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 4.742ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.459ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 9.176ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.931ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 12.256ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 2.105ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 7.709ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.416ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 0.990ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 0.853ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 4.647ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.304ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 5.737ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.543ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 9.382ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 2.022ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 2.126ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.040ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 1.355ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 0.912ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 7.167ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.743ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 8.567ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 2.040ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 9.268ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.759ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 10.169ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 2.082ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 1.607ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 0.945ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 13.344ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 2.207ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 7.275ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.707ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 1.378ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 0.980ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 3.499ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.099ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 0.907ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 0.783ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 3.874ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.416ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 13.176ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 2.256ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 3.316ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.089ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 4.741ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.437ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 6.484ms
+20250305-11:40:26 - [UDPDPDSP]cmd.ExecuteReader() , 1.452ms
+20250305-11:40:26 - [UDPDPDSP]get result dictionary , 1.015ms
+20250305-11:40:26 - [UDPDPDSP]get result done , 0.808ms
+20250305-11:40:27 - [UDPDPPF0]cmd.ExecuteReader() , 42.154ms
+20250305-11:40:27 - [UDPDPPF0]get result dictionary , 0.850ms
+20250305-11:40:27 - [UDPDPPF0]get result done , 0.255ms
+20250305-11:40:27 - [UDPDPPF0]cmd.ExecuteReader() , 39.467ms
+20250305-11:40:27 - [UDPDPPF0]get result dictionary , 1.094ms
+20250305-11:40:27 - [UDPDPPF0]get result done , 0.607ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 16.894ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.826ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.265ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 30.552ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.870ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.319ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 20.570ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.836ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.438ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 18.956ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.763ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.243ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 10.109ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.673ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.186ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 35.345ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 1.384ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.546ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 46.503ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 1.220ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.514ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 32.545ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.923ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.310ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 22.265ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.918ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.267ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 9.008ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.720ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.213ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 25.067ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.862ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.324ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 33.021ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.885ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.228ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 51.316ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.980ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.258ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 62.178ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.954ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.253ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 39.102ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.793ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.207ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 17.961ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.736ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.223ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 24.584ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.872ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.233ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 55.614ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.795ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.296ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 13.010ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.894ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.231ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 47.518ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.770ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.203ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 20.273ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.734ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.245ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 7.550ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.777ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.250ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 38.461ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.746ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.206ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 47.232ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.794ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.236ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 20.166ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.860ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.232ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 15.917ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.774ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.239ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 39.204ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.843ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.238ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 12.705ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.766ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.195ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 37.718ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.987ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.414ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 18.107ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.799ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.236ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 26.364ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.826ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.215ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 26.736ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.849ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.247ms
+20250305-11:40:28 - [UDPDPPF0]cmd.ExecuteReader() , 13.115ms
+20250305-11:40:28 - [UDPDPPF0]get result dictionary , 0.896ms
+20250305-11:40:28 - [UDPDPPF0]get result done , 0.293ms
+20250305-11:40:29 - [UDPDPPF0]cmd.ExecuteReader() , 64.727ms
+20250305-11:40:29 - [UDPDPPF0]get result dictionary , 1.878ms
+20250305-11:40:29 - [UDPDPPF0]get result done , 1.124ms
+20250305-11:40:29 - [UDPDPPF0]cmd.ExecuteReader() , 108.689ms
+20250305-11:40:29 - [UDPDPPF0]get result dictionary , 1.155ms
+20250305-11:40:29 - [UDPDPPF0]get result done , 0.268ms
+20250305-11:40:29 - [UDPDPPF0]cmd.ExecuteReader() , 63.921ms
+20250305-11:40:29 - [UDPDPPF0]get result dictionary , 0.884ms
+20250305-11:40:29 - [UDPDPPF0]get result done , 0.311ms
+20250305-11:40:29 - [UDPDPPF0]cmd.ExecuteReader() , 29.912ms
+20250305-11:40:29 - [UDPDPPF0]get result dictionary , 0.876ms
+20250305-11:40:29 - [UDPDPPF0]get result done , 0.304ms
+20250305-11:40:29 - [UDPDPPF0]cmd.ExecuteReader() , 19.355ms
+20250305-11:40:29 - [UDPDPPF0]get result dictionary , 0.872ms
+20250305-11:40:29 - [UDPDPPF0]get result done , 0.317ms
+20250305-11:40:29 - [UDPDPPF0]cmd.ExecuteReader() , 21.933ms
+20250305-11:40:29 - [UDPDPPF0]get result dictionary , 0.856ms
+20250305-11:40:29 - [UDPDPPF0]get result done , 0.291ms
+20250305-11:40:29 - [UDPDPPF0]cmd.ExecuteReader() , 22.729ms
+20250305-11:40:29 - [UDPDPPF0]get result dictionary , 0.783ms
+20250305-11:40:29 - [UDPDPPF0]get result done , 0.240ms
+20250305-11:40:29 - [UDPDPPF0]cmd.ExecuteReader() , 78.981ms
+20250305-11:40:29 - [UDPDPPF0]get result dictionary , 0.878ms
+20250305-11:40:29 - [UDPDPPF0]get result done , 0.265ms
+20250305-11:40:29 - [UDPDPPF0]cmd.ExecuteReader() , 18.525ms
+20250305-11:40:29 - [UDPDPPF0]get result dictionary , 0.992ms
+20250305-11:40:29 - [UDPDPPF0]get result done , 0.305ms
+20250305-11:40:29 - [UDPDPPF0]cmd.ExecuteReader() , 65.559ms
+20250305-11:40:29 - [UDPDPPF0]get result dictionary , 1.594ms
+20250305-11:40:29 - [UDPDPPF0]get result done , 0.329ms
+20250305-11:40:29 - [UDPDPPF0]cmd.ExecuteReader() , 22.598ms
+20250305-11:40:29 - [UDPDPPF0]get result dictionary , 0.798ms
+20250305-11:40:29 - [UDPDPPF0]get result done , 0.229ms
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 0.018ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 13.975ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 2.302ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 8.114ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.964ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 5.007ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.503ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 7.486ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.744ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 1.412ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 0.968ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 4.490ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.374ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 5.558ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.650ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 9.577ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.804ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 14.746ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 2.717ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 8.507ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.700ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 1.411ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 0.797ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 4.236ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.223ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 6.384ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.572ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 6.663ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.484ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 5.174ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.341ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 3.266ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.100ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 7.004ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.540ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 10.262ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 2.075ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 3.962ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.178ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 5.661ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.570ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 6.649ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.640ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 7.095ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.577ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 6.683ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.704ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 4.153ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.243ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 9.273ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 2.052ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 7.904ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.867ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 6.527ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.617ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 1.869ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.090ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 11.321ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 2.137ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 1.094ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 0.898ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 8.289ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 2.078ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 4.024ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.362ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 6.440ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.777ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 5.721ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.553ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 7.715ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.768ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 18.911ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 2.927ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 9.583ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 2.021ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 7.919ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.619ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 8.037ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.659ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 5.759ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.481ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 6.365ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.585ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 6.287ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.659ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 14.925ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 2.359ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 9.125ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.939ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 6.685ms
+20250305-11:40:29 - [UDPDPDSP]cmd.ExecuteReader() , 1.716ms
+20250305-11:40:29 - [UDPDPDSP]get result dictionary , 1.476ms
+20250305-11:40:29 - [UDPDPDSP]get result done , 0.885ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 16.640ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.734ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.248ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 24.653ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.798ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.234ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 40.653ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.695ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.224ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 9.070ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.674ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.223ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 6.410ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.615ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.184ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 34.788ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.848ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.240ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 14.976ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.726ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.232ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 21.086ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.724ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.289ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 20.398ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.706ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.219ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 20.780ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.812ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.236ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 29.487ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.824ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.236ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 23.433ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.820ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.203ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 23.421ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.776ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.231ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 23.410ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.773ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.207ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 15.057ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.756ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.228ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 17.616ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.733ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.198ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 14.448ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.732ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.200ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 27.196ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.804ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.210ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 18.562ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.828ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.232ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 25.645ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.774ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.253ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 13.199ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.755ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.204ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 42.927ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.758ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.234ms
+20250305-11:40:31 - [UDPDPPF0]cmd.ExecuteReader() , 32.839ms
+20250305-11:40:31 - [UDPDPPF0]get result dictionary , 0.816ms
+20250305-11:40:31 - [UDPDPPF0]get result done , 0.237ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 34.036ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.764ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.229ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 22.343ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.730ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.226ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 53.612ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.843ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.261ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 27.507ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.893ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.282ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 75.848ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.878ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.261ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 22.518ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.741ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.199ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 26.355ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.861ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.257ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 56.839ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.890ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.265ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 48.993ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 1.171ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.780ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 40.039ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.972ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.305ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 30.833ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.738ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.241ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 19.485ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.809ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.243ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 12.739ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.860ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.280ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 59.685ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.847ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.254ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 23.763ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.697ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.219ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 19.393ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.681ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.191ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 17.587ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.706ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.207ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 43.492ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.849ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.325ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 36.659ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.864ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.275ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 26.120ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.815ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.273ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 106.272ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 1.886ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 1.800ms
+20250305-11:40:32 - [UDPDPPF0]cmd.ExecuteReader() , 30.942ms
+20250305-11:40:32 - [UDPDPPF0]get result dictionary , 0.864ms
+20250305-11:40:32 - [UDPDPPF0]get result done , 0.249ms
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+20250305-11:40:32 - [UDPDPDSP]cmd.ExecuteReader() , 0.016ms
+20250305-11:40:32 - [UDPDPDSP]get result dictionary , 7.233ms
+20250305-11:40:32 - [UDPDPDSP]cmd.ExecuteReader() , 1.286ms
+20250305-11:40:32 - [UDPDPDSP]get result dictionary , 3.811ms
+20250305-11:40:32 - [UDPDPDSP]cmd.ExecuteReader() , 1.227ms
+20250305-11:40:32 - [UDPDPDSP]get result dictionary , 17.187ms
+20250305-11:40:32 - [UDPDPDSP]cmd.ExecuteReader() , 2.743ms
+20250305-11:40:32 - [UDPDPDSP]get result dictionary , 10.330ms
+20250305-11:40:32 - [UDPDPDSP]cmd.ExecuteReader() , 1.840ms
+20250305-11:40:32 - [UDPDPDSP]get result dictionary , 4.461ms
+20250305-11:40:32 - [UDPDPDSP]cmd.ExecuteReader() , 1.337ms
+20250305-11:40:32 - [UDPDPDSP]get result dictionary , 7.246ms
+20250305-11:40:32 - [UDPDPDSP]cmd.ExecuteReader() , 1.634ms
+20250305-11:40:32 - [UDPDPDSP]get result dictionary , 1.320ms
+20250305-11:40:32 - [UDPDPDSP]cmd.ExecuteReader() , 0.834ms
+20250305-11:40:32 - [UDPDPDSP]get result dictionary , 7.544ms
+20250305-11:40:32 - [UDPDPDSP]cmd.ExecuteReader() , 1.581ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 6.224ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.538ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 3.770ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.455ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 6.179ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.651ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 10.586ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 2.209ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 8.844ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.946ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 7.421ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.516ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 5.535ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.534ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 1.339ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 0.843ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 0.896ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 0.796ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 2.162ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.091ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 9.137ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.869ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 5.955ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.485ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 3.578ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.145ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 13.450ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 2.419ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 8.912ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.914ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 8.346ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.693ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 7.209ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.531ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 7.605ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.695ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 4.424ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.362ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 7.225ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.557ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 4.127ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.257ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 9.428ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.962ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 10.515ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 2.233ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 9.854ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.789ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 8.625ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.821ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 10.518ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.748ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 0.963ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 0.806ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 5.643ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.394ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 5.128ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.206ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 3.703ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.111ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 3.642ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.145ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 2.284ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 0.994ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 10.417ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 2.121ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 8.331ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.783ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 6.116ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.721ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 8.541ms
+20250305-11:40:33 - [UDPDPDSP]cmd.ExecuteReader() , 1.645ms
+20250305-11:40:33 - [UDPDPDSP]get result dictionary , 9.433ms
+20250305-11:40:33 - [UDPDPDSP]get result done , 1.854ms
+20250305-11:40:34 - [UDPDPPF0]cmd.ExecuteReader() , 21.729ms
+20250305-11:40:34 - [UDPDPPF0]get result dictionary , 0.772ms
+20250305-11:40:34 - [UDPDPPF0]get result done , 0.232ms
+20250305-11:40:34 - [UDPDPPF0]cmd.ExecuteReader() , 31.796ms
+20250305-11:40:34 - [UDPDPPF0]get result dictionary , 0.816ms
+20250305-11:40:34 - [UDPDPPF0]get result done , 0.224ms
+20250305-11:40:34 - [UDPDPPF0]cmd.ExecuteReader() , 14.609ms
+20250305-11:40:34 - [UDPDPPF0]get result dictionary , 0.650ms
+20250305-11:40:34 - [UDPDPPF0]get result done , 0.183ms
+20250305-11:40:34 - [UDPDPPF0]cmd.ExecuteReader() , 101.646ms
+20250305-11:40:34 - [UDPDPPF0]get result dictionary , 0.824ms
+20250305-11:40:34 - [UDPDPPF0]get result done , 0.280ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 23.102ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.800ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.253ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 18.835ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.837ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.207ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 20.345ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.791ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.218ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 20.090ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.774ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.233ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 24.774ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.798ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.240ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 19.234ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.759ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.196ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 111.512ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.926ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.303ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 21.297ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.818ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.225ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 13.171ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.805ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.232ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 53.237ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.887ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.358ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 44.818ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.904ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.276ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 29.517ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.926ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.290ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 16.851ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.789ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.249ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 17.197ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.877ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.222ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 14.436ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.766ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.193ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 25.017ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.892ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.306ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 36.271ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 1.066ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.275ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 38.031ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 1.068ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.572ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 12.221ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.767ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.229ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 17.906ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.795ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.235ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 27.287ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.743ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.245ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 10.717ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.817ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.198ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 8.066ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.599ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.216ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 16.910ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.710ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.223ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 9.161ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.683ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.227ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 52.725ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.894ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.265ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 17.504ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.780ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.218ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 12.237ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.692ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.189ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 11.465ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.805ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.221ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 17.594ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.775ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.236ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 13.867ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.847ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.211ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 15.198ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.750ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.195ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 16.200ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.836ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.226ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 35.369ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.861ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.305ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 51.573ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.811ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.274ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 48.940ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.831ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.248ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 24.107ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.756ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.237ms
+20250305-11:40:35 - [UDPDPPF0]cmd.ExecuteReader() , 9.709ms
+20250305-11:40:35 - [UDPDPPF0]get result dictionary , 0.825ms
+20250305-11:40:35 - [UDPDPPF0]get result done , 0.276ms
+20250305-11:40:36 - [UDPDPPF0]cmd.ExecuteReader() , 6.542ms
+20250305-11:40:36 - [UDPDPPF0]get result dictionary , 0.697ms
+20250305-11:40:36 - [UDPDPPF0]get result done , 0.192ms
+20250305-11:40:36 - [UDPDPPF0]cmd.ExecuteReader() , 20.700ms
+20250305-11:40:36 - [UDPDPPF0]get result dictionary , 0.776ms
+20250305-11:40:36 - [UDPDPPF0]get result done , 0.258ms
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 0.016ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 12.002ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 4.190ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 6.164ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.534ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 9.314ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.747ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 12.327ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 2.267ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 4.957ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.352ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 4.414ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.243ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 3.835ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.110ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 2.456ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 0.954ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 8.759ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 2.420ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 13.101ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 2.276ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 11.701ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.966ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 6.954ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.609ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 4.586ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.457ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 10.799ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.996ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 10.821ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.918ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 8.934ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.754ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 5.426ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.422ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 6.017ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.529ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 5.636ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.302ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 1.360ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 0.893ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 6.069ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.663ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 3.735ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.038ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 3.683ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.401ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 2.239ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.058ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 3.977ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.158ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 5.919ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.483ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 5.164ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.414ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 4.747ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.247ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 5.907ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.452ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 5.218ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.570ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 6.715ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.535ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 10.835ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 2.021ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 5.015ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.344ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 5.178ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.601ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 1.526ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 0.974ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 9.481ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.794ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 6.338ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.649ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 5.175ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.414ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 6.584ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.609ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 6.969ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.597ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 9.882ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.827ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 1.719ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 0.962ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 3.909ms
+20250305-11:40:36 - [UDPDPDSP]cmd.ExecuteReader() , 1.214ms
+20250305-11:40:36 - [UDPDPDSP]get result dictionary , 4.134ms
+20250305-11:40:36 - [UDPDPDSP]get result done , 1.303ms
+20250305-11:40:37 - [UDPDPPF0]cmd.ExecuteReader() , 86.557ms
+20250305-11:40:37 - [UDPDPPF0]get result dictionary , 2.336ms
+20250305-11:40:37 - [UDPDPPF0]get result done , 0.321ms
+20250305-11:40:37 - [UDPDPPF0]cmd.ExecuteReader() , 13.194ms
+20250305-11:40:37 - [UDPDPPF0]get result dictionary , 1.035ms
+20250305-11:40:37 - [UDPDPPF0]get result done , 0.236ms
+20250305-11:40:37 - [UDPDPPF0]cmd.ExecuteReader() , 35.494ms
+20250305-11:40:37 - [UDPDPPF0]get result dictionary , 0.831ms
+20250305-11:40:37 - [UDPDPPF0]get result done , 0.224ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 112.563ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.888ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.225ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 26.585ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.912ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.218ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 36.541ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.926ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.273ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 72.170ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.796ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.192ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 10.976ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.692ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.188ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 60.532ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.841ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.244ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 30.565ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.795ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.230ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 71.746ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.761ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.211ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 15.375ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.711ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.250ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 31.895ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.803ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.246ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 95.969ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 1.084ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.333ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 56.941ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.896ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.262ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 19.772ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.801ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.230ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 46.450ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 1.380ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 1.254ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 6.741ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.764ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.272ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 58.209ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.975ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.279ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 24.044ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.856ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.239ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 23.134ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.832ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.260ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 16.877ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.810ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.241ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 27.620ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.859ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.266ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 43.535ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.819ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.254ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 14.066ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.959ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.323ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 23.084ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.833ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.253ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 32.298ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.824ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.234ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 29.010ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.928ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.255ms
+20250305-11:40:38 - [UDPDPPF0]cmd.ExecuteReader() , 55.576ms
+20250305-11:40:38 - [UDPDPPF0]get result dictionary , 0.952ms
+20250305-11:40:38 - [UDPDPPF0]get result done , 0.251ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 85.758ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 1.349ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.269ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 132.710ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.925ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.260ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 36.311ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.853ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.270ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 32.432ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.881ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.272ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 25.096ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.836ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.260ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 68.505ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.874ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.293ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 85.636ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.768ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.236ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 53.088ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.752ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.217ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 92.135ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.799ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.247ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 39.702ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.775ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.217ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 76.568ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.810ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.231ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 43.354ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 1.277ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.297ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 34.109ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.820ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.267ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 27.171ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.949ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.253ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 80.721ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.813ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.238ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 8.764ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.705ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.174ms
+20250305-11:40:39 - [UDPDPPF0]cmd.ExecuteReader() , 72.761ms
+20250305-11:40:39 - [UDPDPPF0]get result dictionary , 0.861ms
+20250305-11:40:39 - [UDPDPPF0]get result done , 0.231ms
+20250305-11:40:40 - [UDPDPPF0]cmd.ExecuteReader() , 25.724ms
+20250305-11:40:40 - [UDPDPPF0]get result dictionary , 0.804ms
+20250305-11:40:40 - [UDPDPPF0]get result done , 0.200ms
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 0.016ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 18.832ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 2.613ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 8.531ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.854ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 7.851ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.986ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 25.925ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 3.585ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 13.135ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 2.538ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 8.904ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.807ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 11.671ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 2.191ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 9.368ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.984ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 6.440ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.486ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 6.094ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.516ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 7.066ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.638ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 2.879ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.158ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 1.490ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 0.946ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 0.919ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 0.855ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 9.638ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 2.607ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 2.512ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.215ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 6.261ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.546ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 4.106ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.328ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 6.458ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.722ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 2.650ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.109ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 6.527ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.507ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 1.083ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 0.845ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 5.632ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.632ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 7.469ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.753ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 1.000ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 0.898ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 9.623ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 2.058ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 5.587ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.528ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 9.573ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.885ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 1.937ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.081ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 10.117ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 2.032ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 10.608ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 2.136ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 6.506ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.604ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 6.613ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.666ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 7.251ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.740ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 9.283ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.806ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 4.322ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.221ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 6.532ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.680ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 15.021ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 2.643ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 5.022ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.361ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 5.330ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.425ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 7.475ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.730ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 5.800ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.195ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 5.645ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.503ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 6.681ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.523ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 2.408ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.001ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 6.415ms
+20250305-11:40:40 - [UDPDPDSP]cmd.ExecuteReader() , 1.593ms
+20250305-11:40:40 - [UDPDPDSP]get result dictionary , 8.336ms
+20250305-11:40:40 - [UDPDPDSP]get result done , 1.762ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 116.667ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 0.843ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.201ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 35.694ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 0.851ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.352ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 85.339ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 0.829ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.278ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 45.852ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 1.401ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 1.668ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 83.816ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 1.335ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.767ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 56.645ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 1.219ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.325ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 35.354ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 1.154ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.313ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 59.035ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 0.809ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.243ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 31.791ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 0.881ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.242ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 98.328ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 0.816ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.204ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 55.956ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 0.786ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.237ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 31.092ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 0.745ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.216ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 56.928ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 0.849ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.245ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 79.837ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 0.809ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.215ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 20.228ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 0.815ms
+20250305-11:40:42 - [UDPDPPF0]get result done , 0.259ms
+20250305-11:40:42 - [UDPDPPF0]cmd.ExecuteReader() , 12.356ms
+20250305-11:40:42 - [UDPDPPF0]get result dictionary , 0.718ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.228ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 17.557ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.882ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.232ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 20.399ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.853ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.243ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 24.786ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.840ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.231ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 54.802ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.833ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.238ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 167.804ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.911ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.277ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 64.433ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.984ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.277ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 31.913ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.991ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.323ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 75.389ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 1.886ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 1.620ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 53.528ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 1.009ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.294ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 43.274ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 1.097ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.534ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 125.636ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.811ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.308ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 18.069ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.792ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.223ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 30.418ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.881ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.245ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 22.988ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.774ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.209ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 47.543ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.875ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.257ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 48.967ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.881ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 1.086ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 28.023ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 0.966ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.288ms
+20250305-11:40:43 - [UDPDPPF0]cmd.ExecuteReader() , 23.073ms
+20250305-11:40:43 - [UDPDPPF0]get result dictionary , 1.160ms
+20250305-11:40:43 - [UDPDPPF0]get result done , 0.551ms
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 0.014ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 14.334ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.912ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 12.595ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 2.208ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 14.105ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 2.249ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 10.496ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.887ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 10.599ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.941ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 10.760ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.996ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 6.409ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.395ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 5.524ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.411ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 6.729ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.666ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 10.505ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 2.147ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 12.181ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 2.445ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 12.584ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.932ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 18.282ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 2.625ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 3.907ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.250ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 3.371ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.118ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 8.150ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.807ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 10.056ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.751ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 8.729ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.580ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 8.091ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.561ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 11.398ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 2.194ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 9.541ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.740ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 9.381ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.920ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 9.945ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.834ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 9.019ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.714ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 10.345ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.908ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 3.734ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.173ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 8.081ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.794ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 7.500ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.648ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 8.349ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.657ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 0.961ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 0.815ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 12.993ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 2.332ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 8.381ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.770ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 8.607ms
+20250305-11:40:44 - [UDPDPDSP]cmd.ExecuteReader() , 1.708ms
+20250305-11:40:44 - [UDPDPDSP]get result dictionary , 8.162ms
+20250305-11:40:44 - [UDPDPDSP]get result done , 1.784ms

@@ -42,7 +42,7 @@ namespace DB2VM_API.Controller
                 {
                     medclass_replace.AddRange(localList);
                 }
-                medCarInfoClass.update_med_page_cloud(API, medClasses);
+                //medCarInfoClass.update_med_page_cloud(API, medClasses);
                 returnData.Code = 200;
                 returnData.Result = $"取得藥品資料共{medClasses.Count}筆";
                 returnData.TimeTaken = $"{myTimerBasic}";

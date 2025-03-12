@@ -28,10 +28,10 @@ namespace ConsoleApp_UDDATA
                     DateTime now = DateTime.Now;
                     if (now.TimeOfDay > new TimeSpan(15, 0, 0)) break;
                     Console.WriteLine($"{DateTime.Now.ToString()}-取得病床資訊、處方開始");
-                    string url = "http://10.107.3.147:443/api/med_cart/get_all_db";
+                    string url = "http://10.107.3.147:443/api/med_cart/get_all";
                     string json = Basic.Net.WEBApiGet(url);
-                    returnData returnData_UDData = json.JsonDeserializet<returnData>();
-                    Console.WriteLine($"{DateTime.Now.ToString()}-取得病床資訊、處方結束\n{returnData_UDData.JsonSerializationt(true)}");
+                    //returnData returnData_UDData = json.JsonDeserializet<returnData>();
+                    Console.WriteLine($"{DateTime.Now.ToString()}-取得病床資訊、處方結束\n{json}");
                     Console.WriteLine("----------------------------------------");
 
                     Console.WriteLine($"{DateTime.Now.ToString()}-取得處方異動");
@@ -48,12 +48,12 @@ namespace ConsoleApp_UDDATA
                     Console.WriteLine($"{DateTime.Now.ToString()}-取得病床異動結束");
                     Console.WriteLine("----------------------------------------");
 
-                    Console.WriteLine($"{DateTime.Now.ToString()}-取得藥品資訊");
-                    url = "http://10.107.3.147:443/api/med_cart/get_medInfo";
-                    json = Basic.Net.WEBApiGet(url);
-                    returnData returnData_medInfo = json.JsonDeserializet<returnData>();
-                    Console.WriteLine($"{DateTime.Now.ToString()}-取得藥品資訊結束");
-                    Console.WriteLine("----------------------------------------");
+                    //Console.WriteLine($"{DateTime.Now.ToString()}-取得藥品資訊");
+                    //url = "http://10.107.3.147:443/api/med_cart/get_medInfo";
+                    //json = Basic.Net.WEBApiGet(url);
+                    //returnData returnData_medInfo = json.JsonDeserializet<returnData>();
+                    //Console.WriteLine($"{DateTime.Now.ToString()}-取得藥品資訊結束");
+                    //Console.WriteLine("----------------------------------------");
                     System.Threading.Thread.Sleep(60000);
                 }
             }

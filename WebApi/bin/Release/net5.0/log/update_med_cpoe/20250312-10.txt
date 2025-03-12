@@ -1,0 +1,2 @@
+20250312-10:06:45 - {"Data":{},"Code":-200,"Method":"update_med_cpoe","Result":"傳入Data資料異常","Value":"","ValueAry":[],"TimeTaken":"","Token":"","Server":"","DbName":"","TableName":"","Port":0,"UserName":"","Password":"","ServerType":"","ServerName":"","ServerContent":"","RequestUrl":""}
+20250312-10:06:45 - ---------------------------------------------------------------------------
