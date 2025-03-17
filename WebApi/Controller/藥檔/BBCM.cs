@@ -104,7 +104,12 @@ namespace DB2VM_API
                                 藥品碼 = reader["UDDRGNO"].ToString().Trim(),
                                 藥品名稱 = reader["UDARNAME"].ToString().Trim(),
                                 料號 = reader["UDSTOKNO"].ToString().Trim(),
-                                藥品條碼1 = reader["UDBARCD1"].ToString().Trim()
+                                藥品條碼1 = reader["UDBARCD1"].ToString().Trim(),
+                                冷藏藥品 = reader["DRUGREF"].ToString().Trim(),
+                                管制級別 = reader["DRUGREF"].ToString().Trim(),
+                                警訊藥品 = reader["DRUGREF"].ToString().Trim(),
+
+
                             };
                             if (medClass.藥品名稱.ToLower().Contains(" cap ") || medClass.藥品名稱.ToLower().Contains(" tab "))
                             {
@@ -143,7 +148,6 @@ namespace DB2VM_API
                 MyDb2Connection.Open();
                 string SP = "UDPDPHLP";
                 string procName = $"{DB2_schema}.{SP}";
-                List<medInfoClass> medInfoClasses = new List<medInfoClass>();
                 foreach (var medclass in medClasses)
                 {
                     using (DB2Command cmd = MyDb2Connection.CreateCommand())

@@ -26,7 +26,7 @@ namespace ConsoleApp_UDDATA
                 while (true)
                 {
                     DateTime now = DateTime.Now;
-                    if (now.TimeOfDay > new TimeSpan(15, 0, 0)) break;
+                    if (now.TimeOfDay > new TimeSpan(15, 10, 0)) break;
                     Console.WriteLine($"{DateTime.Now.ToString()}-取得病床資訊、處方開始");
                     string url = "http://10.107.3.147:443/api/med_cart/get_all";
                     string json = Basic.Net.WEBApiGet(url);

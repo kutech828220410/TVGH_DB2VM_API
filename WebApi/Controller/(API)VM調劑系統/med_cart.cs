@@ -33,7 +33,7 @@ namespace DB2VM_API.Controller._API_VM調劑系統
         static private MySqlSslMode SSLMode = MySqlSslMode.None;
         private static string Message = "---------------------------------------------------------------------------";
         //公藥、外圍藥清單
-        private List<string> medcode = new List<string>() { "80096", "80105", "80104", "80090", "80067", "02279", "04843" }; 
+        private List<string> medcode = new List<string>() { "04881", "02084", "02693", "05633", "03190", "05984","04903", "01244", "03218"}; 
         static string DB2_schema = $"{ConfigurationManager.AppSettings["DB2_schema"]}";
         ///// <summary>
         /////以藥局和護理站取得占床資料
@@ -1317,6 +1317,10 @@ namespace DB2VM_API.Controller._API_VM調劑系統
             List<OrderClass> orderClasses = new List<OrderClass>();
             DateTime now = DateTime.Now;
             string time = now.ToString("HHmm");
+            if (int.Parse(time) > 1500)
+            {
+                time = "1500";
+            }
             string updateTime = now.ToDateTimeString();
             foreach (var medCarInfoClass in patientInfoClasses)
             {
@@ -1425,16 +1429,18 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                 狀態 = "未過帳"
                      
                             };
-                            if(medCpoeClass.護理站 == "C069" && medCpoeClass.床號 == "46")
-                            {
-                                returnData returnData = new returnData();
-                                returnData.Data = medCpoeClass;
-                                Logger.Log("C069-46", $"{returnData.JsonSerializationt(true)}");
-                            }
+                            //if(medCpoeClass.護理站 == "C069" && medCpoeClass.床號 == "46")
+                            //{
+                            //    returnData returnData = new returnData();
+                            //    returnData.Data = medCpoeClass;
+                            //    Logger.Log("C069-46", $"{returnData.JsonSerializationt(true)}");
+                            //}
                             if (medCpoeClass.藥品名.Contains(" #> ") ||(medCpoeClass.藥品名.Contains(" #>* ") || medCpoeClass.頻次.StartsWith("QW") || medCpoeClass.頻次.StartsWith("TIW") || medCpoeClass.頻次.StartsWith("BIW") || medCpoeClass.頻次 == "Q3D") || medCpoeClass.頻次 == "Q2W") 
                             {
                                 continue;
-                            } 
+                            }
+                            if (medcode.Contains(medCpoeClass.藥碼)) continue;
+
                             if (medCpoeClass.劑量.StartsWith("X"))
                             {
                                 if (medCpoeClass.劑量.Length == 2 || medCpoeClass.劑量.Length == 3)
@@ -1442,6 +1448,9 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                                     continue;
                                 }
                             }
+                            if (medCpoeClass.藥局代碼 == "UATP") continue;
+                            if (medCpoeClass.藥局代碼 == "UBAA" && medCpoeClass.頻次.Contains("PRN") == false) continue;
+
                             if (medCpoeClass.藥碼.Length == 5 && medCpoeClass.藥碼.StartsWith("8"))
                             {
                                 medCpoeClass.公藥 = "Y";
@@ -1462,11 +1471,15 @@ namespace DB2VM_API.Controller._API_VM調劑系統
                             if (iceMed(medCpoeClass.藥碼)) medCpoeClass.冷儲 = "Y";
                             if (medCpoeClass.藥品名.ToLower().Contains(" cap ") || medCpoeClass.藥品名.ToLower().Contains(" tab ")) medCpoeClass.口服 = "Y";
                             if (medCpoeClass.途徑 == "IVA" || medCpoeClass.途徑 == "IVD") medCpoeClass.針劑 = "Y";
-                            if (medCpoeClass.藥局代碼 == "" || medCpoeClass.藥局代碼 == "UC02") 
-                            {
-                                prescription.Add(medCpoeClass);
-                                orderClasses.Add(orderClass);
-                            } 
+                           
+                            prescription.Add(medCpoeClass);
+                            orderClasses.Add(orderClass);
+                            
+                            //if (medCpoeClass.藥局代碼 == "" || medCpoeClass.藥局代碼 == "UC02") 
+                            //{
+                            //    prescription.Add(medCpoeClass);
+                            //    orderClasses.Add(orderClass);
+                            //} 
                         }
                     }
                 }
